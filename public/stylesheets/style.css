@@ -1,0 +1,24 @@
+#container {
+  width: 800px;
+  margin: 0px auto;
+
+}
+section {
+  height: 600px;
+  position: relative;
+}
+nav.navigation {
+  width: 160px;
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  border: 1px solid #aaa;
+}
+nav.navigation ul {
+  margin: 0.5em 0em 0.5em 1em;
+}
+nav.navigation li a {
+  font-size: 22px;
+  letter-spacing: -2px;
+  line-height: 1.3em;
+}

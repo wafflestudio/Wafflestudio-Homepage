@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Waffle Studio</title>
+  <!--[if IE]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag ['reset', 'style'] %>
+  <%= javascript_include_tag :jquery %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div id="container">
+    <section id="home">
+      <%= render :partial => 'layouts/home' %>
+    </section>
+    <section id="about_us">
+      <%= render :partial => 'layouts/about_us' %>
+    </section>
+    <section id="members">
+      <%= render :partial => 'members/list' %>
+    </section>
+    <section id="projects">
+      <%= render :partial => 'projects/list' %>
+    </section>
+    <section id="contact">
+      <%= render :partial => 'layouts/contact' %>
+    </section>
+  </div>
+
+</body>
+</html>

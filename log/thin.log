@@ -1,0 +1,60 @@
+>> Writing PID to tmp/pids/thin.pid
+>> Using rack adapter
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+>> Exiting!
+/usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_tcp_server': no acceptor (RuntimeError)
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_server'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/tcp_server.rb:16:in `connect'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:49:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `call'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:57:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/server.rb:156:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/controllers/controller.rb:80:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `send'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `run_command'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:143:in `run!'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/bin/thin:6
+	from /usr/local/bin/thin:19:in `load'
+	from /usr/local/bin/thin:19
+>> Writing PID to tmp/pids/thin.pid
+>> Using rack adapter
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+>> Exiting!
+/usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_tcp_server': no acceptor (RuntimeError)
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:572:in `start_server'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/tcp_server.rb:16:in `connect'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:49:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `call'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run_machine'
+	from /usr/local/lib/ruby/gems/1.8/gems/eventmachine-0.12.10/lib/eventmachine.rb:256:in `run'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/backends/base.rb:57:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/server.rb:156:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/controllers/controller.rb:80:in `start'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `send'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:177:in `run_command'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/lib/thin/runner.rb:143:in `run!'
+	from /usr/local/lib/ruby/gems/1.8/gems/thin-1.2.7/bin/thin:6
+	from /usr/local/bin/thin:19:in `load'
+	from /usr/local/bin/thin:19
+>> Writing PID to tmp/pids/thin.pid
+>> Using rack adapter
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+>> Writing PID to tmp/pids/thin.pid
+>> Using rack adapter
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+>> Waiting for 6 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
+>> Writing PID to tmp/pids/thin.pid
+>> Using rack adapter
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop

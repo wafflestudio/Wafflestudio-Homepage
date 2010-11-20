@@ -1,0 +1,72 @@
+<% content_for(:title){"프로젝트 등록"} %>
+<%= form_for @project, :url => admin_projects_path, :html => {:multipart => true } do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @project.errors.count %>개의 에러가 발생했습니다:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field 'from_form', :value => 1 %>
+
+  <div class="table">
+		<table class="listing form" cellpadding="0" cellspacing="0">
+			<img src="/images/admin/bg-th-left.gif" width="8" height="7" alt="" class="left" />
+			<img src="/images/admin/bg-th-right.gif" width="7" height="7" alt="" class="right" />
+			<tr>
+				<th class="full" colspan="2"><%= yield(:title) %></th>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>프로젝트명</strong></td>
+				<td class="last"><%= f.text_field 'name' %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>설명</strong></td>
+				<td class="last"><%= f.text_area 'description' %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>시작일</strong></td>
+				<td class="last"><%= f.text_field 'start_date' %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>상태</strong></td>
+				<td class="last"><%= f.select :status, Project.available_statuses %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>링크</strong></td>
+				<td class="last"><%= f.text_field 'link' %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>멤버</strong></td>
+				<td class="last">
+          <% for member in Member.all %>
+            <%= check_box_tag 'project[member_ids][]', member.id, false %>
+            <%= member.name %>
+          <% end %>
+        </td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>스크린샷</strong></td>
+				<td class="last">
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <%= file_field_tag 'project[screenshot_files][]' %><br />
+        </td>
+			</tr>
+		</table>
+  </div>
+
+  <div class="actions">
+    <%= f.submit '프로젝트 등록' %>
+  </div>
+<% end %>

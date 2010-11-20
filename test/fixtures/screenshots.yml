@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  screenshot_file_name: MyString
+  screenshot_content_type: MyString
+
+two:
+  project_id: 1
+  screenshot_file_name: MyString
+  screenshot_content_type: MyString
