@@ -61,8 +61,8 @@ Waffle::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
-  match 'admin', :to => 'admin#admin_index'
-  match 'admin/login', :to => 'admin#login'
+  match 'admin', :to => 'admin#login'
+  match 'admin/authorize', :to => 'admin#authorize'
   match 'admin/logout', :to => 'admin#logout'
   match 'admin/screenshot/:id', :via => 'delete', :to => 'admin/projects#destroy_screenshot', :as => :admin_screenshots
 end

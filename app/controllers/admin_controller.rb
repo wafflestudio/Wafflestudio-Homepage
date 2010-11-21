@@ -2,27 +2,32 @@ require 'yaml'
 require 'sha1'
 
 class AdminController < ApplicationController
-  before_filter :authorized?, :except => [:admin_index, :login]
+  before_filter :authorized?, :except => [:authorize, :login]
 
-  def admin_index
-    unless session[:admin].nil?
-      redirect_to admin_members_path
+  def login
+    if session[:admin]
+      render :action => :index
     end
   end
 
-  def login
+  def index
+
+  end
+
+  def authorize
     if check_credential(params[:id], params[:password])
       session[:admin] = params[:id]
       redirect_to admin_members_path
     else
-      flash[:error] = 'id or password is wrong'
+      flash[:error] = 'Wrong id or password!'
       redirect_to admin_path
     end
   end
 
   def logout
     session[:admin] = nil
-    redirect_to '/'
+    flash[:notice] = '로그아웃!'
+    render :action => :login
   end
 
   private
