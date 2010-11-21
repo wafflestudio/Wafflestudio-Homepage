@@ -1,0 +1,6 @@
+<p><%= flash[:error] %></p>
+<% form_tag '/admin/login' do %>
+  <%= text_field_tag 'id' %>
+  <%= password_field_tag 'password' %>
+  <%= submit_tag 'login' %>
+<% end %>

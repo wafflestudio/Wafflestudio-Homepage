@@ -27,8 +27,12 @@
 		<div id="left-column">
 			<h3>메뉴</h3>
 			<ul class="nav">
+        <% if session[:admin] %>
 				<li><%= link_to '멤버 관리', admin_members_path %></li>
 				<li><%= link_to '프로젝트 관리', admin_projects_path %></li>
+        <% else %>
+				<li>로그인 해 주세요.</li>
+        <% end %>
 				<!--
 				<li><a href="#">Lorem dollar</a></li>
 				<li><a href="#">Ipsum dollar</a></li>
@@ -37,7 +41,9 @@
 				-->
 			</ul>
 			<a href="/" class="link">사이트로 가기</a>
+      <% if session[:admin] %>
 			<a href="/admin/logout" class="link">관리자 로그아웃</a>
+      <% end %>
 		</div>
 		<div id="center-column">
 			<div class="top-bar">
