@@ -53,14 +53,9 @@
 			<tr>
 				<td class="first" width="150"><strong>스크린샷</strong></td>
 				<td class="last">
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <% for i in (1..5) %>
+            <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <% end %>
         </td>
 			</tr>
 		</table>

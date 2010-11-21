@@ -58,14 +58,9 @@
             <%= screenshot.image_file_name %>
             <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(screenshot), :confirm => 'Are you sure?', :method => :delete %><br />
           <% end %>
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
-          <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <% for i in (1..5-@project.screenshots.length) %>
+            <%= file_field_tag 'project[screenshot_files][]' %><br />
+          <% end %>
         </td>
 			</tr>
 		</table>
