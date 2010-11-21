@@ -50,6 +50,8 @@ Waffle::Application.routes.draw do
   namespace :admin do
     resources :members
     resources :projects
+    resources :carousels
+    resources :contacts
   end
 
   # You can have the root of your site routed with "root"
@@ -62,6 +64,7 @@ Waffle::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   match 'admin', :to => 'admin#login'
+  match 'admin/index', :to => 'admin#index', :as => :admin_index
   match 'admin/authorize', :to => 'admin#authorize'
   match 'admin/logout', :to => 'admin#logout'
   match 'admin/screenshot/:id', :via => 'delete', :to => 'admin/projects#destroy_screenshot', :as => :admin_screenshots

@@ -6,12 +6,12 @@ class AdminController < ApplicationController
 
   def login
     if session[:admin]
-      render :action => :index
+      redirect_to admin_index_path
     end
   end
 
   def index
-
+    @unread_contacts_cnt = Contact.count :all, :conditions => {:status => 'unread'}
   end
 
   def authorize

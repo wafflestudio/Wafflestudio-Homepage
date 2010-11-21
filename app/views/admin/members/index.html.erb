@@ -1,5 +1,6 @@
 <% content_for(:title){"멤버 관리"} %>
 <p><%= flash[:notice] %></p>
+<p><%= flash[:error] %></p>
 <%= link_to image_tag('admin/add-icon.gif')+"새 멤버", new_admin_member_path %>
 <div class="table">
 	<img src="/images/admin/bg-th-left.gif" width="8" height="7" alt="" class="left" />

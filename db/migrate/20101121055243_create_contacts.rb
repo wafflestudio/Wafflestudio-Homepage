@@ -5,7 +5,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :email
       t.string :phone
       t.text :message
-      t.string :status, :default => 'unhandled'
+      t.string :status, :default => 'unread'
 
       t.timestamps
     end
