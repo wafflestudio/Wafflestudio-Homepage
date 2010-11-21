@@ -17,17 +17,16 @@ class AdminController < ApplicationController
   def authorize
     if check_credential(params[:id], params[:password])
       session[:admin] = params[:id]
-      redirect_to admin_members_path
     else
       flash[:error] = 'Wrong id or password!'
-      redirect_to admin_path
     end
+    redirect_to admin_path
   end
 
   def logout
     session[:admin] = nil
     flash[:notice] = '로그아웃!'
-    render :action => :login
+    redirect_to admin_path
   end
 
   private

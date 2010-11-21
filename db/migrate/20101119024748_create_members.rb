@@ -4,6 +4,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :name, :null => false
       t.string :name_eng
       t.string :tags, :default => ''
+      t.string :skills, :default => ''
       t.string :school, :default => ''
       t.string :email, :default => ''
       t.string :website, :default => ''

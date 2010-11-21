@@ -349,3 +349,15 @@ div.table .select select {
 	margin-right: 2px;
 	padding: 0px 4px;
 }
+.skill_name {
+  width: 80px;
+}
+.skill_degree {
+  width: 30px;
+  margin-left: 1em;
+}
+.skill_slider {
+  width: 200px;
+  display: inline-block;
+  margin-left: 1em;
+}

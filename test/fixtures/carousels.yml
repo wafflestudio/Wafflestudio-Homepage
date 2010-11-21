@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  visibility: MyString
+  c_image_file_name: MyString
+  c_image_content_type: MyString
+  action: MyString
+
+two:
+  visibility: MyString
+  c_image_file_name: MyString
+  c_image_content_type: MyString
+  action: MyString

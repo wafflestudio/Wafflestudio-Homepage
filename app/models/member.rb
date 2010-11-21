@@ -1,8 +1,9 @@
 class Member < ActiveRecord::Base
   has_and_belongs_to_many :projects
   serialize :tags
-  attr_accessor :project_ids, :tag_names, :from_form
-  before_save :set_tags
+  serialize :skills
+  attr_accessor :project_ids, :tag_names, :skill_inputs, :from_form
+  before_save :set_tags, :set_skills
   after_save :set_projects
 
   has_attached_file :resume
@@ -15,6 +16,12 @@ class Member < ActiveRecord::Base
       self.tags = tag_names||[]
     end
     true
+  end
+
+  def set_skills
+    unless from_form.nil?
+      self.skills = skill_inputs.reject{|skill| skill[:name] == ''}||[]
+    end
   end
 
   def set_projects

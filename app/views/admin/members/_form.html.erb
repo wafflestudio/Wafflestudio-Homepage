@@ -55,6 +55,17 @@
         </td>
 			</tr>
 			<tr>
+				<td class="first" width="150"><strong>기술</strong></td>
+				<td class="last">
+          <% for i in (1..5) %>
+            <div class="skill">
+              <label>종류:</label><%= text_field_tag 'member[skill_inputs][][name]', '', :class => 'skill_name' %>
+              <label>숙련도:</label><div class="skill_slider"></div><%= text_field_tag 'member[skill_inputs][][degree]', 0, {:class=> 'skill_degree', :readonly => true}%>
+            </div>
+          <% end %>
+        </td>
+			</tr>
+			<tr>
 				<td class="first" width="150"><strong>프로젝트</strong></td>
 				<td class="last">
           <% for project in Project.all %>
@@ -90,3 +101,18 @@
     <%= f.submit '멤버 등록' %>
   </div>
 <% end %>
+<script type="text/javascript">
+$(function(){
+  $('.skill_slider').each(function(i){
+    $(this).slider({
+      value: $('.skill_slider').eq(i).next().val(),
+      range: 'min',
+      min: 0,
+      max: 100,
+      slide: function(e, ui){
+        $(this).next().val(ui.value)
+      }
+    });
+  });
+});
+</script>
