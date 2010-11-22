@@ -1,7 +1,7 @@
 <h2>로그인 해 주세요.</h2>
 <p><%= flash[:notice] %></p>
 <p><%= flash[:error] %></p>
-<% form_tag '/admin/authorize' do %>
+<%= form_tag '/admin/authorize' do %>
   <%= text_field_tag 'id' %>
   <%= password_field_tag 'password' %>
   <%= submit_tag 'login' %>

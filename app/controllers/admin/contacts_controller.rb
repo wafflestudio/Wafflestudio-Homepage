@@ -1,11 +1,10 @@
 class Admin::ContactsController < AdminController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order('created_at desc')
   end
 
   def update
     @contact = Contact.find params[:id]
-    logger.info params[:contact].inspect
     if @contact.update_attributes(params[:contact])
       render :text => 'success'
     else
