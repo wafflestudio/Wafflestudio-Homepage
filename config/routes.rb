@@ -14,6 +14,7 @@ Waffle::Application.routes.draw do
   #   resources :products
   resources :members
   resources :projects
+  resources :contacts
 
   # Sample resource route with options:
   #   resources :products do

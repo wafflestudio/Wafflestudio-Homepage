@@ -1,0 +1,7 @@
+<%= form_for @contact, :url => contacts_path, :html => { :method => 'POST'} do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :email %>
+  <%= f.text_field :phone %>
+  <%= f.text_area :message %>
+  <%= f.submit 'ok' %>
+<% end %>
