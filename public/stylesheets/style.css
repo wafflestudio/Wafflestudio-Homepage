@@ -22,3 +22,43 @@ nav.navigation li a {
   letter-spacing: -2px;
   line-height: 1.3em;
 }
+
+#new_contact {
+  width: 565px;
+}
+form label {
+  display: block;
+  line-height: 2em;
+  margin: 0.2em 0 0 0.5em;
+}
+form div.text_fields {
+  float: left;
+}
+form div.text_area {
+  float: right;
+}
+form .text_input_wrapper {
+  width: 265px;
+  height: 30px;
+  font-size: 18px;
+  background: #ccc;
+}
+form .text_input_wrapper .text_input {
+  width: 96%;
+  height: 26px;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  margin-left: 2%;
+  background: transparent;
+  font-size: 15px;
+}
+form textarea {
+  width: 265px;
+  height: 95px;
+  background: #ccc;
+  border: 0;
+}
+#contact_submit {
+  display: block;
+}

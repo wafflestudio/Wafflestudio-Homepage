@@ -1,7 +1,21 @@
 <%= form_for @contact, :url => contacts_path, :html => { :method => 'POST'} do |f| %>
-  <%= f.text_field :name, {:placeholder => 'Name'} %>
-  <%= f.email_field :email, {:placeholder => 'Email'} %>
-  <%= f.phone_field :phone, {:placeholder => 'Phone'} %>
-  <%= f.text_area :message, {:placeholder => 'Message'} %>
-  <%= f.submit 'ok' %>
+  <div class="text_fields">
+    <%= label_tag 'contact_name', 'Name :' %>
+    <div class="text_input_wrapper">
+      <%= f.text_field :name, {:placeholder => 'John Doe', :class => 'text_input'} %>
+    </div>
+    <%= label_tag 'contact_email', 'Email :' %>
+    <div class="text_input_wrapper">
+      <%= f.email_field :email, {:placeholder => 'johndoe@example.com', :class => 'text_input'} %>
+    </div>
+    <%= label_tag 'contact_phone', 'Phone :' %>
+    <div class="text_input_wrapper">
+      <%= f.phone_field :phone, {:placeholder => '010-1234-5678', :class => 'text_input'} %>
+    </div>
+  </div>
+  <div class="text_area">
+    <%= label_tag 'contact_message', 'Message :' %>
+    <%= f.text_area :message, {:placeholder => 'Say hello'} %>
+    <%= f.submit 'ok' %>
+  </div>
 <% end %>
