@@ -1,5 +1,5 @@
 class WaffleMailer < ActionMailer::Base
-  default :to => "hi@fronia.net"
+  default :to => "hello@wafflestudio.com"
 
   def contact_to_waffle(contact)
     @contact = contact
