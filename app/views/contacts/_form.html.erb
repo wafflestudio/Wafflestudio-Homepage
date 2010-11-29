@@ -15,7 +15,9 @@
   </div>
   <div class="text_area">
     <%= label_tag 'contact_message', 'Message :' %>
-    <%= f.text_area :message, {:placeholder => 'Say hello'} %>
+    <div class="text_area_wrapper">
+      <%= f.text_area :message, {:placeholder => 'Say hello'} %>
+    </div>
     <%= f.submit 'ok' %>
   </div>
 <% end %>
