@@ -38,7 +38,7 @@ class AdminController < ApplicationController
   end
 
   def check_credential(id, password)
-    credentials = YAML::load_file("#{RAILS_ROOT}/config/admin.yml")
+    credentials = YAML::load_file("#{Rails.root.to_s}/config/admin.yml")
     !credentials.find{|c| c[:id] == id and c[:password] == SHA1::hexdigest(password)}.nil?
   end
 end

@@ -32,5 +32,6 @@ begin
     end
   end
 rescue NoMethodError, Interrupt
+  puts "Interrupted~"
   system "stty echo"
 end
