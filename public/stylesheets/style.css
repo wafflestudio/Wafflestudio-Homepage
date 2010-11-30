@@ -1,6 +1,7 @@
 #container {
   width: 800px;
   margin: 0px auto;
+  border: 1px solid #ddd;
 
 }
 section {
@@ -13,7 +14,7 @@ nav.navigation {
   width: 160px;
   position: absolute;
   top: 100px;
-  left: 70px;
+  left: 20px;
   border: 1px solid #aaa;
 }
 nav.navigation ul {
@@ -25,7 +26,7 @@ nav.navigation li a {
   line-height: 1.3em;
 }
 section article {
-  margin-left: 260px;
+  margin-left: 200px;
 }
 
 #new_contact {
