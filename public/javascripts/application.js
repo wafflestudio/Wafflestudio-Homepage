@@ -9,7 +9,7 @@ $(function(){
   contactForm = $('#new_contact');
   contactForm.ajaxForm({
     dataType: 'json',
-    clearForm: true,
+    clearForm: false,
     success: contactSendSuccess,
     error: contactSendFail
   });
