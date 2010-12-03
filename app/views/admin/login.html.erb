@@ -2,7 +2,9 @@
 <p><%= flash[:notice] %></p>
 <p><%= flash[:error] %></p>
 <%= form_tag '/admin/authorize' do %>
-  <%= text_field_tag 'id' %>
-  <%= password_field_tag 'password' %>
+  <%= label_tag 'id', '아이디: ' %>
+  <%= text_field_tag 'id', '', {:placeholder => 'id', :tabindex => 1} %><br />
+  <%= label_tag 'password', '비밀번호: ' %>
+  <%= password_field_tag 'password', '', {:placeholder => 'password', :tabindex => 2} %>
   <%= submit_tag 'login' %>
 <% end %>
