@@ -12,8 +12,6 @@ Waffle::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :members
-  resources :projects
   resources :contacts
 
   # Sample resource route with options:
@@ -53,6 +51,7 @@ Waffle::Application.routes.draw do
     resources :projects
     resources :carousels
     resources :contacts
+    resources :timelines
   end
 
   # You can have the root of your site routed with "root"

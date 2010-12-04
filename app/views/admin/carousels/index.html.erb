@@ -32,11 +32,12 @@
 
 <script type="text/javascript">
 function update_carousel(id){
+  var carousel = $('#carousel_'+id);
   $.ajax({
     type: 'PUT',
-    data: {'carousel': {'visibility': $('#carousel_'+id).find('select[name="visibility"]').val(), 
-                        'action_type': $('#carousel_'+id).find('select[name="action_type"]').val(),
-                        'action_value': $('#carousel_'+id).find('input[name="action_value"]').val(),
+    data: {'carousel': {'visibility': carousel.find('select[name="visibility"]').val(), 
+                        'action_type': carousel.find('select[name="action_type"]').val(),
+                        'action_value': carousel.find('input[name="action_value"]').val(),
                         'from_form': '1'}},
     url: '/admin/carousels/'+id,
     success: function(){

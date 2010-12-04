@@ -30,6 +30,7 @@
 			<ul class="nav">
         <% if session[:admin] %>
 				<li><%= link_to 'Carousel 관리', admin_carousels_path %></li>
+				<li><%= link_to 'Timeline 관리', admin_timelines_path %></li>
 				<li><%= link_to '멤버 관리', admin_members_path %></li>
 				<li><%= link_to '프로젝트 관리', admin_projects_path %></li>
 				<li><%= link_to '문의 관리', admin_contacts_path %></li>
