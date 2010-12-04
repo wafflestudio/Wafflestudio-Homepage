@@ -4,4 +4,15 @@
 <%= render :partial => 'layouts/navigation', :locals => {:cur => 'about_us'} %>
 <article>
 
+  <div id="timeline">
+    <ul>
+    <% start_date = Date.new(2007)
+       end_date = Date.new(2011) %>
+    <% @timelines.each do |timeline| %>
+      <li>
+        <a title="<%= timeline.name %>" data-percent="<%= (timeline.took_place_at - start_date)/(end_date - start_date).to_f %>">●</a>
+      </li>
+    <% end %>
+    </ul>
+  </div>
 </article>

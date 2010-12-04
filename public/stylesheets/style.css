@@ -1,3 +1,4 @@
+/*overall layout start*/
 #container {
   width: 800px;
   margin: 0px auto;
@@ -10,6 +11,13 @@ section {
   margin-bottom: 100px;
   position: relative;
 }
+section article {
+  margin-left: 200px;
+}
+/*overall layout end*/
+
+
+/*navication start*/
 nav.navigation {
   width: 160px;
   position: absolute;
@@ -25,10 +33,27 @@ nav.navigation li a {
   letter-spacing: -2px;
   line-height: 1.3em;
 }
-section article {
-  margin-left: 200px;
-}
+/*navication end*/
 
+
+/*timeline start*/
+#timeline {
+  width: 600px;
+  height: 20px;
+  position: absolute;
+  left: 100px;
+  bottom: 50px;
+  border: 1px solid red;
+}
+#timeline li {
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+/*timeline end*/
+
+
+/*contact start*/
 #new_contact {
   width: 565px;
 }
@@ -82,3 +107,4 @@ form textarea {
 #contact_submit {
   display: block;
 }
+/*contact end*/

@@ -5,6 +5,24 @@ var contactForm;
 
 $(function(){
 
+/*timeline start*/
+  $('#timeline li>a').qtip({
+    position: {
+      corner: {target: 'topMiddle',
+               tooltip: 'bottomMiddle'}
+    },
+    style: {name: 'dark', tip: 'bottomMiddle',
+      border: {radius: 5},
+      title: {'font-size': 8, 'color': 'black'}
+    },
+    show: {delay: 0}
+  });
+  $('#timeline li').each(function(){
+    var anchor = $(this).children('a');
+    $(this).css('left', $('#timeline').width()*parseFloat(anchor.attr('data-percent'))-anchor.width()/2);
+  });
+/*timeline end*/
+
 /*contact form start*/
   contactForm = $('#new_contact');
   contactForm.ajaxForm({
