@@ -39,16 +39,22 @@ nav.navigation li a {
 /*timeline start*/
 #timeline {
   width: 600px;
-  height: 20px;
+  height: 4px;
   position: absolute;
   left: 100px;
   bottom: 50px;
-  border: 1px solid red;
+  background: brown;
 }
 #timeline li {
-  list-style: none;
+  width: 10px;
+  height: 10px;
+  line-height: 0px;
+  font-size: 0px;
+  background: red;
+  display: block;
   position: absolute;
-  top: 0;
+  top: -3px;
+  list-style: none;
 }
 /*timeline end*/
 

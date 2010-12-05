@@ -6,20 +6,14 @@ var contactForm;
 $(function(){
 
 /*timeline start*/
-  $('#timeline li>a').qtip({
-    position: {
-      corner: {target: 'topMiddle',
-               tooltip: 'bottomMiddle'}
-    },
-    style: {name: 'dark', tip: 'bottomMiddle',
-      border: {radius: 5},
-      title: {'font-size': 8, 'color': 'black'}
-    },
-    show: {delay: 0}
-  });
-  $('#timeline li').each(function(){
-    var anchor = $(this).children('a');
-    $(this).css('left', $('#timeline').width()*parseFloat(anchor.attr('data-percent'))-anchor.width()/2);
+  $('#timeline li').tipsy({
+    gravity: 's',
+    fade: true,
+    delayOut: 300,
+    offset: 5
+  })
+  .each(function(){
+    $(this).css('left', $('#timeline').width()*parseFloat($(this).attr('data-percent'))-$(this).width()/2);
   });
 /*timeline end*/
 
