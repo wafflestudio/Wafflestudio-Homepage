@@ -69,7 +69,8 @@ function process_tweets(tweets){
   $('#tweet_template').tmpl(processed_tweets).appendTo('#tweetbox');
 }
 function relativeTime(pastTime){
-  var origStamp = Date.parse(pastTime);
+  var toParse = pastTime.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");
+  var origStamp = Date.parse(toParse);
   var curDate = new Date();
   var curStamp = curDate.getTime();
   var diff = parseInt((curStamp - origStamp)/1000);
