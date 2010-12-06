@@ -7,8 +7,9 @@
   <![endif]-->
   <%= stylesheet_link_tag ['reset', 'style', 'tipsy'] %>
   <%= javascript_include_tag :jquery %>
-  <%= javascript_include_tag ['jquery.form', 'jquery.tipsy', 'application'] %>
+  <%= javascript_include_tag ['twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'application'] %>
   <%= csrf_meta_tag %>
+  <%= render :partial => 'layouts/tweet_template' %>
 </head>
 <body>
   <div id="container">

@@ -5,11 +5,14 @@ var contactForm;
 
 $(function(){
 
+/*get tweets and show*/
+  request_tweets('wafflestudio', 5)
+
 /*timeline start*/
   $('#timeline li').tipsy({
     gravity: 's',
-    fade: true,
-    delayOut: 300,
+    fade: false,
+    delayOut: 100,
     offset: 5
   })
   .each(function(){
@@ -31,9 +34,7 @@ $(function(){
 
 function contactSendSuccess(response, status, xhr){
   //TODO: display activity indicator
-  console.log(response);
 }
-var error;
 function contactSendFail(xhr, status){
   //TODO: display the reason of failure
   var errors = $.parseJSON(xhr.responseText);
@@ -42,4 +43,48 @@ function contactSendFail(xhr, status){
     error_arr.push(message);
   });
   alert(error_arr.join('\n'));
+}
+function request_tweets(screen_name, count){
+  $.ajax({
+    data: {
+      screen_name: screen_name,
+      count: count,
+      include_entities: true
+    },
+    url: 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
+    method: 'GET',
+    dataType: 'jsonp',
+    success: function(data){
+      process_tweets(data);
+    }
+  });
+}
+function process_tweets(tweets){
+  var processed_tweets = $.map(tweets, function(tweet){
+    var processed_tweet = {};
+    processed_tweet.text = linkify_entities(tweet);
+    processed_tweet.time = relativeTime(tweet.created_at);
+    return processed_tweet;
+  });
+  $('#tweet_template').tmpl(processed_tweets).appendTo('#tweetbox');
+}
+function relativeTime(pastTime){
+  var origStamp = Date.parse(pastTime);
+  var curDate = new Date();
+  var curStamp = curDate.getTime();
+  var diff = parseInt((curStamp - origStamp)/1000);
+
+  if(diff < 0) return false;
+  if(diff <= 5) return "Just now";
+  if(diff <= 20) return "Seconds ago";
+  if(diff <= 60) return "A minute ago";
+  if(diff <= 3600) return parseInt(diff/60) + "minutes ago";
+  if(diff <= 1.5*3600) return "One minutes ago";
+  if(diff <= 23.5*3600) return Math.round(diff/3600)+ "hours ago";
+  if(diff <= 1.5*24*3600) return "One day ago";
+  if(diff <= 29.5*24*3600) return Math.round(diff/(3600*24))+ "days ago";
+  return Math.round(diff/(3600*24*30))+"months ago";
+
+  //if longer, absolute time
+
 }

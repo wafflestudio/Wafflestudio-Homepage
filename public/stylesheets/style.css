@@ -48,12 +48,13 @@ nav.navigation li a {
 #timeline li {
   width: 10px;
   height: 10px;
-  line-height: 0px;
-  font-size: 0px;
-  background: red;
-  display: block;
   position: absolute;
   top: -3px;
+  display: block;
+  background: red;
+  cursor: pointer;
+  line-height: 0px;
+  font-size: 0px;
   list-style: none;
 }
 /*timeline end*/
