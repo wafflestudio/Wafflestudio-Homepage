@@ -6,7 +6,7 @@ var contactForm;
 $(function(){
 
 /*get tweets and show*/
-  request_tweets('wafflestudio', 5)
+  request_tweets('wafflestudio', 4)
 
 /*timeline start*/
   $('#timeline li').tipsy({
@@ -66,7 +66,8 @@ function process_tweets(tweets){
     processed_tweet.time = relativeTime(tweet.created_at);
     return processed_tweet;
   });
-  $('#tweet_template').tmpl(processed_tweets).appendTo('#tweetbox');
+  $('#tweets').empty();
+  $('#tweet_template').tmpl(processed_tweets).appendTo('#tweets');
 }
 function relativeTime(pastTime){
   var toParse = pastTime.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");
@@ -85,7 +86,4 @@ function relativeTime(pastTime){
   if(diff <= 1.5*24*3600) return "One day ago";
   if(diff <= 29.5*24*3600) return Math.round(diff/(3600*24))+ "days ago";
   return Math.round(diff/(3600*24*30))+"months ago";
-
-  //if longer, absolute time
-
 }

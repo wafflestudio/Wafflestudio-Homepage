@@ -1,3 +1,10 @@
+/*overall style start*/
+body{
+  font-size: 12px;
+}
+/*overall style end*/
+
+
 /*overall layout start*/
 #container {
   width: 800px;
@@ -7,9 +14,9 @@
 }
 section {
   height: 600px;
+  position: relative;
   margin-top: 100px;
   margin-bottom: 100px;
-  position: relative;
 }
 section article {
   margin-left: 200px;
@@ -36,6 +43,22 @@ nav.navigation li a {
 /*navication end*/
 
 
+/*tweetbox start*/
+#tweetbox {
+  width: 300px;
+  position: absolute;
+  top: 250px;
+  left: 50px;
+}
+#tweetbox h2{
+  font-size: 15px;
+}
+.tweet {
+  margin: 1em;
+}
+/*tweetbox end*/
+
+
 /*timeline start*/
 #timeline {
   width: 600px;
@@ -60,7 +83,7 @@ nav.navigation li a {
 /*timeline end*/
 
 
-/*contact start*/
+/*contact form start*/
 #new_contact {
   width: 565px;
 }
@@ -114,4 +137,4 @@ form textarea {
 #contact_submit {
   display: block;
 }
-/*contact end*/
+/*contact form end*/
