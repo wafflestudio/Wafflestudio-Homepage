@@ -1,14 +1,12 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-
-var contactForm;
-
 $(function(){
 
-/*get tweets and show*/
-  request_tweets('wafflestudio', 4)
+  request_tweets();
+  init_timeline();
+  init_contact_form();
 
-/*timeline start*/
+});
+
+function init_timeline(){
   $('#timeline li').tipsy({
     gravity: 's',
     fade: false,
@@ -18,24 +16,30 @@ $(function(){
   .each(function(){
     $(this).css('left', $('#timeline').width()*parseFloat($(this).attr('data-percent'))-$(this).width()/2);
   });
-/*timeline end*/
-
-/*contact form start*/
-  contactForm = $('#new_contact');
-  contactForm.ajaxForm({
+}
+function init_contact_form(){
+  $('#new_contact').ajaxForm({
     dataType: 'json',
     clearForm: false,
-    success: contactSendSuccess,
-    error: contactSendFail
+    success: contact_send_success,
+    error: contact_send_fail
   });
-/*contact form end*/
-
-});
-
-function contactSendSuccess(response, status, xhr){
+  $('#new_contact input[title]').tipsy({
+    trigger: 'focus',
+    fade: true,
+    html: true,
+    gravity: 'w'
+  });
+  $('#new_contact textarea[title]').tipsy({
+    trigger: 'focus',
+    fade: true,
+    gravity: 'e'
+  });
+}
+function contact_send_success(response, status, xhr){
   //TODO: display activity indicator
 }
-function contactSendFail(xhr, status){
+function contact_send_fail(xhr, status){
   //TODO: display the reason of failure
   var errors = $.parseJSON(xhr.responseText);
   var error_arr = [];
@@ -44,19 +48,19 @@ function contactSendFail(xhr, status){
   });
   alert(error_arr.join('\n'));
 }
-function request_tweets(screen_name, count){
+function request_tweets(){
+  $('#tweets').html('<li class="loading">Loading tweets...</li>');
   $.ajax({
     data: {
-      screen_name: screen_name,
-      count: count,
+      screen_name: 'wafflestudio',
+      count: 5,
       include_entities: true
     },
     url: 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',
     method: 'GET',
     dataType: 'jsonp',
-    success: function(data){
-      process_tweets(data);
-    }
+    success: process_tweets,
+    error: fail_loading_tweets
   });
 }
 function process_tweets(tweets){
@@ -67,7 +71,13 @@ function process_tweets(tweets){
     return processed_tweet;
   });
   $('#tweets').empty();
-  $('#tweet_template').tmpl(processed_tweets).appendTo('#tweets');
+  $('#tweet_template').tmpl(processed_tweets).hide().appendTo('#tweets').fadeIn();
+}
+function fail_loading_tweets(){
+  $('#tweets').html('<li class="failed">Failed to load tweets. <a class="reload_tweet">Try again</a></li>');
+  $('.reload_tweet').click(function(){
+    request_tweets();
+  });
 }
 function relativeTime(pastTime){
   var toParse = pastTime.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");

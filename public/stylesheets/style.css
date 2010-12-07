@@ -56,6 +56,22 @@ nav.navigation li a {
 .tweet {
   margin: 1em;
 }
+#tweets .loading {
+  height: 16px;
+  margin: 1em;
+  padding-left: 16px;
+  display: block;
+  background: url(/images/tweet-loader.gif) no-repeat;
+}
+#tweets .failed {
+  margin: 1em;
+  color: #ff6666;
+}
+#tweets .reload_tweet {
+  color: #444;
+  cursor: pointer;
+  text-decoration: underline;
+}
 /*tweetbox end*/
 
 
