@@ -43,11 +43,18 @@ nav.navigation li a {
 /*navication end*/
 
 
+/*home section start*/
+#home {
+  background: #bbcad2;
+}
+/*home section start*/
+
+
 /*tweetbox start*/
 #tweetbox {
   width: 300px;
   position: absolute;
-  top: 250px;
+  top: 310px;
   left: 50px;
 }
 #tweetbox h2{
@@ -72,7 +79,77 @@ nav.navigation li a {
   cursor: pointer;
   text-decoration: underline;
 }
+#tweets .time {
+  font-size: 11px;
+  color: #666;
+}
 /*tweetbox end*/
+
+
+/*carousel start*/
+#carousel {
+  position: absolute;
+  top: 250px;
+  left: 410px;
+}
+#slider {
+  width:326px; /* Change this to your images width */
+  height:266px; /* Change this to your images height */
+  background:url(/images/loading.gif) no-repeat 50% 50%;
+}
+#slider img {
+  position:absolute;
+  top:0px;
+  left:0px;
+  display:none;
+}
+#slider a {
+  border:0;
+  display:block;
+}
+.nivo-controlNav {
+  position:absolute;
+  left:50%;
+  bottom:-42px;
+}
+.nivo-controlNav a { 
+  display:block;
+  width:22px;
+  height:22px;
+  background:url(/images/bullets.png) no-repeat;
+  text-indent:-9999px;
+  border:0;
+  margin-right:3px;
+  float:left;
+}
+.nivo-controlNav a.active {
+  background-position:0 -22px;
+}
+.nivo-directionNav a { 
+  display:block;
+  width:30px;
+  height:30px;
+  background:url(/images/arrows.png) no-repeat;
+  text-indent:-9999px;
+  border:0;
+}
+a.nivo-nextNav {
+  background-position:-30px 0;
+  right:15px;
+}
+a.nivo-prevNav {
+  left:15px;
+}
+
+.nivo-caption {
+    text-shadow:none;
+    font-family: Helvetica, Arial, sans-serif;
+}
+.nivo-caption a {
+    color:#efe9d1;
+    text-decoration:underline;
+}
+/*carousel end*/
 
 
 /*timeline start*/

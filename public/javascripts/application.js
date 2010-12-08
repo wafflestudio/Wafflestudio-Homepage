@@ -1,6 +1,7 @@
 $(function(){
 
   request_tweets();
+  init_carousel();
   init_timeline();
   init_contact_form();
 
@@ -16,6 +17,29 @@ function init_timeline(){
   .each(function(){
     $(this).css('left', $('#timeline').width()*parseFloat($(this).attr('data-percent'))-$(this).width()/2);
   });
+}
+function init_carousel(){
+  $('#slider').nivoSlider({
+    slices: 6,
+    animSpeed: 700,
+    pauseTime: 5000,
+    directionNav: false
+  });
+  var control = $('.nivo-controlNav');
+  control.css('margin-left', -control.width()/2);
+}
+function slider_action(type, value){
+  switch(type){
+    case 'url': 
+      window.open(value);
+      break;
+    case 'project': 
+      alert(value);
+      break;
+    case 'member': 
+      alert(value);
+      break;
+  }
 }
 function init_contact_form(){
   $('#new_contact').ajaxForm({
@@ -53,7 +77,7 @@ function request_tweets(){
   $.ajax({
     data: {
       screen_name: 'wafflestudio',
-      count: 5,
+      count: 4,
       include_entities: true
     },
     url: 'http://api.twitter.com/1/statuses/user_timeline.json?callback=?',

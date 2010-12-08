@@ -10,6 +10,10 @@
     </ul>
   </div>
   <div id="carousel">
-
+    <div id="slider">
+    <% @carousels.each do |carousel| %>
+      <%= link_to_function image_tag(carousel.c_image.url), "slider_action('#{carousel.action[:type]}', '#{carousel.action[:value]}')" %>
+    <% end %>
+    </div>
   </div>
 </article>

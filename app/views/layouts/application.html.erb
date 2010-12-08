@@ -5,9 +5,9 @@
   <!--[if IE]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <%= stylesheet_link_tag ['reset', 'style', 'tipsy'] %>
+  <%= stylesheet_link_tag ['reset', 'style', 'tipsy', 'nivo-slider'] %>
   <%= javascript_include_tag :jquery %>
-  <%= javascript_include_tag ['twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'application'] %>
+  <%= javascript_include_tag ['jquery.nivo.slider', 'twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'application'] %>
   <%= csrf_meta_tag %>
   <%= render :partial => 'layouts/tweet_template' %>
 </head>
