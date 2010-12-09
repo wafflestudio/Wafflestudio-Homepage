@@ -3,6 +3,7 @@ $(function(){
   request_tweets();
   init_carousel();
   init_timeline();
+  init_members();
   init_contact_form();
 
 });
@@ -20,8 +21,8 @@ function init_timeline(){
 }
 function init_carousel(){
   $('#slider').nivoSlider({
-    slices: 6,
-    animSpeed: 700,
+    slices: 8,
+    animSpeed: 500,
     pauseTime: 5000,
     directionNav: false
   });
@@ -44,7 +45,7 @@ function slider_action(type, value){
 function init_contact_form(){
   $('#new_contact').ajaxForm({
     dataType: 'json',
-    clearForm: false,
+    clearForm: true,
     success: contact_send_success,
     error: contact_send_fail
   });
@@ -62,6 +63,7 @@ function init_contact_form(){
 }
 function contact_send_success(response, status, xhr){
   //TODO: display activity indicator
+  alert('전송되었습니다');
 }
 function contact_send_fail(xhr, status){
   //TODO: display the reason of failure
@@ -120,4 +122,34 @@ function relativeTime(pastTime){
   if(diff <= 1.5*24*3600) return "One day ago";
   if(diff <= 29.5*24*3600) return Math.round(diff/(3600*24))+ "days ago";
   return Math.round(diff/(3600*24*30))+"months ago";
+}
+function init_members(){
+  var members = $('.member');
+  var member_tags = $('#member_tags li');
+  members.hover(function(){
+    $(this).children('.member_thumb').stop().animate({'top': '-17px'}, 150);
+  }, function(){
+    $(this).children('.member_thumb').animate({'top': '0px'}, 150);
+  }).each(function(){
+    var tags = $(this).attr('data-tags').split(',');
+    tags = $.map(tags, function(tag){
+      return tag.split(' ').join('');
+    });
+    $(this).addClass(tags.join(' '));
+  });
+  member_tags.click(function(){
+    var tag = $(this);
+    if(!tag.hasClass('on')){
+      members.removeClass('disabled on');
+      var tag_str = tag.text().split(' ').join('');
+      members.not('.'+tag_str).addClass('disabled');
+      members.filter('.'+tag_str).addClass('on');
+      member_tags.not(tag[0]).removeClass('on');
+      tag.addClass('on');
+    }
+    else{
+      members.removeClass('disabled on');
+      tag.removeClass('on');
+    }
+  });
 }

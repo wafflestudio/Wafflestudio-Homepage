@@ -140,15 +140,6 @@ a.nivo-nextNav {
 a.nivo-prevNav {
   left:15px;
 }
-
-.nivo-caption {
-    text-shadow:none;
-    font-family: Helvetica, Arial, sans-serif;
-}
-.nivo-caption a {
-    color:#efe9d1;
-    text-decoration:underline;
-}
 /*carousel end*/
 
 
@@ -174,6 +165,75 @@ a.nivo-prevNav {
   list-style: none;
 }
 /*timeline end*/
+
+
+/*members start*/
+#member_tags {
+  position: absolute;
+  left: 50px;
+  top: 250px;
+}
+#member_tags li {
+  margin-bottom: 4px;
+  padding: 3px;
+  color: white;
+  cursor: pointer;
+}
+#member_list {
+  width: 590px;
+  height: 400px;
+}
+.member {
+  float: left;
+  margin: 5px;
+  position: relative;
+  width: 61px;
+  height: 70px;
+  border: 1px solid white;
+  overflow: hidden;
+  cursor: pointer;
+}
+.member.on {
+  border: 1px solid red;
+}
+.member.disabled {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=40)"; /* IE 8 */
+  -khtml-opacity: .40; /* Safari 1.x */
+  -moz-opacity: .40; /* FF lt 1.5, Netscape */
+}
+.member_thumb {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+}
+.member_name {
+  width: 61px;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  z-index: 0;
+  text-align: center;
+  font-size: 11px;
+}
+.member_tagbars {
+  position: absolute;
+  top: 63px;
+  left: 2px;
+}
+.member_tagbar {
+  width: 5px;
+  height: 7px;
+  display: block;
+  float: left;
+  margin-right: 2px;
+  font-size: 7px;
+  line-height: 7px;
+  overflow: hidden;
+}
+/*members end*/
 
 
 /*contact form start*/

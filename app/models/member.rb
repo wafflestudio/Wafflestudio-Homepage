@@ -8,7 +8,7 @@ class Member < ActiveRecord::Base
 
   has_attached_file :resume
   has_attached_file :profile, :styles => { :thumb => "100x100>" }
-  has_attached_file :list1, :styles => { :thumb => "100x100>" }
+  has_attached_file :list1, :styles => { :thumb => "61x61" }
   has_attached_file :list2, :styles => { :thumb => "100x100>" }
 
   def set_tags
@@ -33,6 +33,12 @@ class Member < ActiveRecord::Base
   end
 
   def self.available_tags
-    ['Web Develop', 'Android Develop', 'iOS Develop', 'Strategy', 'Visual Design', 'User Experience', 'Head']
+    ['Web Develop', 'Visual Design', 'Strategy', 'User Experience', 'iOS Develop', 'Android Develop', 'Head']
   end
+
+  def self.tag_color
+    colors = ['#DE2F12', '#D01351', '#D4790D', '#0A86CD', '#000000', '#62C00E', 'violet']
+    Hash[*(self.available_tags).zip(colors).flatten]
+  end
+
 end
