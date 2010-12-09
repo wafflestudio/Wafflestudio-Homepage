@@ -123,6 +123,80 @@ function relativeTime(pastTime){
   if(diff <= 29.5*24*3600) return Math.round(diff/(3600*24))+ "days ago";
   return Math.round(diff/(3600*24*30))+"months ago";
 }
+function request_member(id, replace){
+  $('.member').removeClass('current');
+  $('#member_'+id).addClass('current');
+  var success_callback = replace? replace_member:show_member;
+  $.ajax({
+    dataType: 'json',
+    url: '/members/'+id,
+    success: success_callback
+  });
+}
+function show_member(data){
+  var member = data.member;
+  $('#invisible').empty();
+  $('#member_template').tmpl(member).attr('id', 'member_popup').appendTo('#invisible');
+  $.colorbox({
+    inline: true,
+    href: '#member_popup',
+    onComplete: init_member_popup
+  });
+}
+function replace_member(data){
+  var member = data.member;
+  $('#invisible').empty();
+  $('#cboxLoadedContent .member_popup').fadeOut(100, function(){
+    $(this).remove();
+    $('#member_template').tmpl(member).attr('id', 'member_popup').hide().appendTo('#cboxLoadedContent').fadeIn(100);
+    init_member_popup();
+  });
+}
+function next_member(){
+  var next = $('.member.current').next()
+  if(next.length == 0) return;
+  var id = next.attr('id').split('_')[1];
+  /*
+  $(document).one('cbox_closed', function(){
+    request_member(id);
+  });
+  $.colorbox.close();
+  */
+  request_member(id, true);
+}
+function prev_member(){
+  var prev = $('.member.current').prev()
+  if(prev.length == 0) return;
+  var id = prev.attr('id').split('_')[1];
+  /*
+  $(document).one('cbox_closed', function(){
+    request_member(id);
+  });
+  $.colorbox.close();
+  */
+  request_member(id, true);
+}
+function init_member_popup(){
+  if($('.member.current').prev().length)
+    $('.member_popup nav .prev').click(prev_member);
+  else
+    $('.member_popup nav .prev').addClass('disabled');
+  if($('.member.current').next().length)
+    $('.member_popup nav .next').click(next_member);
+  else
+    $('.member_popup nav .next').addClass('disabled');
+  $('.skills li').each(function(){
+    var li = $(this);
+    var skill = li.text();
+    var degree = li.attr('data-degree');
+    var label = $('<label>').addClass('skill_label').text(skill);
+    var bar = $('<span>').addClass('skill_bar');
+    li.text('')
+    .append(label)
+    .append(bar);
+    bar.delay(300).animate({width: (li.width()-2)*parseFloat(degree/100)});
+  });
+}
 function init_members(){
   var members = $('.member');
   var member_tags = $('#member_tags li');
@@ -136,6 +210,9 @@ function init_members(){
       return tag.split(' ').join('');
     });
     $(this).addClass(tags.join(' '));
+  }).click(function(){
+    var id = $(this).attr('id').split('_')[1]
+    request_member(id, false);
   });
   member_tags.click(function(){
     var tag = $(this);

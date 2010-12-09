@@ -7,7 +7,7 @@ class Member < ActiveRecord::Base
   after_save :set_projects
 
   has_attached_file :resume
-  has_attached_file :profile, :styles => { :thumb => "100x100>" }
+  has_attached_file :profile, :styles => { :actual => "230x480>", :thumb => "100x100>" }
   has_attached_file :list1, :styles => { :thumb => "61x61" }
   has_attached_file :list2, :styles => { :thumb => "100x100>" }
 

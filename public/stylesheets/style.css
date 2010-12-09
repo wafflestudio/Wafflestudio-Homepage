@@ -95,7 +95,7 @@ nav.navigation li a {
 #slider {
   width:326px; /* Change this to your images width */
   height:266px; /* Change this to your images height */
-  background:url(/images/loading.gif) no-repeat 50% 50%;
+  background:url(/images/nivo/loading.gif) no-repeat 50% 50%;
 }
 #slider img {
   position:absolute;
@@ -116,7 +116,7 @@ nav.navigation li a {
   display:block;
   width:22px;
   height:22px;
-  background:url(/images/bullets.png) no-repeat;
+  background:url(/images/nivo/bullets.png) no-repeat;
   text-indent:-9999px;
   border:0;
   margin-right:3px;
@@ -129,7 +129,7 @@ nav.navigation li a {
   display:block;
   width:30px;
   height:30px;
-  background:url(/images/arrows.png) no-repeat;
+  background:url(/images/nivo/arrows.png) no-repeat;
   text-indent:-9999px;
   border:0;
 }
@@ -194,7 +194,7 @@ a.nivo-prevNav {
   cursor: pointer;
 }
 .member.on {
-  border: 1px solid red;
+  border: 1px solid #fcc;
 }
 .member.disabled {
   opacity: 0.4;
@@ -209,7 +209,7 @@ a.nivo-prevNav {
   left: 0;
   z-index: 1;
 }
-.member_name {
+.member .name {
   width: 61px;
   position: absolute;
   top: 48px;
@@ -218,12 +218,12 @@ a.nivo-prevNav {
   text-align: center;
   font-size: 11px;
 }
-.member_tagbars {
+.member .tagbars {
   position: absolute;
   top: 63px;
   left: 2px;
 }
-.member_tagbar {
+.member .tagbar {
   width: 5px;
   height: 7px;
   display: block;
@@ -232,6 +232,112 @@ a.nivo-prevNav {
   font-size: 7px;
   line-height: 7px;
   overflow: hidden;
+}
+.member_popup {
+  width: 700px;
+  height: 500px;
+  letter-spacing: -1px;
+  color: #222;
+}
+.member_popup a {
+  text-decoration: none;
+  color: #579;
+}
+.member_popup .profile {
+  width: 230px;
+  height: 480px;
+  margin-top: 10px;
+  margin-left: 30px;
+  float: left;
+  text-align: center;
+}
+.member_popup .text_content {
+  margin-left: 280px;
+  padding-top: 30px;
+}
+.member_popup .name_eng {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 30px;
+}
+.member_popup .name {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.member_popup .school {
+  color: #aaa;
+}
+.member_popup .comment {
+  width: 300px;
+  margin: 15px;
+  font-size: 15px;
+  font-style: italic;
+  color: #888;
+}
+.member_popup dt {
+  margin-bottom: 3px;
+  color: #aaa;
+  font-weight: bold;
+}
+.member_popup dd {
+  margin-left: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.member_popup .skills li {
+  width: 302px;
+  height: 13px;
+  line-height: 13px;
+  position: relative;
+  margin: 8px 0px;
+  border: 1px solid #ccc;
+  background: #eee;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.member_popup .skill_label {
+  position: absolute;
+  left: 5px;
+  z-index: 2;
+  color: #fff;
+}
+.member_popup .skill_bar {
+  width: 0px;
+  height: 11px;
+  line-height: 11px;
+  margin-top: 1px;
+  position: absolute;
+  left: 1px;
+  z-index: 1;
+  background: #7a3857;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.member_popup nav div {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 230px;
+  cursor: pointer;
+}
+.member_popup nav .prev {
+  left: 0px;
+  background: url(/images/colorbox/arrows.png) no-repeat;
+}
+.member_popup nav .next{
+  right: 0px;
+  background: url(/images/colorbox/arrows.png) no-repeat -30px;
+}
+.member_popup nav .disabled{
+  cursor: default;
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=40)"; /* IE 8 */
+  -khtml-opacity: .40; /* Safari 1.x */
+  -moz-opacity: .40; /* FF lt 1.5, Netscape */
 }
 /*members end*/
 

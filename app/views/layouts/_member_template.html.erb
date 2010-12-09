@@ -1,0 +1,33 @@
+<script id="member_template" type="text/x-jquery-tmpl">
+  <div class="member_popup">
+    <div class="profile">
+      <img src="${profile_url}" alt="${name}" title="${name}" />
+    </div>
+    <div class="text_content">
+      <span class="name_eng">${name_eng}</span>
+      <span class="name">${name}</span>
+      <span class="school">${school}</span>
+      <blockquote class="comment">"${comment}"</blockquote>
+      <dl>
+        <dt>Email</dt>
+        <dd><a href="mailto:${email}" target="_blank">${email}</a></dd>
+        <dt>Website</dt>
+        <dd><a href="${website}" target="_blank">${website}</a></dd>
+        <dt>Twitter</dt>
+        <dd><a href="http://twitter.com/${twitter}" target="_blank">@${twitter}</a></dd>
+        <dt>Skills</dt>
+        <dd>
+          <ul class="skills">
+          {{each skills}}
+            <li data-degree="${$value.degree}">${$value.name}</li>
+          {{/each}}
+          <ul>
+        </dd>
+      </dl>
+    </div>
+    <nav>
+      <div class="prev"></div>
+      <div class="next"></div>
+    </nav>
+  </div>
+</script>
