@@ -140,7 +140,9 @@ function show_member(data){
   $.colorbox({
     inline: true,
     href: '#member_popup',
-    onComplete: init_member_popup
+    onLoad: member_bind_key_nav,
+    onComplete: init_member_popup,
+    onCleanup: member_unbind_key_nav
   });
 }
 function replace_member(data){
@@ -152,39 +154,60 @@ function replace_member(data){
     init_member_popup();
   });
 }
-function next_member(){
-  var next = $('.member.current').next()
-  if(next.length == 0) return;
+function show_next_member(){
+  var next = next_member(); 
+  if(!next) return;
   var id = next.attr('id').split('_')[1];
-  /*
-  $(document).one('cbox_closed', function(){
-    request_member(id);
-  });
-  $.colorbox.close();
-  */
+  request_member(id, true);
+}
+function next_member(){
+  var next = $('.member.current').next();
+  if(next.length > 0)
+    return next;
+  else
+    return false;
+}
+function show_prev_member(){
+  var prev = prev_member();
+  if(!prev) return;
+  var id = prev.attr('id').split('_')[1];
   request_member(id, true);
 }
 function prev_member(){
-  var prev = $('.member.current').prev()
-  if(prev.length == 0) return;
-  var id = prev.attr('id').split('_')[1];
-  /*
-  $(document).one('cbox_closed', function(){
-    request_member(id);
+  var prev = $('.member.current').prev();
+  if(prev.length > 0)
+    return prev;
+  else
+    return false;
+}
+function member_bind_key_nav(){
+  window.keyNav = true;
+  $(document).bind('keydown.member_nav', function(e){
+    if(!window.keyNav) return;
+    if(e.keyCode == 37 && prev_member()){
+      window.keyNav = false;
+      show_prev_member();
+    }
+    if(e.keyCode == 39 && next_member()){
+      window.keyNav = false;
+      show_next_member();
+    }
   });
-  $.colorbox.close();
-  */
-  request_member(id, true);
+}
+function member_unbind_key_nav(){
+  window.keyNav = false;
+  $(document).unbind('keydown.member_nav');
 }
 function init_member_popup(){
+  window.keyNav = true;
   if($('.member.current').prev().length)
-    $('.member_popup nav .prev').click(prev_member);
+    $('.member_popup .nav .prev').click(show_prev_member);
   else
-    $('.member_popup nav .prev').addClass('disabled');
+    $('.member_popup .nav .prev').addClass('disabled');
   if($('.member.current').next().length)
-    $('.member_popup nav .next').click(next_member);
+    $('.member_popup .nav .next').click(show_next_member);
   else
-    $('.member_popup nav .next').addClass('disabled');
+    $('.member_popup .nav .next').addClass('disabled');
   $('.skills li').each(function(){
     var li = $(this);
     var skill = li.text();

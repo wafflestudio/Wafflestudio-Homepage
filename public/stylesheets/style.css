@@ -1,5 +1,6 @@
 /*overall style start*/
 body{
+  font-family: 나눔고딕, NanumGothic, 돋움, dotum;
   font-size: 12px;
 }
 /*overall style end*/
@@ -316,22 +317,22 @@ a.nivo-prevNav {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-.member_popup nav div {
+.member_popup .nav div {
   width: 30px;
   height: 40px;
   position: absolute;
   top: 230px;
   cursor: pointer;
 }
-.member_popup nav .prev {
+.member_popup .nav .prev {
   left: 0px;
   background: url(/images/colorbox/arrows.png) no-repeat;
 }
-.member_popup nav .next{
+.member_popup .nav .next{
   right: 0px;
   background: url(/images/colorbox/arrows.png) no-repeat -30px;
 }
-.member_popup nav .disabled{
+.member_popup .nav .disabled{
   cursor: default;
   opacity: 0.4;
   filter: alpha(opacity=40); /* IE lt 8 */
