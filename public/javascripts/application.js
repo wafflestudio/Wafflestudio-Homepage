@@ -38,41 +38,10 @@ function slider_action(type, value){
       alert(value);
       break;
     case 'member': 
-      alert(value);
+      //TODO:request_member as callback of scrolling to member section
+      request_member(value, false);
       break;
   }
-}
-function init_contact_form(){
-  $('#new_contact').ajaxForm({
-    dataType: 'json',
-    clearForm: true,
-    success: contact_send_success,
-    error: contact_send_fail
-  });
-  $('#new_contact input[title]').tipsy({
-    trigger: 'focus',
-    fade: true,
-    html: true,
-    gravity: 'w'
-  });
-  $('#new_contact textarea[title]').tipsy({
-    trigger: 'focus',
-    fade: true,
-    gravity: 'e'
-  });
-}
-function contact_send_success(response, status, xhr){
-  //TODO: display activity indicator
-  alert('전송되었습니다');
-}
-function contact_send_fail(xhr, status){
-  //TODO: display the reason of failure
-  var errors = $.parseJSON(xhr.responseText);
-  var error_arr = [];
-  $.each(errors, function(i, message){
-    error_arr.push(message);
-  });
-  alert(error_arr.join('\n'));
 }
 function request_tweets(){
   $('#tweets').html('<li class="loading">Loading tweets...</li>');
@@ -101,9 +70,7 @@ function process_tweets(tweets){
 }
 function fail_loading_tweets(){
   $('#tweets').html('<li class="failed">Failed to load tweets. <a class="reload_tweet">Try again</a></li>');
-  $('.reload_tweet').click(function(){
-    request_tweets();
-  });
+  $('.reload_tweet').click(request_tweets);
 }
 function relativeTime(pastTime){
   var toParse = pastTime.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");
@@ -127,6 +94,12 @@ function request_member(id, replace){
   $('.member').removeClass('current');
   $('#member_'+id).addClass('current');
   var success_callback = replace? replace_member:show_member;
+  if(replace){
+    $('#cboxLoadedContent').addClass('loading')
+    .children('.member_popup').fadeOut(50, function(){
+      $(this).remove();
+    });
+  }
   $.ajax({
     dataType: 'json',
     url: '/members/'+id,
@@ -147,12 +120,10 @@ function show_member(data){
 }
 function replace_member(data){
   var member = data.member;
-  $('#invisible').empty();
-  $('#cboxLoadedContent .member_popup').fadeOut(100, function(){
-    $(this).remove();
-    $('#member_template').tmpl(member).attr('id', 'member_popup').hide().appendTo('#cboxLoadedContent').fadeIn(100);
-    init_member_popup();
+  $('#member_template').tmpl(member).attr('id', 'member_popup').hide().appendTo('#cboxLoadedContent').fadeIn(100, function(){
+    $('#cboxLoadedContent').removeClass('loading');
   });
+  init_member_popup();
 }
 function show_next_member(){
   var next = next_member(); 
@@ -188,7 +159,7 @@ function member_bind_key_nav(){
       window.keyNav = false;
       show_prev_member();
     }
-    if(e.keyCode == 39 && next_member()){
+    else if(e.keyCode == 39 && next_member()){
       window.keyNav = false;
       show_next_member();
     }
@@ -208,6 +179,13 @@ function init_member_popup(){
     $('.member_popup .nav .next').click(show_next_member);
   else
     $('.member_popup .nav .next').addClass('disabled');
+  var profile_img = $('.profile img');
+  profile_img.css({
+    'margin-top': -profile_img.height()/2,
+    'margin-left': -profile_img.width()/2,
+    'top': '50%',
+    'left': '50%'
+  });
   $('.skills li').each(function(){
     var li = $(this);
     var skill = li.text();
@@ -252,4 +230,37 @@ function init_members(){
       tag.removeClass('on');
     }
   });
+  //TODO:choco&cream/jam separation
+}
+function init_contact_form(){
+  $('#new_contact').ajaxForm({
+    dataType: 'json',
+    clearForm: true,
+    success: contact_send_success,
+    error: contact_send_fail
+  });
+  $('#new_contact input[title]').tipsy({
+    trigger: 'focus',
+    fade: true,
+    html: true,
+    gravity: 'w'
+  });
+  $('#new_contact textarea[title]').tipsy({
+    trigger: 'focus',
+    fade: true,
+    gravity: 'e'
+  });
+}
+function contact_send_success(response, status, xhr){
+  //TODO: display activity indicator
+  alert('전송되었습니다');
+}
+function contact_send_fail(xhr, status){
+  //TODO: display the reason of failure
+  var errors = $.parseJSON(xhr.responseText);
+  var error_arr = [];
+  $.each(errors, function(i, message){
+    error_arr.push(message);
+  });
+  alert(error_arr.join('\n'));
 }
