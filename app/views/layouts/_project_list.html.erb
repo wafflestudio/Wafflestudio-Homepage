@@ -3,5 +3,12 @@
 </header>
 <%= render :partial => 'layouts/navigation' %>
 <article>
-
+  <ul id="project_list">
+  <% @projects.each do |project| %>
+    <li id="project_<%= project.id%>" data-id="<%= project.id %>" class="project">
+      <%= image_tag project.screenshots.first.image.url(:middle) %>
+      <span class="name"><%= project.name %></span>
+    </li>
+  <% end %>
+  </ul>
 </article>

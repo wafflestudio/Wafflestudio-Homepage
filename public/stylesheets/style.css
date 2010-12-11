@@ -236,7 +236,7 @@ a.nivo-prevNav {
 }
 .member_popup {
   width: 700px;
-  height: 500px;
+  height: 550px;
   letter-spacing: -1px;
   color: #222;
   background: white;
@@ -248,15 +248,10 @@ a.nivo-prevNav {
 .member_popup .profile {
   width: 230px;
   height: 480px;
-  margin-top: 10px;
-  position: relative;
+  margin-top: 45px;
   margin-left: 30px;
   float: left;
-}
-.member_popup .profile img {
-  position: absolute;
-  left: 0;
-  top: 0;
+  text-align: center;
 }
 .member_popup .text_content {
   margin-left: 280px;
@@ -325,11 +320,39 @@ a.nivo-prevNav {
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+.member_popup .projects {
+  height: 80px;
+}
+.member_popup .projects li {
+  width: 95px;
+  height: 75px;
+  position: relative;
+  background: #ccc;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.member_popup .projects img {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.member_popup .projects .caption {
+  width: 85px;
+  height: 15px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  line-height: 15px;
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 11px;
+}
 .member_popup .nav div {
   width: 30px;
   height: 40px;
   position: absolute;
-  top: 230px;
+  top: 250px;
   cursor: pointer;
 }
 .member_popup .nav .prev {
@@ -349,6 +372,117 @@ a.nivo-prevNav {
   -moz-opacity: .40; /* FF lt 1.5, Netscape */
 }
 /*members end*/
+
+
+/*project start*/
+.project_popup {
+  width: 850px;
+  height: 550px;
+}
+.project_popup .name {
+  margin-top: 20px;
+  margin-left: 30px;
+  display: block;
+  font-size: 30px;
+}
+.project_popup .images {
+  width: 424px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 10px;
+  float: left;
+  background: #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.project_popup .screenshots {
+  width: 400px;
+  height: 314px;
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.project_popup .screenshots li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.project_popup .screenshots img {
+  border: 2px solid #888;
+}
+.project_popup .thumbnails {
+  height: 100px;
+  position: relative;
+  margin: 0px 0px 10px 10px;
+}
+.project_popup .thumbnails li {
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.project_popup .thumbnails img {
+  border: 4px solid #888;
+}
+.project_popup .thumbnails li.cur img {
+  border-color: #c88;
+}
+.project_popup .text_content {
+  margin-right: 40px;
+}
+.project_popup .members {
+  height: 80px;
+}
+.project_popup .members li {
+  width: 71px;
+  height: 71px;
+  position: relative;
+  background: #ccc;
+  float: left;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.project_popup .members img {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.project_popup .members .caption {
+  width: 61px;
+  height: 15px;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  line-height: 15px;
+  text-align: center;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 11px;
+}
+.project_popup .nav div {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 250px;
+  cursor: pointer;
+}
+.project_popup .nav .prev {
+  left: 0px;
+  background: url(/images/colorbox/arrows.png) no-repeat;
+}
+.project_popup .nav .next{
+  right: 0px;
+  background: url(/images/colorbox/arrows.png) no-repeat -30px;
+}
+.project_popup .nav .disabled{
+  cursor: default;
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* IE lt 8 */
+  -ms-filter: "alpha(opacity=40)"; /* IE 8 */
+  -khtml-opacity: .40; /* Safari 1.x */
+  -moz-opacity: .40; /* FF lt 1.5, Netscape */
+}
+/*project end*/
 
 
 /*contact form start*/

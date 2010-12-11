@@ -10,7 +10,7 @@
   </ul>
   <ul id="member_list">
   <% @members.each do |member| %>
-    <li id="member_<%= member.id %>"class="member" data-tags="<%= member.tags.join(',') %>">
+    <li id="member_<%= member.id %>" data-id="<%= member.id %>" class="member" data-tags="<%= member.tags.join(',') %>">
       <%= image_tag member.list1.url(:thumb), :class => 'member_thumb' %>
       <span class="name"><%= member.name %></span>
       <div class="tagbars">

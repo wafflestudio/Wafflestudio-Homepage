@@ -18,10 +18,25 @@
         <dt>Skills</dt>
         <dd>
           <ul class="skills">
-          {{each skills}}
-            <li data-degree="${$value.degree}">${$value.name}</li>
+          {{each(i, skill) skills}}
+            <li data-degree="${skill.degree}">${skill.name}</li>
           {{/each}}
           <ul>
+        </dd>
+        <dt>Projects</dt>
+        <dd>
+          <ul class="projects">
+          {{each(i, p) projects}}
+            <li data-id="${p.project.id}">
+              {{if p.project.screenshot_urls.length}}
+              <img src="${p.project.screenshot_urls[0]}" />
+              {{/if}}
+              <div class="caption">
+              ${p.project.name}
+              </div>
+            </li>
+          {{/each}}
+          </ul>
         </dd>
       </dl>
     </div>
