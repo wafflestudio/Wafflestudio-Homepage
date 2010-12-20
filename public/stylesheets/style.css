@@ -276,6 +276,15 @@ a.nivo-prevNav {
   font-style: italic;
   color: #888;
 }
+.member_popup .resume {
+  height: 20px;
+  padding-left: 23px;
+  display: block;
+  background: url(/images/pdf.png) no-repeat;
+  line-height: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
 .member_popup dt {
   margin-bottom: 3px;
   color: #aaa;

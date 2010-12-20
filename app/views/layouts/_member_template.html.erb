@@ -7,14 +7,26 @@
       <span class="name_eng">${name_eng}</span>
       <span class="name">${name}</span>
       <span class="school">${school}</span>
+      {{if comment}}
       <blockquote class="comment">"${comment}"</blockquote>
+      {{/if}}
+      {{if resume_content_type}}
+      <a class="resume" href="${resume_url}">Download resume</a>
+      {{/if}}
       <dl>
+        {{if email}}
         <dt>Email</dt>
         <dd><a href="mailto:${email}" target="_blank">${email}</a></dd>
+        {{/if}}
+        {{if website}}
         <dt>Website</dt>
         <dd><a href="${website}" target="_blank">${website}</a></dd>
+        {{/if}}
+        {{if twitter}}
         <dt>Twitter</dt>
         <dd><a href="http://twitter.com/${twitter}" target="_blank">@${twitter}</a></dd>
+        {{/if}}
+        {{if skills.length}}
         <dt>Skills</dt>
         <dd>
           <ul class="skills">
@@ -23,6 +35,8 @@
           {{/each}}
           <ul>
         </dd>
+        {{/if}}
+        {{if projects.length}}
         <dt>Projects</dt>
         <dd>
           <ul class="projects">
@@ -38,6 +52,7 @@
           {{/each}}
           </ul>
         </dd>
+        {{/if}}
       </dl>
     </div>
     <div class="nav">

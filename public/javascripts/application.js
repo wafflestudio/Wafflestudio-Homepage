@@ -34,7 +34,7 @@ function slider_action(type, value){
       window.open(value);
       break;
     case 'project': 
-      alert(value);
+      request_project(value, false);
       break;
     case 'member': 
       //TODO:request_member as callback of scrolling to member section
