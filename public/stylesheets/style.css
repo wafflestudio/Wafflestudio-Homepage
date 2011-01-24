@@ -2,22 +2,22 @@
 body{
   font-family: 나눔고딕, NanumGothic, 돋움, dotum;
   font-size: 12px;
-  background: #B2B2B2;
+  background: #aeafa0;
 }
 /*overall style end*/
 
 
 /*overall layout start*/
 #container {
-  width: 800px;
+  width: 870px;
   margin: 0px auto;
-  margin-top: 100px;
-  background: url(/images/section_bg.gif) no-repeat;
+  background: url(/images/backgrounds/whole_bg.png) no-repeat;
 }
 section {
   height: 600px;
   position: relative;
   margin-bottom: 100px;
+  margin: 0px 35px;
 }
 section article {
   margin-left: 200px;
@@ -30,7 +30,7 @@ nav.navigation {
   width: 160px;
   position: absolute;
   top: 100px;
-  left: 20px;
+  left: 28px;
   border: 1px solid #aaa;
 }
 nav.navigation ul {
@@ -38,8 +38,10 @@ nav.navigation ul {
 }
 nav.navigation li a {
   font-size: 22px;
-  letter-spacing: -2px;
-  line-height: 1.3em;
+  letter-spacing: -1px;
+  line-height: 1.4em;
+  font-family: 'Raleway';
+  cursor: pointer;
 }
 /*navication end*/
 
@@ -47,21 +49,65 @@ nav.navigation li a {
 /*home section start*/
 #home {
 }
+#home h1 {
+	width: 346px;
+	height: 73px;
+	text-indent: -9999px;
+	background: url(/images/logo.png) no-repeat;
+	position: absolute;
+	top: 13px;
+	right: 18px;
+}
+#home h2 {
+	width: 219px;
+	height: 113px;
+	position: absolute;
+	right: 22px;
+	top: 85px;
+	background: url(/images/sub_logo.png) no-repeat;
+	text-indent: -9999px;
+}
+#home nav.navigation {
+	top: 48px;
+	border: 1px solid rgba(255,255,255,0.15);
+	background: rgba(205,205,205,0.06);
+}
+#home nav.navigation li a {
+	color: #6d6d6d;
+}
+#home nav.navigation li a.hover {
+	color: white;
+}
 /*home section start*/
 
 
 /*tweetbox start*/
 #tweetbox {
-  width: 300px;
+  width: 340px;
   position: absolute;
-  top: 310px;
-  left: 50px;
+  top: 235px;
+  left: 60px;
 }
-#tweetbox h2{
-  font-size: 15px;
+#tweetbox h3 {
+	font-size: 22px;
+	color: #90d1fb;
+	text-decoration: none;
+	margin-top: 13px;
+	margin-bottom: 15px;
+}
+#follow_us {
+	display: block;
+	width: 127px;
+	height: 43px;
+	background: url(/images/buttons/follow_us.gif) no-repeat;
+	position: absolute;
+	right: 5px;
+	top: 0px;
 }
 .tweet {
-  margin: 1em;
+  margin: 1em 0;
+  color: #555;
+	line-height: 1.2em;
 }
 #tweets .loading {
   height: 16px;
@@ -81,7 +127,10 @@ nav.navigation li a {
 }
 #tweets .time {
   font-size: 11px;
-  color: #666;
+  color: #999;
+}
+#tweets .tweet_text a {
+	color: #2276BB;
 }
 /*tweetbox end*/
 
@@ -89,12 +138,12 @@ nav.navigation li a {
 /*carousel start*/
 #carousel {
   position: absolute;
-  top: 250px;
+  top: 240px;
   left: 410px;
 }
 #slider {
-  width:326px; /* Change this to your images width */
-  height:266px; /* Change this to your images height */
+  width:355px; /* Change this to your images width */
+  height:287px; /* Change this to your images height */
   background:url(/images/nivo/loading.gif) no-repeat 50% 50%;
 }
 #slider img {
@@ -143,6 +192,11 @@ a.nivo-prevNav {
 /*carousel end*/
 
 
+#about_us {
+	margin-top: 70px;
+}
+
+
 /*timeline start*/
 #timeline {
   width: 600px;
@@ -169,6 +223,8 @@ a.nivo-prevNav {
 
 /*members start*/
 #members {
+	margin-top: 200px;
+	height: 650px;
 }
 #member_tags {
   position: absolute;
@@ -386,6 +442,7 @@ a.nivo-prevNav {
 
 /*project start*/
 #projects {
+	margin-top: 320px;
 }
 .project {
   float: left;
@@ -501,6 +558,9 @@ a.nivo-prevNav {
 
 
 /*contact form start*/
+#contact {
+	margin-top: 55px;
+}
 #new_contact {
   width: 565px;
 }

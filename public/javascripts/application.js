@@ -1,4 +1,9 @@
 $(function(){
+	$('nav.navigation a').hover(function(){
+		$(this).addClass('hover');
+	}, function(){
+		$(this).removeClass('hover');
+	});
   request_tweets();
   init_carousel();
   init_timeline();
