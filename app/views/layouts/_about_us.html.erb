@@ -7,7 +7,7 @@
   <div id="timeline">
     <ul>
     <% start_date = Date.new(2007)
-       end_date = Date.new(2011) %>
+       end_date = Date.new(2012) %>
     <% @timelines.each do |timeline| %>
       <li title="<%= "#{timeline.name} (#{timeline.took_place_at.strftime("%m/%d")})" %>" data-percent="<%= (timeline.took_place_at - start_date)/(end_date - start_date).to_f %>"></li>
     <% end %>

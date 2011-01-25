@@ -15,12 +15,12 @@ $(function(){
 function init_timeline(){
   $('#timeline li').tipsy({
     gravity: 's',
-    fade: false,
-    delayOut: 100,
+    fade: true,
+    delayOut: 50,
     offset: 5
   })
   .each(function(){
-    $(this).css('left', $('#timeline').width()*parseFloat($(this).attr('data-percent'))-$(this).width()/2);
+    $(this).css('left', $('#timeline').width()*parseFloat($(this).attr('data-percent'))+$(this).width());
   });
 }
 function init_carousel(){

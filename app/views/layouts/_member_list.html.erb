@@ -1,7 +1,7 @@
 <header>
   <h1>Members</h1>
 </header>
-<%= render :partial => 'layouts/navigation' %>
+<%= render :partial => 'layouts/navigation', :locals => {:cur => 'members'} %>
 <article>
   <ul id="member_tags">
   <% Member.available_tags.each do |tag| %>

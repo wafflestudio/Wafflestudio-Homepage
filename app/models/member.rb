@@ -33,7 +33,7 @@ class Member < ActiveRecord::Base
   end
 
   def self.available_tags
-    ['Web Develop', 'Visual Design', 'Strategy', 'User Experience', 'iOS Develop', 'Android Develop', 'Head']
+    ['Web Development', 'Visual Design', 'Strategy', 'User Experience', 'iOS Development', 'Android Development', 'Head']
   end
 
   def self.tag_color

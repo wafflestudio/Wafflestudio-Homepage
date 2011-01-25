@@ -1,9 +1,8 @@
-<%= local_assigns[:cur] %>
 <nav class="navigation">
   <ul>
-    <li><a>About Us</a></li>
-    <li><a>Members</a></li>
-    <li><a>Projects</a></li>
-    <li><a>Contact</a></li>
+    <li><a<%= raw ' class="active"' if local_assigns[:cur] == 'about_us' %>>About Us</a></li>
+    <li><a<%= raw ' class="active"' if local_assigns[:cur] == 'members' %>>Members</a></li>
+    <li><a<%= raw ' class="active"' if local_assigns[:cur] == 'projects' %>>Projects</a></li>
+    <li><a<%= raw ' class="active"' if local_assigns[:cur] == 'contact' %>>Contact</a></li>
   </ul>
 </nav>

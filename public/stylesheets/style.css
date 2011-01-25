@@ -25,7 +25,7 @@ section article {
 /*overall layout end*/
 
 
-/*navication start*/
+/*navication common start*/
 nav.navigation {
   width: 160px;
   position: absolute;
@@ -40,10 +40,10 @@ nav.navigation li a {
   font-size: 22px;
   letter-spacing: -1px;
   line-height: 1.4em;
-  font-family: 'Raleway';
+  font-family: 'PT Sans';
   cursor: pointer;
 }
-/*navication end*/
+/*navication common end*/
 
 
 /*home section start*/
@@ -78,10 +78,7 @@ nav.navigation li a {
 #home nav.navigation li a.hover {
 	color: white;
 }
-/*home section start*/
-
-
-/*tweetbox start*/
+	/*tweet box*/
 #tweetbox {
   width: 340px;
   position: absolute;
@@ -94,6 +91,9 @@ nav.navigation li a {
 	text-decoration: none;
 	margin-top: 13px;
 	margin-bottom: 15px;
+	font-family: Courier, monospace;
+	font-weight: normal;
+	letter-spacing: -1px;
 }
 #follow_us {
 	display: block;
@@ -132,10 +132,7 @@ nav.navigation li a {
 #tweets .tweet_text a {
 	color: #2276BB;
 }
-/*tweetbox end*/
-
-
-/*carousel start*/
+	/*carousel*/
 #carousel {
   position: absolute;
   top: 240px;
@@ -189,57 +186,108 @@ a.nivo-nextNav {
 a.nivo-prevNav {
   left:15px;
 }
-/*carousel end*/
+/*home sectionend*/
 
 
+/*about us section start*/
 #about_us {
 	margin-top: 70px;
+	height: 630px;
 }
-
-
-/*timeline start*/
+#about_us h1 {
+	width: 396px;
+	height: 267px;
+	background: url(/images/about_us.png) no-repeat;
+	position: absolute;
+	right: 25px;
+	top: 15px;
+	text-indent: -9999px;
+}
+#about_us nav.navigation {
+	top: 150px;
+	border: 1px solid rgba(78,65,51,0.34);
+	background: rgba(205,205,205,0.06);
+}
+#about_us nav.navigation li a {
+	color: #272727;
+}
+#about_us nav.navigation li a.active {
+	color: #dbb;
+}
+#about_us nav.navigation li a.hover {
+	color: white;
+}
+	/*timeline*/
 #timeline {
-  width: 600px;
-  height: 4px;
+  width: 671px;
+  height: 25px;
   position: absolute;
-  left: 100px;
-  bottom: 50px;
-  background: brown;
+  left: 65px;
+  bottom: 0px;
+  background: url(/images/backgrounds/timeline_bg.png) no-repeat;;
 }
 #timeline li {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   position: absolute;
-  top: -3px;
+  top: -5px;
   display: block;
-  background: white;
+  background: url(/images/icons/timeline_entry.png) no-repeat;
   cursor: pointer;
   line-height: 0px;
   font-size: 0px;
   list-style: none;
 }
-/*timeline end*/
+/*about us section end*/
 
 
-/*members start*/
+/*members section start*/
 #members {
 	margin-top: 200px;
 	height: 650px;
 }
+#members h1 {
+	width: 453px;
+	height: 86px;
+	background: url(/images/members.png) no-repeat;
+	position: absolute;
+	left: 30px;
+	top: 5px;
+	text-indent: -9999px;
+}
+#members nav.navigation {
+	top: 150px;
+	border: 1px solid rgba(78,65,51,0.34);
+	background: rgba(205,205,205,0.06);
+}
+#members nav.navigation li a {
+	color: #272727;
+}
+#members nav.navigation li a.active {
+	color: #eb0205;
+}
+#members nav.navigation li a.hover {
+	color: #a66;
+}
 #member_tags {
   position: absolute;
-  left: 50px;
-  top: 250px;
+  left: 40px;
+  top: 310px;
 }
 #member_tags li {
-  margin-bottom: 4px;
-  padding: 3px;
+  margin-bottom: 6px;
+  padding: 3px 6px;
   color: white;
   cursor: pointer;
+  float: left;
+  clear: left;
+  font-size: 13px;
 }
 #member_list {
   width: 590px;
   height: 400px;
+  position: absolute;
+  top: 145px;
 }
 .member {
   float: left;
@@ -252,7 +300,7 @@ a.nivo-prevNav {
   cursor: pointer;
 }
 .member.on {
-  border: 1px solid #fcc;
+  /*border: 1px solid #fcc;*/
 }
 .member.disabled {
   opacity: 0.4;
@@ -282,11 +330,11 @@ a.nivo-prevNav {
   left: 2px;
 }
 .member .tagbar {
-  width: 5px;
+  width: 7px;
   height: 7px;
   display: block;
   float: left;
-  margin-right: 2px;
+  margin-right: 1px;
   font-size: 7px;
   line-height: 7px;
   overflow: hidden;
@@ -437,10 +485,10 @@ a.nivo-prevNav {
   -khtml-opacity: .40; /* Safari 1.x */
   -moz-opacity: .40; /* FF lt 1.5, Netscape */
 }
-/*members end*/
+/*members section end*/
 
 
-/*project start*/
+/*project section start*/
 #projects {
 	margin-top: 320px;
 }
@@ -554,12 +602,13 @@ a.nivo-prevNav {
   -khtml-opacity: .40; /* Safari 1.x */
   -moz-opacity: .40; /* FF lt 1.5, Netscape */
 }
-/*project end*/
+/*projects section end*/
 
 
-/*contact form start*/
+/*contact section start*/
 #contact {
 	margin-top: 55px;
+	height: 400px;
 }
 #new_contact {
   width: 565px;
@@ -614,9 +663,8 @@ form textarea {
 #contact_submit {
   display: block;
 }
-/*contact form end*/
+/*contact section end*/
 footer {
   margin-top: -8px;
   height: 425px;
-  background: url(/images/footer.png) no-repeat;
 }
