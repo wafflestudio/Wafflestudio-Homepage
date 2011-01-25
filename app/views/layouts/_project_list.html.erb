@@ -1,7 +1,7 @@
 <header>
   <h1>Projects</h1>
 </header>
-<%= render :partial => 'layouts/navigation' %>
+<%= render :partial => 'layouts/navigation', :locals => {:cur => 'projects'} %>
 <article>
   <ul id="project_list">
   <% @projects.each do |project| %>

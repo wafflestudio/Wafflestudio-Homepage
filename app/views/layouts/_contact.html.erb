@@ -1,7 +1,9 @@
 <header>
   <h1>Contact</h1>
+  <h2>와플스튜디오에 제안 혹은 문의할 사항이 있으면 언제든 연락주세요. 
+  동아리 가입의 문도 언제든 열려있으니 주저말고 두드리세요!</h2>
 </header>
-<%= render :partial => 'layouts/navigation' %>
+<%= render :partial => 'layouts/navigation', :locals => {:cur => 'contact'} %>
 <article>
 <%= render :partial => 'contacts/form' %>
 </article>

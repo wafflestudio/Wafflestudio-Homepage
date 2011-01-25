@@ -4,6 +4,7 @@ $(function(){
 	}, function(){
 		$(this).removeClass('hover');
 	});
+	init_navigation();
   request_tweets();
   init_carousel();
   init_timeline();
@@ -12,6 +13,32 @@ $(function(){
   init_contact_form();
 });
 
+function init_navigation(){
+	$('nav.navigation li a').click(function(){
+		switch($(this).text()){
+			case 'About Us':
+				$('html, body').animate({
+					scrollTop: $('#about_us').offset().top-100
+				}, 1000);
+				break;
+			case 'Members':
+				$('html, body').animate({
+					scrollTop: $('#members').offset().top-40
+				}, 1000);
+				break;
+			case 'Projects':
+				$('html, body').animate({
+					scrollTop: $('#projects').offset().top-100
+				}, 1000);
+				break;
+			case 'Contact':
+				$('html, body').animate({
+					scrollTop: $('#contact').offset().top
+				}, 1000);
+				break;
+		}
+	});
+}
 function init_timeline(){
   $('#timeline li').tipsy({
     gravity: 's',

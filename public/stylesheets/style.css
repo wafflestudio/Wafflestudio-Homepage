@@ -492,6 +492,29 @@ a.nivo-prevNav {
 #projects {
 	margin-top: 320px;
 }
+#projects h1 {
+	width: 281px;
+	height: 86px;
+	text-indent: -9999px;
+	background: url(/images/projects.png) no-repeat;
+	position: absolute;
+	top: 18px;
+	right: 28px;
+}
+#projects nav.navigation {
+	top: 20px;
+	border: 1px solid rgba(78,65,51,0.34);
+	background: rgba(205,205,205,0.06);
+}
+#projects nav.navigation li a {
+	color: #7a604c;
+}
+#projects nav.navigation li a.active {
+	color: #bfb6a3;
+}
+#projects nav.navigation li a.hover {
+	color: white;
+}
 .project {
   float: left;
 }
@@ -610,14 +633,53 @@ a.nivo-prevNav {
 	margin-top: 55px;
 	height: 400px;
 }
+#contact h1 {
+	width: 281px;
+	height: 67px;
+	text-indent: -9999px;
+	background: url(/images/contact.png) no-repeat;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -140px;
+}
+#contact h2 {
+	width: 345px;
+	height: 35px;
+	text-indent: -9999px;
+	background: url(/images/sub_contact.png) no-repeat;
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	margin-left: -172px;
+}
+#contact nav.navigation {
+	top: 150px;
+	border: 1px solid rgba(78,65,51,0.34);
+	background: rgba(205,205,205,0.06);
+}
+#contact  nav.navigation li a {
+	color: #596b79;
+}
+#contact  nav.navigation li a.active {
+	color: #a9b7c2;
+}
+#contact nav.navigation li a.hover {
+	color: white;
+}
 #new_contact {
   width: 565px;
+  position: absolute;
+  top: 140px;
+  left: 210px;
 }
 form label {
   display: block;
   line-height: 2em;
   margin: 0.2em 0 0 0.5em;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
+  font-size: 14px;
+  color: #cfcfcf;
 }
 form div.text_fields {
   float: left;
@@ -629,14 +691,16 @@ form .text_input_wrapper {
   width: 265px;
   height: 30px;
   font-size: 18px;
-  background: #ccc;
+  background: #021732;
+  border: 1px solid rgba(177,177,177,0.29);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
 form .text_area_wrapper {
   width: 265px;
-  background: #ccc;
+  background: #021732;
+  border: 1px solid rgba(177,177,177,0.29);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -650,18 +714,29 @@ form .text_input_wrapper .text_input {
   margin-left: 2%;
   background: transparent;
   font-size: 15px;
+  color: white;
 }
 form textarea {
+  color: white;
   width: 96%;
-  height: 95px;
-  margin: 5px 2%;
+  height: 75px;
+  margin: 5px 3px;
   background: transparent;
-  height: 95px;
-  background: #ccc;
   border: 0;
 }
 #contact_submit {
   display: block;
+  margin-top: 18px;
+  background: #5a6f4a;
+  color: #e0dbce;
+  height: 40px;
+  border: 0;
+  width: 100%;
+  font-size: 14px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
 }
 /*contact section end*/
 footer {
