@@ -13,7 +13,7 @@
   <div id="carousel">
     <div id="slider">
     <% @carousels.each do |carousel| %>
-      <%= link_to_function image_tag(carousel.c_image.url), "slider_action('#{carousel.action[:type]}', '#{carousel.action[:value]}')" %>
+    	<a href="#" onclick="slider_action(event, <%= "'#{carousel.action[:type]}', '#{carousel.action[:value]}'" %>)" ><%= image_tag carousel.c_image.url %></a>
     <% end %>
     </div>
   </div>

@@ -31,7 +31,7 @@
 			</tr>
 			<tr>
 				<td class="first" width="150"><strong>등급</strong></td>
-				<td class="last"><%= f.select :grade, ['cream', 'choco', 'jam'], {:selected => @member.grade} %></td>
+				<td class="last"><%= f.select :grade, Member.available_grades, {:selected => @member.grade} %></td>
 			</tr>
 			<tr>
 				<td class="first" width="150"><strong>이메일</strong></td>

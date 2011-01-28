@@ -1,0 +1,10 @@
+#thefron_box {
+	position: absolute;
+	top: 200px;
+	left: 100px;
+	width: 600px;
+	height: 300px;
+}
+.thefron_img_container {
+	margin: 0px 10px;
+}

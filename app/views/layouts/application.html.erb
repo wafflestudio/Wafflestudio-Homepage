@@ -2,17 +2,21 @@
 <html>
 <head>
   <title>Waffle Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="Wafflestudio, 와플스튜디오, 웹개발, Web Development, snuev, 서울대학교" />
+  <meta name="description" content="와플스튜디오 홈페이지입니다." />
+  <meta name="revised" content="Hoseong Hwang, 30/01/2011" />
+  <%= csrf_meta_tag %>
   <!--[if IE]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  <%= stylesheet_link_tag ['reset', 'style', 'tipsy', 'nivo-slider', 'colorbox'] %>
+  <%= stylesheet_link_tag ['reset', 'style', 'tipsy', 'nivo-slider', 'colorbox', 'impromptu', 'slider'] %>
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/ie7-and-down.css" />
+	<![endif]-->
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag :jquery %>
-  <%= javascript_include_tag ['jquery.nivo.slider', 'twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'jquery.colorbox-min', 'application'] %>
-  <%= csrf_meta_tag %>
-  <%= render :partial => 'layouts/tweet_template' %>
-  <%= render :partial => 'layouts/member_template' %>
-  <%= render :partial => 'layouts/project_template' %>
+  <%= javascript_include_tag ['jquery.nivo.slider', 'twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'jquery.colorbox-min', 'jquery.impromptu.min', 'jquery.slider', 'application'] %>
 </head>
 <body>
   <div id="container">
@@ -31,9 +35,9 @@
     <section id="contact">
       <%= render :partial => 'layouts/contact' %>
     </section>
-    <footer>
-    </footer>
   </div>
-  <div id="invisible" style="display:none;"></div>
+  <%= render :partial => 'layouts/tweet_template' %>
+  <%= render :partial => 'layouts/member_template' %>
+  <%= render :partial => 'layouts/project_template' %>
 </body>
 </html>

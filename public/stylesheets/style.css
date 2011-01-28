@@ -42,6 +42,7 @@ nav.navigation li a {
   line-height: 1.4em;
   font-family: 'PT Sans';
   cursor: pointer;
+  text-decoration: none;
 }
 /*navication common end*/
 
@@ -92,7 +93,7 @@ nav.navigation li a {
 	margin-top: 13px;
 	margin-bottom: 15px;
 	font-family: Courier, monospace;
-	font-weight: normal;
+	font-weight: bold;
 	letter-spacing: -1px;
 }
 #follow_us {
@@ -217,6 +218,16 @@ a.nivo-prevNav {
 #about_us nav.navigation li a.hover {
 	color: white;
 }
+#about_us article {
+	color: white;
+}
+#about_us h2 {
+	font-size: 30px;
+	position: absolute;
+	top: 185px;
+	right: 220px;
+	font-style: italic;
+}
 	/*timeline*/
 #timeline {
   width: 671px;
@@ -224,7 +235,7 @@ a.nivo-prevNav {
   position: absolute;
   left: 65px;
   bottom: 0px;
-  background: url(/images/backgrounds/timeline_bg.png) no-repeat;;
+  background: url(/images/backgrounds/timeline_bg.png) no-repeat;
 }
 #timeline li {
   width: 14px;
@@ -631,6 +642,7 @@ a.nivo-prevNav {
 /*contact section start*/
 #contact {
 	margin-top: 55px;
+	padding-bottom: 450px;
 	height: 400px;
 }
 #contact h1 {
@@ -681,6 +693,10 @@ form label {
   font-size: 14px;
   color: #cfcfcf;
 }
+form em {
+	color: #ff5555;
+	font-style: normal;
+}
 form div.text_fields {
   float: left;
 }
@@ -723,6 +739,7 @@ form textarea {
   margin: 5px 3px;
   background: transparent;
   border: 0;
+  overflow: auto;
 }
 #contact_submit {
   display: block;
@@ -736,10 +753,24 @@ form textarea {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-
+  cursor: pointer;
+}
+#contact_submit.hover {
+	background: #728A60;
+}
+#contact_submit.sending {
+	color: white;
+	background: #A5B897 url('/images/contact_submit_loader.gif') no-repeat 75px 50%;
 }
 /*contact section end*/
 footer {
   margin-top: -8px;
   height: 425px;
+}
+/*image loader*/
+#invisible {
+	background: url('/images/contact_submit_loader.gif');
+  background: url(/images/tweet-loader.gif);
+  background: url(/images/pdf.png);
+  background: url(/images/colorbox/arrows.png);
 }

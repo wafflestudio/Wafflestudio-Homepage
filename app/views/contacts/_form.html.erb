@@ -1,23 +1,23 @@
 <%= form_for @contact, :url => contacts_path, :html => { :method => 'POST'} do |f| %>
   <div class="text_fields">
-    <%= label_tag 'contact_name', 'Name :' %>
+    <%= label_tag 'contact_name', raw('Name<em>*</em>') %>
     <div class="text_input_wrapper">
       <%= f.text_field :name, {:class => 'text_input', :title => '이름을 입력해 주세요.'} %>
     </div>
-    <%= label_tag 'contact_email', 'Email :' %>
+    <%= label_tag 'contact_email', raw('Email<em>*</em>') %>
     <div class="text_input_wrapper">
       <%= f.email_field :email, {:class => 'text_input', :title => '답변을 받으실 이메일을 입력해 주세요.'} %>
     </div>
-    <%= label_tag 'contact_phone', 'Phone :' %>
+    <%= label_tag 'contact_phone', 'Phone' %>
     <div class="text_input_wrapper">
       <%= f.phone_field :phone, {:class => 'text_input', :title => '빠른 답변이 필요하시면<br />전화번호를 남겨주시기 바랍니다.'} %>
     </div>
   </div>
   <div class="text_area">
-    <%= label_tag 'contact_message', 'Message :' %>
+    <%= label_tag 'contact_message', 'Message' %>
     <div class="text_area_wrapper">
       <%= f.text_area :message, {:title => '문의하실 내용을 입력해 주세요.'} %>
     </div>
-    <%= f.submit 'go!' %>
+    <%= f.submit 'Send' %>
   </div>
 <% end %>

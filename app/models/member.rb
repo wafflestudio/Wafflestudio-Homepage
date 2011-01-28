@@ -32,6 +32,10 @@ class Member < ActiveRecord::Base
     end
   end
 
+  def self.available_grades
+		['cream', 'choco', 'jam', 'previous']
+  end
+
   def self.available_tags
     ['Web Development', 'Visual Design', 'Strategy', 'User Experience', 'iOS Development', 'Android Development', 'Head']
   end
