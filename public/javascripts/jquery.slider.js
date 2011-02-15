@@ -39,19 +39,35 @@
 			top: '0px'
 		});
 
-		this.children('li').map(function(){
+		this.children('li').map(function(i){
+			var li = $(this);
 			var img_container = $('<div />', {
 				className: settings.prefix+'_img_container',
 				click: function(e){
 					if(settings.onClick)
 						settings.onClick($(this).find('img'));
-				}
+				},
+				id: settings.prefix+'_img_container_'+i
 			}).css({
 				float: 'left'
 			}).append(
-				$(this).children('img').clone()
+				li.children('img').clone()
 			);
-			img_container.appendTo(slider)
+			img_container.appendTo(slider).data({
+				name: li.children('.name:eq(0)').text(),
+				subtitle: li.children('.subtitle:eq(0)').text()
+			});
+			if(settings.useCaption){
+				var caption = $('<div />', {
+					className: settings.prefix+'_img_caption',
+					id: settings.prefix+'_img_caption_'+i
+				}).append(
+					$('<div />').addClass('name').text(img_container.data('name'))
+				).append(
+					$('<div />').addClass('subtitle').text(img_container.data('subtitle'))
+				).appendTo(img_container);
+				if(i != settings.startIndex) caption.hide();
+			}
 		});
 		this.hide().after(box.append(slider));
 
@@ -90,6 +106,8 @@
 			if(animate){
 				slider.animate({'left': left}, settings.animateTime, function(){
 				});
+				$('.'+settings.prefix+'_img_caption').not(img.find('.'+settings.prefix+'_img_caption')).fadeOut();
+				img.find('.'+settings.prefix+'_img_caption').fadeIn();
 			}
 			else{
 				slider.css('left', left);

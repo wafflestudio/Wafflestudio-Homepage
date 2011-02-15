@@ -8,6 +8,7 @@
     <li id="project_<%= project.id%>" data-id="<%= project.id %>" class="project">
       <%= image_tag project.screenshots.first.image.url(:middle), {'data-id' => project.id} %>
       <span class="name"><%= project.name %></span>
+      <span class="subtitle"><%= project.subtitle %></span>
     </li>
   <% end %>
   </ul>

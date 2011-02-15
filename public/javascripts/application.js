@@ -9,7 +9,7 @@ $(function(){
   //팝업용 임시공간
 	$('<div>').attr('id', 'invisible').appendTo($('body')).hide()
 	//hover클래스가 필요한 것들
-	$('nav.navigation a, #contact_submit').hover(function(){
+	$('nav.navigation a, #contact_submit, #top').hover(function(){
 		$(this).addClass('hover');
 	}, function(){
 		$(this).removeClass('hover');
@@ -42,6 +42,14 @@ function init_navigation(){
 				}, 1000);
 				break;
 		}
+	});
+	$('#top').click(function(e){
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
+	}).css({
+		marginLeft: $('#container').width()/2-20
 	});
 }
 function init_timeline(){
@@ -305,7 +313,9 @@ function init_projects(){
 			var id = el.attr('data-id');
 			request_project(id, false);
 		},
-		startIndex: 0
+		startIndex: 0,
+		useCaption: true,
+		duration: 6000
 	});
 }
 function init_contact_form(){
