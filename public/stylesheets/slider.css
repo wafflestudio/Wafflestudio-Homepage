@@ -16,7 +16,7 @@
 	left: 0;
 	color: white;
 	/*background: rgba(118,77,31,0.58);*/
-	background: rgba(0,0,0,0.7);
+	background: url(/images/backgrounds/black_bg.png);
 	width: 100%;
 }
 .thefron_img_caption .name {

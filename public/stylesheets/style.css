@@ -70,8 +70,8 @@ nav.navigation li a {
 }
 #home nav.navigation {
 	top: 48px;
-	border: 1px solid rgba(255,255,255,0.15);
-	background: rgba(205,205,205,0.06);
+	border: 1px solid #434343;
+	background: url(/images/backgrounds/white_bg.png);
 }
 #home nav.navigation li a {
 	color: #6d6d6d;
@@ -106,7 +106,8 @@ nav.navigation li a {
 	top: 0px;
 }
 .tweet {
-  margin: 1em 0;
+	padding: 5px 0px;
+	border-top: 1px dashed #ccc;
   color: #555;
 	line-height: 1.2em;
 }
@@ -206,8 +207,8 @@ a.nivo-prevNav {
 }
 #about_us nav.navigation {
 	top: 150px;
-	border: 1px solid rgba(78,65,51,0.34);
-	background: rgba(205,205,205,0.06);
+	border: 1px solid #9d3329;
+	background: url(/images/backgrounds/white_bg.png);
 }
 #about_us nav.navigation li a {
 	color: #272727;
@@ -268,8 +269,8 @@ a.nivo-prevNav {
 }
 #members nav.navigation {
 	top: 150px;
-	border: 1px solid rgba(78,65,51,0.34);
-	background: rgba(205,205,205,0.06);
+	border: 1px solid #bfbbb6;
+	background: url(/images/backgrounds/white_bg.png);
 }
 #members nav.navigation li a {
 	color: #272727;
@@ -314,11 +315,13 @@ a.nivo-prevNav {
   /*border: 1px solid #fcc;*/
 }
 .member.disabled {
+/*
   opacity: 0.4;
-  filter: alpha(opacity=40); /* IE lt 8 */
-  -ms-filter: "alpha(opacity=40)"; /* IE 8 */
-  -khtml-opacity: .40; /* Safari 1.x */
-  -moz-opacity: .40; /* FF lt 1.5, Netscape */
+  filter: alpha(opacity=40);
+	-ms-filter: “progid:DXImageTransform.Microsoft.Alpha(Opacity=40)”
+  -khtml-opacity: .40;
+  -moz-opacity: .40;
+*/
 }
 .member_thumb {
   position: absolute;
@@ -469,7 +472,7 @@ a.nivo-prevNav {
   left: 5px;
   line-height: 15px;
   text-align: center;
-  background: rgba(0,0,0,0.7);
+	background: url(/images/backgrounds/black_bg.png);
   color: white;
   font-size: 11px;
 }
@@ -502,7 +505,7 @@ a.nivo-prevNav {
 /*project section start*/
 #projects {
 	margin-top: 320px;
-	background: url(/images/backgrounds/dev_process.png) no-repeat 50% 410px;
+	/*background: url(/images/backgrounds/dev_process.png) no-repeat 50% 410px;*/
 }
 #projects h1 {
 	width: 281px;
@@ -515,8 +518,8 @@ a.nivo-prevNav {
 }
 #projects nav.navigation {
 	top: 20px;
-	border: 1px solid rgba(78,65,51,0.34);
-	background: rgba(205,205,205,0.06);
+	border: 1px solid #4e361a;
+	background: url(/images/backgrounds/white_bg.png);
 }
 #projects nav.navigation li a {
 	color: #7a604c;
@@ -610,7 +613,7 @@ a.nivo-prevNav {
   left: 5px;
   line-height: 15px;
   text-align: center;
-  background: rgba(0,0,0,0.7);
+	background: url(/images/backgrounds/black_bg.png);
   color: white;
   font-size: 11px;
 }
@@ -643,8 +646,7 @@ a.nivo-prevNav {
 /*contact section start*/
 #contact {
 	margin-top: 55px;
-	padding-bottom: 450px;
-	height: 400px;
+	height: 389px;
 }
 #contact h1 {
 	width: 281px;
@@ -668,8 +670,8 @@ a.nivo-prevNav {
 }
 #contact nav.navigation {
 	top: 150px;
-	border: 1px solid rgba(78,65,51,0.34);
-	background: rgba(205,205,205,0.06);
+	border: 1px solid #233245;
+	background: url(/images/backgrounds/white_bg.png);
 }
 #contact  nav.navigation li a {
 	color: #596b79;
@@ -709,7 +711,7 @@ form .text_input_wrapper {
   height: 30px;
   font-size: 18px;
   background: #021732;
-  border: 1px solid rgba(177,177,177,0.29);
+  border: 1px solid #344356;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -717,7 +719,7 @@ form .text_input_wrapper {
 form .text_area_wrapper {
   width: 265px;
   background: #021732;
-  border: 1px solid rgba(177,177,177,0.29);
+  border: 1px solid #344356;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -765,8 +767,8 @@ form textarea {
 }
 /*contact section end*/
 footer {
-  margin-top: -8px;
   height: 425px;
+	background: url(/images/backgrounds/waffle.png) no-repeat center top;
 }
 /*image loader*/
 #invisible {

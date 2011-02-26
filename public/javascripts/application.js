@@ -14,6 +14,24 @@ $(function(){
 	}, function(){
 		$(this).removeClass('hover');
 	});
+	var footer = $('footer');
+	var Fmin = footer.height()/2;
+	var newPos;
+	$(window).bind('scroll', function(){
+		top_pos = footer.offset().top - $(window).height();
+		bottom_pos = $(document).height()-$(window).height()
+		windowTop = $(window).scrollTop();
+		if(windowTop >= top_pos && windowTop <= bottom_pos){
+			ratio = parseFloat((windowTop-top_pos)/(bottom_pos - top_pos));
+			newPos = Fmin+(footer.height()-Fmin)*ratio;
+		}
+		else{
+			newPos = Fmin
+		}
+		$('footer').css({
+			'background-position': '0 '+(-footer.height()+newPos)+'px'
+		});
+	});
 });
 
 function init_navigation(){
@@ -75,9 +93,8 @@ function init_carousel(){
   var control = $('.nivo-controlNav');
   control.css('margin-left', -control.width()/2);
 }
-function slider_action(e, type, value){
+function slider_action(type, value){
 	//top section 카로슬 개체 클릭 시 동작 지정
-	e.preventDefault();
   switch(type){
     case 'url': 
       window.open(value);
@@ -298,8 +315,17 @@ function init_members(){
       members.filter('.'+tag_str).addClass('on');
       member_tags.not(tag[0]).removeClass('on');
       tag.addClass('on');
+			members.filter('.disabled').animate({
+				opacity: 0.3
+			}, 'fast');
+			members.not('.disabled').animate({
+				opacity: 1
+			}, 'fast');
     }
     else{
+			members.filter('.disabled').animate({
+				opacity: 1
+			}, 'fast');
       members.removeClass('disabled on');
       tag.removeClass('on');
     }

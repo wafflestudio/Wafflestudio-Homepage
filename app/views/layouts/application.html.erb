@@ -16,7 +16,7 @@
 	<![endif]-->
   <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag :jquery %>
-  <%= javascript_include_tag ['jquery.nivo.slider', 'twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'jquery.colorbox-min', 'jquery.impromptu.min', 'jquery.slider', 'application'] %>
+  <%= javascript_include_tag ['jquery.nivo.slider', 'twitter-entities.js', 'jquery.tmpl.min', 'jquery.form', 'jquery.tipsy', 'jquery.colorbox-min', 'jquery.impromptu.min', 'jquery.slider', 'parallax', 'application'] %>
 </head>
 <body>
   <div id="container">
@@ -35,6 +35,8 @@
     <section id="contact">
       <%= render :partial => 'layouts/contact' %>
     </section>
+		<footer>
+		</footer>
   </div>
   <a href="#top" id="top">top</a>
   <%= render :partial => 'layouts/tweet_template' %>
