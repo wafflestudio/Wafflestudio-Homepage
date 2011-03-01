@@ -232,6 +232,31 @@ a.nivo-prevNav {
 	right: 220px;
 	font-style: italic;
 }
+#about_us h3 {
+	position: absolute;
+	font-size: 14px;
+	top: 225px;
+	right: 220px;
+}
+#about_us_body {
+	position: absolute;
+	top: 300px;
+	left: 40px;
+}
+#about_us_body li {
+	width: 225px;
+	float: left;
+	margin-right: 25px;
+}
+#about_us_body h4 {
+	font-size: 18px;
+	letter-spacing: 1px;
+	margin-bottom: 1em;
+}
+#about_us_body p {
+	line-height: 1.5em;
+	text-align: justify;
+}
 	/*timeline*/
 #timeline {
   width: 671px;
