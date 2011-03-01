@@ -6,6 +6,7 @@ $(function(){
   init_members();
   init_projects();
   init_contact_form();
+	init_parallax();
   //팝업용 임시공간
 	$('<div>').attr('id', 'invisible').appendTo($('body')).hide()
 	//hover클래스가 필요한 것들
@@ -14,6 +15,9 @@ $(function(){
 	}, function(){
 		$(this).removeClass('hover');
 	});
+});
+
+function init_parallax(){
 	var footer = $('footer');
 	var Fmin = footer.height()/2;
 	var newPos;
@@ -32,7 +36,7 @@ $(function(){
 			'background-position': '0 '+(-footer.height()+newPos)+'px'
 		});
 	});
-});
+}
 
 function init_navigation(){
 	//주 네비게이션 스크롤 기능

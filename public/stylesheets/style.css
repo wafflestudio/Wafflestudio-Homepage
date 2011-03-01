@@ -2,7 +2,7 @@
 body{
   font-family: 나눔고딕, NanumGothic, 돋움, dotum;
   font-size: 12px;
-  background: #aeafa0;
+  background: #aeafa0 url(/images/backgrounds/bg_pattern.jpg) center top;
 }
 /*overall style end*/
 
@@ -51,13 +51,16 @@ nav.navigation li a {
 #home {
 }
 #home h1 {
-	width: 346px;
-	height: 73px;
-	text-indent: -9999px;
-	background: url(/images/logo.png) no-repeat;
 	position: absolute;
 	top: 13px;
 	right: 18px;
+}
+#home h1 a {
+	width: 346px;
+	height: 73px;
+	display: block;
+	text-indent: -9999px;
+	background: url(/images/logo.png) no-repeat;
 }
 #home h2 {
 	width: 219px;
