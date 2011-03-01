@@ -237,10 +237,12 @@ a.nivo-prevNav {
 	font-size: 14px;
 	top: 225px;
 	right: 220px;
+	text-align: right;
+	line-height: 1.5em;
 }
 #about_us_body {
 	position: absolute;
-	top: 300px;
+	top: 320px;
 	left: 40px;
 }
 #about_us_body li {
@@ -250,11 +252,12 @@ a.nivo-prevNav {
 }
 #about_us_body h4 {
 	font-size: 18px;
-	letter-spacing: 1px;
+	letter-spacing: -1px;
 	margin-bottom: 1em;
 }
 #about_us_body p {
-	line-height: 1.5em;
+	line-height: 1.7em;
+	font-size: 12px;
 	text-align: justify;
 }
 	/*timeline*/

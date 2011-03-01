@@ -121,7 +121,7 @@ function slider_action(type, value){
 }
 function request_tweets(){
 	//최신 트윗 가져오기
-  $('#tweets').html('<li class="loading">Loading tweets...</li>');
+  //$('#tweets').html('<li class="loading">Loading tweets...</li>');
   $.ajax({
     data: {
       screen_name: 'wafflestudio',
