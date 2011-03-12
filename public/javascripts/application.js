@@ -42,6 +42,7 @@ function init_navigation(){
 	//주 네비게이션 스크롤 기능
 	$('nav.navigation li a').click(function(e){
 		e.preventDefault();
+		if($(this).hasClass('active')) return;
 		switch($(this).text()){
 			case 'About Us':
 				$('html, body').animate({
