@@ -3,6 +3,7 @@
 문의자 이름 : <%= @contact.name %>
 문의자 이메일 : <%= @contact.email %>
 문의자 전화번호 : <%= @contact.phone %>
+작성된 시간: <%= @contact.created_at.strftime "%Y-%m-%d %H:%M:%S" %>
 내용 : 
 
 <%= @contact.message %>
