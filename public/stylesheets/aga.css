@@ -1,0 +1,33 @@
+/**
+ * Aga v1.03
+ * http://squareflower.de
+ *
+ * Copyright 2010, Lukas Rydygel
+ * Attribution-ShareAlike 3.0 Unported
+ * http://creativecommons.org/licenses/by-sa/3.0/
+ *
+ */
+.aga-horizontal,
+.aga-vertical {
+    position:relative;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+}
+.aga-horizontal *,
+.aga-vertical * {
+    padding:0;
+    margin:0;
+    outline:none;
+}
+.aga-horizontal-item,
+.aga-vertical-item {
+    position:absolute;
+    list-style:none;
+}
+.aga-horizontal-item {
+    float:left;
+}
+.aga-vertical-item {
+    float:none;
+}

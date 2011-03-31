@@ -55,6 +55,17 @@
         </td>
 			</tr>
 			<tr>
+				<td class="first" width="150"><strong>Featured</strong></td>
+				<td class="last">
+          <% unless @project.featured.nil? %>
+            <%= image_tag @project.featured.image.url(:thumb) %>
+            <%= @project.featured.image_file_name %>
+            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(@project.featured), :confirm => 'Are you sure?', :method => :delete %><br />
+          <% end %>
+					<%= file_field_tag 'project[featured_img]' %><br />
+        </td>
+			</tr>
+			<tr>
 				<td class="first" width="150"><strong>스크린샷</strong></td>
 				<td class="last">
           <% for screenshot in @project.screenshots %>

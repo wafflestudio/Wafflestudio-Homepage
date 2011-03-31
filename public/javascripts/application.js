@@ -339,6 +339,7 @@ function init_members(){
 }
 function init_projects(){
 	//프로젝트 리스트 초기화
+	/*
   $('#project_list').slider({
 		onClick: function(el){
 			var id = el.attr('data-id');
@@ -347,6 +348,16 @@ function init_projects(){
 		startIndex: 0,
 		useCaption: true,
 		duration: 6000
+	});
+*/
+	$('#project_list').aga({
+		action: 'hover',
+		hoverTime: 200,
+		open: {
+			after: function(a, b){
+				console.log(a)
+			}
+		}
 	});
 }
 function init_contact_form(){

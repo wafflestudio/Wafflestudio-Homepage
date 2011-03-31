@@ -3,6 +3,8 @@
 </header>
 <%= render :partial => 'layouts/navigation', :locals => {:cur => 'projects'} %>
 <article>
+<!--commented out-->
+<% if false %>
   <ul id="project_list">
   <% @projects.each do |project| %>
     <li id="project_<%= project.id%>" data-id="<%= project.id %>" class="project">
@@ -12,4 +14,16 @@
     </li>
   <% end %>
   </ul>
+<% end %>
+<!--commented out-->
+
+  <ul id="project_list">
+  <% @projects.each do |project| %>
+    <li id="project_<%= project.id%>" data-id="<%= project.id %>" class="project">
+      <%= image_tag project.featured.image.url(:big), {'data-id' => project.id} %>
+    </li>
+  <% end %>
+  </ul>
+
+
 </article>

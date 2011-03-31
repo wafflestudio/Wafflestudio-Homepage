@@ -564,6 +564,21 @@ a.nivo-prevNav {
 .project {
   float: left;
 }
+#project_list {
+	position: absolute;
+	top: 240px;
+	left: 50%;
+	margin-left: -325px;
+	width: 650px;
+	height: 300px;
+}
+#project_list li {
+	width: 600px;
+	height: 300px;
+	-moz-box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
+	box-shadow:0 0 10px #000;
+}
 .project_popup {
   width: 850px;
   height: 550px;
