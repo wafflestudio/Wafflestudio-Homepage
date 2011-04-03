@@ -1,5 +1,5 @@
 require 'yaml'
-require 'sha1'
+require 'digest/sha1'
 
 #system "touch #{RAILS_ROOT}/config/admin.yml"
 #admin_credentials = YAML::load_file("#{RAILS_ROOT}/config/admin.yml")||[]
@@ -22,7 +22,7 @@ begin
     puts ' '
     system "stty echo"
     if confirm_password == new_password
-      admin_credentials.push({:id => new_id.strip, :password => SHA1::hexdigest(new_password.strip)})
+      admin_credentials.push({:id => new_id.strip, :password => Digest::SHA1.hexdigest(new_password.strip)})
 #    yaml = File.open("#{RAILS_ROOT}/config/admin.yml", "w")
       yaml = File.open("config/admin.yml", "w")
       yaml.write(YAML::dump(admin_credentials))

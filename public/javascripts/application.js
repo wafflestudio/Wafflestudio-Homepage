@@ -351,14 +351,13 @@ function init_projects(){
 	});
 */
 	$('#project_list').aga({
-		action: 'hover',
-		hoverTime: 200,
-		open: {
-			after: function(a, b){
-				console.log(a)
-			}
-		}
+	  easing: ['easeOutExpo'],
+    size: {
+      max: $('#project_list').width() - 20*($('#project_list li').length - 1)
+    },
+    animationTime: 800
 	});
+	//$('#project_list .project_overlay').css('right', 20 + (20*($('#project_list li').length - 1)));
 }
 function init_contact_form(){
 	//컨택 폼 ajax로 동작하게

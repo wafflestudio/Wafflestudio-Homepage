@@ -1,5 +1,6 @@
 <header>
   <h1>Projects</h1>
+  <h2>와플스튜디오가 개발 및 운영중인 서비스입니다</h2>
 </header>
 <%= render :partial => 'layouts/navigation', :locals => {:cur => 'projects'} %>
 <article>
@@ -20,7 +21,11 @@
   <ul id="project_list">
   <% @projects.each do |project| %>
     <li id="project_<%= project.id%>" data-id="<%= project.id %>" class="project">
-      <%= image_tag project.featured.image.url(:big), {'data-id' => project.id} %>
+      <%= image_tag project.featured.image.url(:featured), {'data-id' => project.id} unless project.featured.nil? %>
+      <div class="project_overlay">
+        <div class="project_name"><%= image_tag project.logo.image.url(:logo) unless project.logo.nil? %></div>
+        <div class="project_subtitle"><%= project.subtitle %></div>
+      </div>
     </li>
   <% end %>
   </ul>
