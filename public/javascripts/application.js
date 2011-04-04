@@ -355,9 +355,15 @@ function init_projects(){
     size: {
       max: $('#project_list').width() - 20*($('#project_list li').length - 1)
     },
-    animationTime: 800
+    animationTime: 1000,
+    handler: function(el){
+      return $(el).find('.handle');
+    }
 	});
-	//$('#project_list .project_overlay').css('right', 20 + (20*($('#project_list li').length - 1)));
+	$('#project_list .project_overlay').click(function(){
+    var id = $(this).closest('.project').attr('data-id');
+    request_project(id, false);
+  });
 }
 function init_contact_form(){
 	//컨택 폼 ajax로 동작하게

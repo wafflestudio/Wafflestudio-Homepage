@@ -585,20 +585,31 @@ a.nivo-prevNav {
 #project_list li {
 	width: 600px;
 	height: 300px;
-	cursor: pointer;
 	-moz-box-shadow:0 0 10px #000;
 	-webkit-box-shadow:0 0 10px #000;
 	box-shadow:0 0 10px #000;
 }
+#project_list .handle {
+  left: -13px;
+  top: 20px;
+  position: absolute;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: white;
+  padding: 3px 5px;
+  cursor: pointer;
+  background: url(/images/backgrounds/black_bg.png);
+  -o-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
 #projects .project_overlay {
+  cursor: pointer;
   position: absolute;
   bottom: 20px;
   left: 20px;
-  opacity: 0.8;
-  filter: alpha(opacity=80); /* IE lt 8 */
-  -ms-filter: "alpha(opacity=80)"; /* IE 8 */
-  -khtml-opacity: .80; /* Safari 1.x */
-  -moz-opacity: .80; /* FF lt 1.5, Netscape */
 }
 #projects .project_name {
   background: url(/images/backgrounds/black_bg.png);
