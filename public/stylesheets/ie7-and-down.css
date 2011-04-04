@@ -1,3 +1,7 @@
 form div.text_area {
 	padding-left: 30px;
 }
+#project_list li {
+	padding-left: 1px;
+	background: url(/images/backgrounds/black_bg.png);
+}

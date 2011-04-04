@@ -590,26 +590,20 @@ a.nivo-prevNav {
 	box-shadow:0 0 10px #000;
 }
 #project_list .handle {
-  left: -13px;
+  left: 0px;
   top: 20px;
   position: absolute;
-  font-size: 9px;
-  letter-spacing: 2px;
   color: white;
-  padding: 3px 5px;
+	width: 16px;
+	height: 43px;
   cursor: pointer;
-  background: url(/images/backgrounds/black_bg.png);
-  -o-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  background: url(/images/buttons/view.png);
 }
 #projects .project_overlay {
   cursor: pointer;
   position: absolute;
   bottom: 20px;
-  left: 20px;
+  left: 23px;
 }
 #projects .project_name {
   background: url(/images/backgrounds/black_bg.png);
