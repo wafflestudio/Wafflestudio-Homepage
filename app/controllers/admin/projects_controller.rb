@@ -34,7 +34,7 @@ class Admin::ProjectsController < AdminController
   end
 
   def destroy
-    Member.destroy(params[:id])
+    Project.destroy(params[:id])
     redirect_to admin_projects_path
   end
 
