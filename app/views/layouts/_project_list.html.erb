@@ -24,7 +24,7 @@
       <%= image_tag project.featured.image.url(:featured), {'data-id' => project.id} unless project.featured.nil? %>
       <div class="handle"></div>
       <div class="project_overlay">
-        <div class="project_name"><%= image_tag project.logo.image.url(:logo) unless project.logo.nil? %></div>
+        <div class="project_name"><%= project.logo.nil? ? project.name : image_tag(project.logo.image.url(:logo))  %></div>
         <div class="project_subtitle"><%= project.subtitle %></div>
       </div>
     </li>

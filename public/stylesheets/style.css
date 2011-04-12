@@ -606,6 +606,8 @@ a.nivo-prevNav {
   left: 23px;
 }
 #projects .project_name {
+	font-size: 25px;
+	font-weight: bold;
   background: url(/images/backgrounds/black_bg.png);
   color: white;
   padding: 10px 15px;
@@ -622,17 +624,26 @@ a.nivo-prevNav {
 }
 .project_popup {
   width: 850px;
-  height: 550px;
+  height: 515px;
+}
+.project_popup .header {
+	margin: 20px 40px 10px 40px;
+	padding: 10px;
+	position: relative;
+	background: url(/images/backgrounds/black_bg.png);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.project_popup .header a {
+	text-decoration: none;
 }
 .project_popup .name {
-  margin-top: 20px;
-  margin-left: 30px;
-  display: block;
-  font-size: 30px;
+  font-size: 25px;
+	color: white;
 }
 .project_popup .images {
   width: 424px;
-  margin-top: 30px;
   margin-left: 40px;
   margin-right: 10px;
   float: left;
@@ -673,10 +684,32 @@ a.nivo-prevNav {
 .project_popup .thumbnails li.cur img {
   border-color: #c88;
 }
-.project_popup .text_content {
-  margin-right: 40px;
+.project_popup .since {
+	color: white;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.project_popup .right_section {
+	margin-left: 474px;
+}
+.project_popup .description {
+	margin-right: 40px;
+	height: 250px;
+	padding: 10px;
+	background: #4c4c4c;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.project_popup .description p {
+	color: white;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
 }
 .project_popup .members {
+	margin-left: 10px;
   height: 80px;
 }
 .project_popup .members li {
@@ -686,6 +719,7 @@ a.nivo-prevNav {
   background: #ccc;
   float: left;
   margin-right: 10px;
+	margin-top: 10px;
   cursor: pointer;
 }
 .project_popup .members img {
@@ -703,6 +737,13 @@ a.nivo-prevNav {
 	background: url(/images/backgrounds/black_bg.png);
   color: white;
   font-size: 11px;
+}
+.project_popup .info {
+	color: #aaa;
+	font-size: 10px;
+	margin-top: 3px;
+	clear: both;
+	display: block;
 }
 .project_popup .nav div {
   width: 30px;

@@ -1,7 +1,18 @@
 <script id="project_template" type="text/x-jquery-tmpl">
   <div class="project_popup">
-    <h1 class="name">${name}</h1>
-    <div class="images">
+		<div class="header">
+			<a href="${link}" title="${name}">
+	    <h1 class="name">
+				{{if logo_url}}
+					<img src="${logo_url}" alt="${name} logo" title="${name} logo"/>	
+				{{else}}
+					${name}
+				{{/if}}
+				</h1>
+			</a>
+      <span class="since">since ${since}</span>
+		</div>
+    <div class="images left_section">
       <ul class="screenshots">
       {{each(i, url) screenshot_urls}}
         <li><img src="${url}" /></li>
@@ -13,24 +24,24 @@
       {{/each}}
       </ul>
     </div>
-    <div class="text_content">
-      <span class="since">since ${since}</span>
-      <p class="description">
-        ${description}
-      </p>
-    </div>
-    <ul class="members">
-    {{each(i, m) members}}
-      <li data-id="${m.member.id}">
-        {{if m.member.thumbnail_url}}
-        <img src="${m.member.thumbnail_url}" />
-        {{/if}}
-        <div class="caption">
-        ${m.member.name}
-        </div>
-      </li>
-    {{/each}}
-    </ul>
+		<div class="right_section">
+			<div class="description">
+				<p>${description}</p>
+			</div>
+  	  <ul class="members">
+   	 {{each(i, m) members}}
+   	   <li data-id="${m.member.id}">
+   	     {{if m.member.thumbnail_url}}
+   	     <img src="${m.member.thumbnail_url}" />
+   	     {{/if}}
+   	     <div class="caption">
+   	     ${m.member.name}
+   	     </div>
+ 	     </li>
+ 	   {{/each}}
+ 	   </ul>
+			<span class="info">명단에는 현재 프로젝트에 참가 중인 사람들만 표시합니다. 히스토리는 준비 중입니다.</span>
+		</div>
     <div class="nav">
       <div class="prev"></div>
       <div class="next"></div>

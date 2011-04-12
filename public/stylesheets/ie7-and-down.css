@@ -5,3 +5,6 @@ form div.text_area {
 	padding-left: 1px;
 	background: url(/images/backgrounds/black_bg.png);
 }
+.project_popup .description {
+	_height: 270px;
+}

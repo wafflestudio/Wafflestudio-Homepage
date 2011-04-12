@@ -360,6 +360,9 @@ function init_projects(){
       return $(el).find('.handle');
     }
 	});
+	$('#project_list .handle').each(function(i){
+		$(this).css('top', ($(this).position().top + i*5)+'px');
+	});
 	$('#project_list .project_overlay').click(function(){
     var id = $(this).closest('.project').attr('data-id');
     request_project(id, false);
