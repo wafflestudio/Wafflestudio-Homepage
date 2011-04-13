@@ -1,14 +1,20 @@
 class Member < ActiveRecord::Base
-  has_and_belongs_to_many :projects
+  has_many :involvements
+	has_many :projects, :through => :involvements, :conditions => "involvements.status = 'current'"
+	has_many :prev_projects, :through => :involvements, :source => :project, :conditions => "involvements.status = 'previous'" do
+		def <<(prev_project)
+			Involvement.send(:with_scope, :create => {:status => 'previous'}) {self.concat prev_project}
+		end
+	end
   serialize :tags
   serialize :skills
-  attr_accessor :project_ids, :tag_names, :skill_inputs, :from_form
+  attr_accessor :project_ids, :prev_project_ids, :tag_names, :skill_inputs, :from_form
   before_save :set_tags, :set_skills
   after_save :set_projects
 
   has_attached_file :resume
   has_attached_file :profile, :styles => { :actual => "230x480>", :thumb => "100x100>" }
-  has_attached_file :list1, :styles => { :thumb => "61x61" }
+  has_attached_file :list1, :styles => { :thumb => "61x61", :small => "25x25" }
   has_attached_file :list2, :styles => { :thumb => "100x100>" }
 
   def set_tags
@@ -29,6 +35,9 @@ class Member < ActiveRecord::Base
       projects.delete_all
       selected_projects = (project_ids||[]).collect{|id| Project.find id}
       selected_projects.each{|project| self.projects << project }
+			prev_projects.delete_all
+			selected_prev_projects = (prev_project_ids||[]).collect{|id| Project.find id}
+      selected_prev_projects.each{|project| self.prev_projects << project }
     end
   end
 

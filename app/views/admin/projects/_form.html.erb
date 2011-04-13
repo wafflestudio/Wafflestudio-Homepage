@@ -55,6 +55,15 @@
         </td>
 			</tr>
 			<tr>
+				<td class="first" width="150"><strong>이전 멤버</strong></td>
+				<td class="last">
+          <% for member in Member.all %>
+            <%= check_box_tag 'project[prev_member_ids][]', member.id, false %>
+            <%= member.name %>
+          <% end %>
+        </td>
+			</tr>
+			<tr>
 				<td class="first" width="150"><strong>Logo</strong></td>
 				<td class="last">
 					<%= file_field_tag 'project[logo_img]' %><br />

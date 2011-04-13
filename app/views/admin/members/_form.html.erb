@@ -79,6 +79,15 @@
         </td>
 			</tr>
 			<tr>
+				<td class="first" width="150"><strong>이전 프로젝트</strong></td>
+				<td class="last">
+          <% for project in Project.all %>
+            <%= check_box_tag 'member[prev_project_ids][]', project.id, false %>
+            <%= project.name %>
+          <% end %>
+        </td>
+			</tr>
+			<tr>
 				<td class="first" width="150"><strong>이력서</strong></td>
 				<td class="last"><%= f.file_field 'resume' %></td>
 			</tr>

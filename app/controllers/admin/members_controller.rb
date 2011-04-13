@@ -19,7 +19,7 @@ class Admin::MembersController < AdminController
   end
 
   def edit
-    @member = Member.find params[:id], :include => [:projects]
+    @member = Member.find params[:id]
   end
 
   def update

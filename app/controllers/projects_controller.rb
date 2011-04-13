@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def show
-    @project = Project.find params[:id], :include => [:members]
+    @project = Project.find params[:id]
     @project[:thumbnail_urls] = @project.screenshots.map{|s| s.image.url(:thumb)}[0..2]
     @project[:screenshot_urls] = @project.screenshots.map{|s| s.image.url(:big)}[0..2]
     @project[:logo_url] = @project.logo.nil? ? nil : @project.logo.image.url(:logo)

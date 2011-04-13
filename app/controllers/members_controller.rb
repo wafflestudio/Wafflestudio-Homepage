@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def show
-    @member = Member.find params[:id], :include => [:projects]
+    @member = Member.find params[:id]
     @member[:profile_url] = @member.profile.url(:actual)
     @member[:resume_url] = @member.resume.url
     @member[:projects] = @member.projects.map do |p|
