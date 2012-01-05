@@ -103,6 +103,7 @@ function init_timeline(){
 function init_carousel(){
 	//top section의 카로슬 활성화
   $('#slider').nivoSlider({
+    effect: 'sliceDownRight,sliceDownLeft,sliceUpRight',
     slices: 8,
     animSpeed: 500,
     pauseTime: 5000,
