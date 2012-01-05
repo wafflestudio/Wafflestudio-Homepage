@@ -1,3 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require jquery.easing
+//= require jquery.nivo.slider
+//= require twitter-entities.js
+//= require jquery.tmpl.min
+//= require jquery.form
+//= require jquery.tipsy
+//= require jquery.colorbox-min
+//= require jquery.impromptu.min
+//= require jquery.slider
+//= require aga.min
+
 $(function(){
 	init_navigation();
   request_tweets();

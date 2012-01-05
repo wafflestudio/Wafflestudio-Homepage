@@ -26,7 +26,7 @@
   <div id="carousel">
     <div id="slider">
     <% @carousels.each do |carousel| %>
-    	<a href="#" onclick="slider_action(<%= "'#{carousel.action[:type]}', '#{carousel.action[:value]}'" %>);return false" ><%= image_tag carousel.c_image.url %></a>
+    	<a href="#" onclick="slider_action(<%= "'#{carousel.action[:type]}', '#{carousel.action[:value]}'" %>);return false" ><%= image_tag carousel.c_image.url(:middle) %></a>
     <% end %>
     </div>
   </div>
