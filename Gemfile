@@ -12,6 +12,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
