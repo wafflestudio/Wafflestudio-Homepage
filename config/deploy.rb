@@ -70,6 +70,7 @@ namespace :deploy do
   end
   task :symlink_shared, :roles => :web do
     run "ln -nfs #{shared_path}/db/production.sqlite3 #{latest_release}/db/production.sqlite3"
+    run "ln -nfs #{shared_path}/config/admin.yml #{latest_release}/config/admin.yml"
   end
   task :finalize_update, :roles => :web, :except => { :no_release => true } do
     run "chmod -R g+w #{latest_release}" if fetch(:group_writable, true)
