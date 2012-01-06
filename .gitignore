@@ -15,4 +15,4 @@
 /tmp
 
 /config/admin.yml
-/public/system
+/public/system/*
