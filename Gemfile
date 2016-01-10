@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2'
+gem 'rails', '= 4.0'
 gem 'rake'
 gem 'rdoc'
 gem 'paperclip'
@@ -15,6 +15,7 @@ gem 'jquery-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'therubyracer'
 
 # Use unicorn as the web server
 # gem 'unicorn'
