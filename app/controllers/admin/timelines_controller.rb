@@ -21,7 +21,7 @@ class Admin::TimelinesController < AdminController
     if @timeline.update_attributes(params[:timeline])
       render :text => 'success'
     else
-      render:text => 'fail', :status => 403
+      render :text => 'fail', :status => 403
     end
   end
 
