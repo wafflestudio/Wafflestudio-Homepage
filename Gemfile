@@ -5,11 +5,9 @@ gem 'rake'
 gem 'rdoc'
 gem 'paperclip'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 gem 'jquery-rails'
 
