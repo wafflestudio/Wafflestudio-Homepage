@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require 'yaml'
-require 'sha1'
+require 'digest/sha1'
 
 class AdminController < ApplicationController
   before_filter :authorized?, :except => [:authorize, :login]
@@ -41,6 +41,6 @@ class AdminController < ApplicationController
 
   def check_credential(id, password)
     credentials = YAML::load_file("#{Rails.root.to_s}/config/admin.yml")
-    !credentials.find{|c| c[:id] == id and c[:password] == SHA1::hexdigest(password)}.nil?
+    !credentials.find{|c| c[:id] == id and c[:password] == Digest::SHA1::hexdigest(password)}.nil?
   end
 end
