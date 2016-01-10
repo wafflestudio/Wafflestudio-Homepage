@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::CarouselsController < AdminController
   def index
     @carousels = Carousel.order('created_at desc')

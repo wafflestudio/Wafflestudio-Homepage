@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::ProjectsController < AdminController
   def index
     @projects = Project.all

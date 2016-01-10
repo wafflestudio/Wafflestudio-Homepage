@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::TimelinesController < AdminController
   def index
     @timelines = Timeline.order('took_place_at')

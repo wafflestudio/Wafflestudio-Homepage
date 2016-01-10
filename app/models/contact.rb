@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Contact < ActiveRecord::Base
 
   validates :email, :presence => {:message => '이메일 주소를 입력해 주세요.'}, :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, :message => '이메일 주소 형식이 잘못되었어요.'}

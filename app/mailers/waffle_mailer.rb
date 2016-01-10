@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class WaffleMailer < ActionMailer::Base
 
   def contact_to_waffle(contact)
