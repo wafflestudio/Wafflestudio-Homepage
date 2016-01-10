@@ -12,7 +12,7 @@
 body{
   font-family: 나눔고딕, NanumGothic, 돋움, dotum;
   font-size: 12px;
-  background: #aeafa0 url(asset-path('backgrounds/bg_pattern.jpg', 'assets')) center top;
+  background: #aeafa0 url(asset-path('backgrounds/bg_pattern.jpg')) center top;
 }
 /*overall style end*/
 
@@ -21,7 +21,7 @@ body{
 #container {
   width: 870px;
   margin: 0px auto;
-  background: url(asset-path('backgrounds/whole_bg.png', 'assets')) no-repeat;
+  background: url(asset-path('backgrounds/whole_bg.png')) no-repeat;
 }
 section {
   height: 600px;
@@ -69,7 +69,7 @@ nav.navigation {
       height: 73px;
       display: block;
       text-indent: -9999px;
-      background: url(asset-path('logo.png', 'assets')) no-repeat;
+      background: url(asset-path('logo.png')) no-repeat;
     }
   }
   h2 {
@@ -78,13 +78,13 @@ nav.navigation {
     position: absolute;
     right: 22px;
     top: 85px;
-    background: url(asset-path('sub_logo.png', 'assets')) no-repeat;
+    background: url(asset-path('sub_logo.png')) no-repeat;
     text-indent: -9999px;
   }
   nav.navigation {
     top: 48px;
     border: 1px solid #434343;
-    background: url(asset-path('backgrounds/white_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/white_bg.png'));
     li a {
       color: #6d6d6d;
       &.hover {
@@ -128,7 +128,7 @@ nav.navigation {
       margin: 1em;
       padding-left: 16px;
       display: block;
-      background: url(asset-path('tweet-loader.gif', 'assets')) no-repeat;
+      background: url(asset-path('tweet-loader.gif')) no-repeat;
     }
     .failed {
       margin: 1em;
@@ -145,7 +145,7 @@ nav.navigation {
 	display: block;
 	width: 127px;
 	height: 43px;
-	background: url(asset-path('buttons/follow_us.gif', 'assets')) no-repeat;
+	background: url(asset-path('buttons/follow_us.gif')) no-repeat;
 	position: absolute;
 	right: 5px;
 	top: 0px;
@@ -159,7 +159,7 @@ nav.navigation {
 #slider {
   width:355px; /* Change this to your images width */
   height:287px; /* Change this to your images height */
-  background:url(asset-path('nivo/loading.gif', 'assets')) no-repeat 50% 50%;
+  background:url(asset-path('nivo/loading.gif')) no-repeat 50% 50%;
   img {
     position:absolute;
     top:0px;
@@ -179,7 +179,7 @@ nav.navigation {
     display:block;
     width:22px;
     height:22px;
-    background:url(asset-path('nivo/bullets.png', 'assets')) no-repeat;
+    background:url(asset-path('nivo/bullets.png')) no-repeat;
     text-indent:-9999px;
     border:0;
     margin-right:3px;
@@ -193,7 +193,7 @@ nav.navigation {
   display:block;
   width:30px;
   height:30px;
-  background:url(asset-path('nivo/arrows.png', 'assets')) no-repeat;
+  background:url(asset-path('nivo/arrows.png')) no-repeat;
   text-indent:-9999px;
   border:0;
 }
@@ -214,7 +214,7 @@ a.nivo-prevNav {
   h1 {
     width: 396px;
     height: 267px;
-    background: url(asset-path('about_us.png', 'assets')) no-repeat;
+    background: url(asset-path('about_us.png')) no-repeat;
     position: absolute;
     right: 25px;
     top: 15px;
@@ -223,7 +223,7 @@ a.nivo-prevNav {
   nav.navigation {
     top: 150px;
     border: 1px solid #9d3329;
-    background: url(asset-path('backgrounds/white_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/white_bg.png'));
     li a {
       color: #272727;
       &.active {
@@ -280,14 +280,14 @@ a.nivo-prevNav {
   position: absolute;
   left: 65px;
   bottom: 0px;
-  background: url(asset-path('backgrounds/timeline_bg.png', 'assets')) no-repeat;
+  background: url(asset-path('backgrounds/timeline_bg.png')) no-repeat;
   li {
     width: 14px;
     height: 14px;
     position: absolute;
     top: -5px;
     display: block;
-    background: url(asset-path('icons/timeline_entry.png', 'assets')) no-repeat;
+    background: url(asset-path('icons/timeline_entry.png')) no-repeat;
     cursor: pointer;
     line-height: 0px;
     font-size: 0px;
@@ -304,7 +304,7 @@ a.nivo-prevNav {
   h1 {
     width: 453px;
     height: 86px;
-    background: url(asset-path('members.png', 'assets')) no-repeat;
+    background: url(asset-path('members.png')) no-repeat;
     position: absolute;
     left: 30px;
     top: 5px;
@@ -313,7 +313,7 @@ a.nivo-prevNav {
   nav.navigation {
     top: 150px;
     border: 1px solid #bfbbb6;
-    background: url(asset-path('backgrounds/white_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/white_bg.png'));
     li a {
       color: #272727;
       &.active {
@@ -440,7 +440,7 @@ a.nivo-prevNav {
     height: 20px;
     padding-left: 23px;
     display: block;
-    background: url(asset-path('pdf.png', 'assets')) no-repeat;
+    background: url(asset-path('pdf.png')) no-repeat;
     line-height: 20px;
     cursor: pointer;
     margin-bottom: 10px;
@@ -512,7 +512,7 @@ a.nivo-prevNav {
       left: 5px;
       line-height: 15px;
       text-align: center;
-      background: url(asset-path('backgrounds/black_bg.png', 'assets'));
+      background: url(asset-path('backgrounds/black_bg.png'));
       color: white;
       font-size: 11px;
     }
@@ -527,11 +527,11 @@ a.nivo-prevNav {
     }
     .prev {
       left: 0px;
-      background: url(asset-path('colorbox/arrows.png', 'assets')) no-repeat;
+      background: url(asset-path('colorbox/arrows.png')) no-repeat;
     }
     .next{
       right: 0px;
-      background: url(asset-path('colorbox/arrows.png', 'assets')) no-repeat -30px;
+      background: url(asset-path('colorbox/arrows.png')) no-repeat -30px;
     }
     &.disabled {
       cursor: default;
@@ -554,7 +554,7 @@ a.nivo-prevNav {
     width: 281px;
     height: 86px;
     text-indent: -9999px;
-    background: url(asset-path('projects.png', 'assets')) no-repeat;
+    background: url(asset-path('projects.png')) no-repeat;
     position: absolute;
     top: 18px;
     right: 28px;
@@ -563,7 +563,7 @@ a.nivo-prevNav {
     width: 240px;
     height: 21px;
     text-indent: -9999px;
-    background: url(asset-path('sub_projects.png', 'assets')) no-repeat;
+    background: url(asset-path('sub_projects.png')) no-repeat;
     position: absolute;
     top: 110px;
     right: 28px;
@@ -571,7 +571,7 @@ a.nivo-prevNav {
   nav.navigation {
     top: 20px;
     border: 1px solid #4e361a;
-    background: url(asset-path('backgrounds/white_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/white_bg.png'));
     li a {
       color: #7a604c;
       &.active {
@@ -591,7 +591,7 @@ a.nivo-prevNav {
   .project_name {
     font-size: 25px;
     font-weight: bold;
-    background: url(asset-path('backgrounds/black_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/black_bg.png'));
     color: white;
     padding: 10px 15px;
     float: left;
@@ -599,7 +599,7 @@ a.nivo-prevNav {
   }
   .project_subtitle {
     font-size: 14px;
-    background: url(asset-path('backgrounds/black_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/black_bg.png'));
     color: white;
     padding: 4px 7px;
     float: left;
@@ -632,7 +632,7 @@ a.nivo-prevNav {
     width: 16px;
     height: 43px;
     cursor: pointer;
-    background: url(asset-path('buttons/view.png', 'assets'));
+    background: url(asset-path('buttons/view.png'));
   }
 }
 .project_popup {
@@ -642,7 +642,7 @@ a.nivo-prevNav {
     margin: 20px 40px 10px 40px;
     padding: 10px;
     position: relative;
-    background: url(asset-path('backgrounds/black_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/black_bg.png'));
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -745,7 +745,7 @@ a.nivo-prevNav {
       left: 5px;
       line-height: 15px;
       text-align: center;
-      background: url(asset-path('backgrounds/black_bg.png', 'assets'));
+      background: url(asset-path('backgrounds/black_bg.png'));
       color: white;
       font-size: 11px;
     }
@@ -767,11 +767,11 @@ a.nivo-prevNav {
     }
     &.prev {
       left: 0px;
-      background: url(asset-path('colorbox/arrows.png', 'assets')) no-repeat;
+      background: url(asset-path('colorbox/arrows.png')) no-repeat;
     }
     &.next{
       right: 0px;
-      background: url(asset-path('colorbox/arrows.png', 'assets')) no-repeat -30px;
+      background: url(asset-path('colorbox/arrows.png')) no-repeat -30px;
     }
     &.disabled{
       cursor: default;
@@ -794,7 +794,7 @@ a.nivo-prevNav {
     width: 281px;
     height: 67px;
     text-indent: -9999px;
-    background: url(asset-path('contact.png', 'assets')) no-repeat;
+    background: url(asset-path('contact.png')) no-repeat;
     position: absolute;
     top: 0px;
     left: 50%;
@@ -804,7 +804,7 @@ a.nivo-prevNav {
     width: 345px;
     height: 35px;
     text-indent: -9999px;
-    background: url(asset-path('sub_contact.png', 'assets')) no-repeat;
+    background: url(asset-path('sub_contact.png')) no-repeat;
     position: absolute;
     top: 80px;
     left: 50%;
@@ -813,7 +813,7 @@ a.nivo-prevNav {
   nav.navigation {
     top: 150px;
     border: 1px solid #233245;
-    background: url(asset-path('backgrounds/white_bg.png', 'assets'));
+    background: url(asset-path('backgrounds/white_bg.png'));
     li a {
       color: #596b79;
       &.active {
@@ -907,32 +907,32 @@ form {
   }
   &.sending {
     color: white;
-    background: #A5B897 url(asset-path('contact_submit_loader.gif', 'assets')) no-repeat 75px 50%;
+    background: #A5B897 url(asset-path('contact_submit_loader.gif')) no-repeat 75px 50%;
   }
 }
 /*contact section end*/
 footer {
   height: 425px;
-	background: url(asset-path('backgrounds/waffle.png', 'assets')) no-repeat center top;
+	background: url(asset-path('backgrounds/waffle.png')) no-repeat center top;
 }
 /*image loader*/
 #invisible {
-	background: url(asset-path('contact_submit_loader.gif', 'assets'));
-  background: url(asset-path('tweet-loader.gif', 'assets'));
-  background: url(asset-path('pdf.png', 'assets'));
-  background: url(asset-path('colorbox/arrows.png', 'assets'));
+	background: url(asset-path('contact_submit_loader.gif'));
+  background: url(asset-path('tweet-loader.gif'));
+  background: url(asset-path('pdf.png'));
+  background: url(asset-path('colorbox/arrows.png'));
 }
 #top {
 	position: fixed;
 	bottom: 20px;
 	width: 59px;
 	height: 59px;
-	background: url(asset-path('buttons/top.png', 'assets')) no-repeat 0px -59px;
+	background: url(asset-path('buttons/top.png')) no-repeat 0px -59px;
 	text-indent: -9999px;
 	display: block;
 	left: 50%;
   &.hover {
-    background: url(asset-path('buttons/top.png', 'assets')) no-repeat;
+    background: url(asset-path('buttons/top.png')) no-repeat;
   }
 }
 #fb-wrapper {
