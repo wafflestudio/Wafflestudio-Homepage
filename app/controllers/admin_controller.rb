@@ -13,7 +13,7 @@ class AdminController < ApplicationController
   end
 
   def index
-    @unread_contacts_cnt = Contact.count :all, :conditions => {:status => 'unread'}
+    @unread_contacts_cnt = Contact.where(:status => 'unread').count
   end
 
   def authorize
