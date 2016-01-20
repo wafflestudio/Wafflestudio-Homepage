@@ -1,15 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '4.2.5'
 gem 'rake'
 gem 'rdoc'
 gem 'paperclip'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
 
 gem 'jquery-rails'
 
@@ -17,6 +15,7 @@ gem 'jquery-rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'therubyracer'
 
 # Use unicorn as the web server
 # gem 'unicorn'

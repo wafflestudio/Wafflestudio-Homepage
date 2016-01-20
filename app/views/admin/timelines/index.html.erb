@@ -30,7 +30,7 @@
       <%= select_date timeline.took_place_at, {:order => [:year, :month, :day], :start_year => 2000, :end_year => 2030, :use_month_numbers => true, :prefix => "took_place_at_#{timeline.id}"} %>
     </td>
     <td>
-      <%= link_to_function '변경', "update_timeline(#{timeline.id})" %>
+      <%= link_to '변경', "#", onclick: "update_timeline(#{timeline.id})" %>
     </td>
     <td><%= link_to image_tag('admin/hr.gif'), admin_timeline_url(timeline), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

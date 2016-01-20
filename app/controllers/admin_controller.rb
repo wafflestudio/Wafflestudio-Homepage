@@ -1,5 +1,7 @@
+# encoding: utf-8
+
 require 'yaml'
-require 'sha1'
+require 'digest/sha1'
 
 class AdminController < ApplicationController
   before_filter :authorized?, :except => [:authorize, :login]
@@ -11,7 +13,7 @@ class AdminController < ApplicationController
   end
 
   def index
-    @unread_contacts_cnt = Contact.count :all, :conditions => {:status => 'unread'}
+    @unread_contacts_cnt = Contact.where(:status => 'unread').count
   end
 
   def authorize
@@ -39,6 +41,6 @@ class AdminController < ApplicationController
 
   def check_credential(id, password)
     credentials = YAML::load_file("#{Rails.root.to_s}/config/admin.yml")
-    !credentials.find{|c| c[:id] == id and c[:password] == SHA1::hexdigest(password)}.nil?
+    !credentials.find{|c| c[:id] == id and c[:password] == Digest::SHA1::hexdigest(password)}.nil?
   end
 end

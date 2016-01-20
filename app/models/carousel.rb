@@ -1,5 +1,6 @@
 class Carousel < ActiveRecord::Base
   has_attached_file :c_image, :styles => {:middle => '340x260#', :thumb => '150x150>'}
+  validates_attachment_content_type :c_image, :content_type => /\Aimage\/.*\Z/
   serialize :action, Hash
   attr_accessor :action_type, :action_value, :from_form
 

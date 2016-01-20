@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   has_many :involvements
-	has_many :projects, :through => :involvements, :conditions => "involvements.status = 'current'"
-	has_many :prev_projects, :through => :involvements, :source => :project, :conditions => "involvements.status = 'previous'" do
+	has_many :projects, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
+	has_many :prev_projects, -> {where(:involvements => {:status => 'previous'})}, :source => :project, :through => :involvements do
 		def <<(prev_project)
 			Involvement.send(:with_scope, :create => {:status => 'previous'}) {self.concat prev_project}
 		end
@@ -16,6 +16,22 @@ class Member < ActiveRecord::Base
   has_attached_file :profile, :styles => { :actual => "230x480>", :thumb => "100x100>" }
   has_attached_file :list1, :styles => { :thumb => "61x61", :small => "25x25" }
   has_attached_file :list2, :styles => { :thumb => "100x100>" }
+  validates_attachment_content_type :resume, :content_type => /\Aapplication\/.*\Z/
+  validates_attachment_content_type :profile, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :list1, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :list2, :content_type => /\Aimage\/.*\Z/
+
+  def resume_url
+    resume.url
+  end
+
+  def profile_url_actual
+    profile.url(:actual)
+  end
+
+  def list1_url_thumb
+    list1.url(:thumb)
+  end
 
   def set_tags
     unless from_form.nil?

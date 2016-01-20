@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   has_many :involvements
-	has_many :members, :through => :involvements, :conditions => "involvements.status = 'current'"
-	has_many :prev_members, :through => :involvements, :source => :member, :conditions => "involvements.status = 'previous'" do
+	has_many :members, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
+	has_many :prev_members, -> {where(:involvements => {:status => 'previous'})}, :source => :member, :through => :involvements do
 		def <<(prev_member)
 			Involvement.send(:with_scope, :create => {:status => 'previous'}) {self.concat prev_member}
 		end

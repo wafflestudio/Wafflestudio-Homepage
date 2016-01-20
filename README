@@ -1,3 +1,6 @@
+0. ImageMagick 설치
+$ sudo apt-get install imagemagick
+
 1. 젬 설치
 $ bundle install
 

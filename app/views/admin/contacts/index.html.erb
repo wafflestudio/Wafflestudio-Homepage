@@ -23,7 +23,7 @@
     <td><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></td>
     <td>
       <%= select_tag :status, options_for_select(Contact.available_statuses, contact.status).html_safe %>
-      <%= link_to_function '변경', "change_status(#{contact.id})" %>
+      <%= link_to '변경', '#', onclick: "change_status(#{contact.id})" %>
     </td>
     <td><%= link_to image_tag('admin/hr.gif'), admin_contact_url(contact), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -59,11 +59,8 @@ function change_status(id){
   });
 }
 $(function(){
-  $('tr.contact td:first-child').toggle(function(e){
-    $(this).parent().next().show();
-  }, function(e){
-    e.stopPropagation();
-    $(this).parent().next().hide();
+  $('tr.contact td:first-child').click(function (){
+    $(this).parent().next().toggle("fast");
   });
 });
 </script>

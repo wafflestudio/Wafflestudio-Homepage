@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::CarouselsController < AdminController
   def index
     @carousels = Carousel.order('created_at desc')
@@ -8,7 +10,7 @@ class Admin::CarouselsController < AdminController
   end
 
   def create
-    @carousel = Carousel.new(params[:carousel])
+    @carousel = Carousel.new(carousel_params)
     if @carousel.save
       flash[:notice] = '생성완료'
       redirect_to admin_carousels_path
@@ -20,7 +22,7 @@ class Admin::CarouselsController < AdminController
 
   def update
     @carousel = Carousel.find params[:id]
-    if @carousel.update_attributes(params[:carousel])
+    if @carousel.update_attributes(carousel_params)
       render :text => 'success'
     else
       render :text => 'fail', :status => 403
@@ -30,5 +32,10 @@ class Admin::CarouselsController < AdminController
   def destroy
     Carousel.destroy(params[:id])
     redirect_to admin_carousels_path
+  end
+
+  private
+  def carousel_params
+    params.require(:carousel).permit(:from_form, :c_image, :visibility, :action_type, :action_value)
   end
 end

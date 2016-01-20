@@ -22,7 +22,7 @@
     <td><%= select_tag :visibility, options_for_select(Carousel.available_visibility_options, carousel.visibility).html_safe %></td>
     <td><%= select_tag :action_type, options_for_select(Carousel.available_action_types, carousel.action[:type]).html_safe %></td>
     <td><%= text_field_tag :action_value, carousel.action[:value] %></td>
-    <td><%= link_to_function '변경', "update_carousel(#{carousel.id});" %></td>
+    <td><%= link_to '변경', "", onclick: "update_carousel(#{carousel.id});" %></td>
     <td><%= link_to image_tag('admin/hr.gif'), admin_carousel_url(carousel), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Admin::ProjectsController < AdminController
   def index
     @projects = Project.all
@@ -8,7 +10,7 @@ class Admin::ProjectsController < AdminController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(project_params)
     if @project.save
       flash[:notice] = '생성완료'
       redirect_to admin_projects_path
@@ -24,7 +26,9 @@ class Admin::ProjectsController < AdminController
 
   def update
     @project = Project.find params[:id]
-    if @project.update_attributes(params[:project])
+    if @project.update_attributes(project_params)
+      puts @project.from_form
+      puts '수정'
       flash[:notice] = '수정완료'
       redirect_to admin_projects_path
     else
@@ -42,4 +46,10 @@ class Admin::ProjectsController < AdminController
     Screenshot.destroy(params[:id])
     redirect_to :back
   end
+
+  private
+  def project_params
+    params.require(:project).permit(:from_form, :name, :subtitle, :description, :start_date, :status, :link, :logo_img, :featured_img, :member_ids => [], :prev_member_ids => [], :screenshot_files => [])
+  end
+
 end
