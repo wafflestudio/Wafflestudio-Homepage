@@ -6,4 +6,20 @@ class Screenshot < ActiveRecord::Base
   def image_small
     image.url(:small)
   end
+
+  def image_big
+    image.url(:big)
+  end
+
+  def image_featured
+    image.url(:featured)
+  end
+
+  def image_thumb
+    image.url(:thumb)
+  end
+
+  def image_logo
+    image.url(:logo)
+  end
 end
