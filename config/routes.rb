@@ -65,7 +65,7 @@ Waffle::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   get 'admin', :to => 'admin#login'
   get 'admin/index', :to => 'admin#index', :as => :admin_index
-  get 'admin/authorize', :to => 'admin#authorize'
+  post 'admin/authorize', :to => 'admin#authorize'
   get 'admin/logout', :to => 'admin#logout'
   delete 'admin/screenshot/:id', :to => 'admin/projects#destroy_screenshot', :as => :admin_screenshots
 end

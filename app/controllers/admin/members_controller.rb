@@ -10,7 +10,7 @@ class Admin::MembersController < AdminController
   end
 
   def create
-    @member = Member.new(params[:member]) 
+    @member = Member.new(member_params) 
     if @member.save
       flash[:notice] = '생성완료'
       redirect_to admin_members_path
@@ -26,7 +26,7 @@ class Admin::MembersController < AdminController
 
   def update
     @member = Member.find params[:id]
-    if @member.update_attributes(params[:member])
+    if @member.update_attributes(member_params)
       flash[:notice] = '수정완료'
       redirect_to admin_members_path
     else
@@ -38,6 +38,11 @@ class Admin::MembersController < AdminController
   def destroy
     Member.destroy(params[:id])
     redirect_to admin_members_path
+  end
+
+  private
+  def member_params
+    params.require(:member).permit(:from_form, :name, :name_eng, :grade, :email, :twitter, :school, :website, :resume, :profile, :list1, :list2, :comment, :tag_names => [], :skill_inputs => [:name, :degree], :project_ids => [], :prev_project_ids => [])
   end
 
 end

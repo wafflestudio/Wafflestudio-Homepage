@@ -59,11 +59,8 @@ function change_status(id){
   });
 }
 $(function(){
-  $('tr.contact td:first-child').toggle(function(e){
-    $(this).parent().next().show();
-  }, function(e){
-    e.stopPropagation();
-    $(this).parent().next().hide();
+  $('tr.contact td:first-child').click(function (){
+    $(this).parent().next().toggle("fast");
   });
 });
 </script>
