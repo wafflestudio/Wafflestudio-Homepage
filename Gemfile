@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.5'
 gem 'rake'
 gem 'rdoc'
 gem 'paperclip'
