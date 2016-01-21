@@ -3,7 +3,7 @@ class Project < ActiveRecord::Base
 	has_many :members, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
 	has_many :prev_members, -> {where(:involvements => {:status => 'previous'})}, :source => :member, :through => :involvements do
 		def <<(prev_member)
-			Involvement.send(:with_scope, :create => {:status => 'previous'}) {self.concat prev_member}
+			Involvement.where(:status => 'previous').scoping {self.concat prev_member}
 		end
 	end
 	has_one :featured, :class_name => "Screenshot", :foreign_key => "featuring_id"
