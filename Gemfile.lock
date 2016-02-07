@@ -50,7 +50,9 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
+    daemons (1.2.3)
     erubis (2.7.0)
+    eventmachine (1.0.9.1)
     execjs (2.6.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -68,15 +70,16 @@ GEM
     mime-types (2.99)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
-    minitest (5.8.3)
-    nokogiri (1.6.7.1)
+    minitest (5.8.4)
+    nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    paperclip (4.3.2)
+    paperclip (4.3.4)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -97,7 +100,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (4.2.5)
       actionpack (= 4.2.5)
@@ -106,7 +109,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
     rdoc (4.2.1)
-      json (~> 1.4)
     ref (2.0.0)
     sass (3.4.21)
     sass-rails (5.0.4)
@@ -118,16 +120,17 @@ GEM
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
-    sprockets-rails (3.0.0)
+    sprockets-rails (3.0.1)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.11)
-    sqlite3-ruby (1.3.3)
-      sqlite3 (>= 1.3.3)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
+    thin (1.6.4)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -144,12 +147,13 @@ DEPENDENCIES
   coffee-rails
   jquery-rails
   paperclip
+  pg
   rails (= 4.2.5)
   rake
   rdoc
   sass-rails
-  sqlite3-ruby
   therubyracer
+  thin
   uglifier
 
 BUNDLED WITH

@@ -9,12 +9,15 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110413065100) do
+ActiveRecord::Schema.define(version: 20110413065100) do
 
-  create_table "carousels", :force => true do |t|
-    t.string   "visibility",           :default => "invisible"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "carousels", force: :cascade do |t|
+    t.string   "visibility",           default: "invisible"
     t.string   "c_image_file_name"
     t.string   "c_image_content_type"
     t.string   "action"
@@ -22,35 +25,35 @@ ActiveRecord::Schema.define(:version => 20110413065100) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts", :force => true do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "phone"
     t.text     "message"
-    t.string   "status",      :default => "unread"
-    t.string   "mail_status", :default => "unsent"
+    t.string   "status",      default: "unread"
+    t.string   "mail_status", default: "unsent"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "involvements", :force => true do |t|
+  create_table "involvements", force: :cascade do |t|
     t.integer  "member_id"
     t.integer  "project_id"
-    t.string   "status",     :default => "current"
+    t.string   "status",     default: "current"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "members", :force => true do |t|
-    t.string   "name",                                      :null => false
+  create_table "members", force: :cascade do |t|
+    t.string   "name",                                   null: false
     t.string   "name_eng"
-    t.string   "tags",                 :default => ""
-    t.string   "skills",               :default => ""
-    t.string   "school",               :default => ""
-    t.string   "email",                :default => ""
-    t.string   "website",              :default => ""
-    t.string   "twitter",              :default => ""
-    t.text     "comment",              :default => ""
+    t.string   "tags",                 default: ""
+    t.string   "skills",               default: ""
+    t.string   "school",               default: ""
+    t.string   "email",                default: ""
+    t.string   "website",              default: ""
+    t.string   "twitter",              default: ""
+    t.text     "comment",              default: ""
     t.string   "resume_file_name"
     t.string   "resume_content_type"
     t.string   "list1_file_name"
@@ -61,26 +64,26 @@ ActiveRecord::Schema.define(:version => 20110413065100) do
     t.string   "profile_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "grade",                :default => "cream"
+    t.string   "grade",                default: "cream"
   end
 
-  create_table "members_projects", :id => false, :force => true do |t|
+  create_table "members_projects", id: false, force: :cascade do |t|
     t.integer "member_id"
     t.integer "project_id"
   end
 
-  create_table "projects", :force => true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.date     "start_date"
-    t.string   "status",      :default => "on"
+    t.string   "status",      default: "on"
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "subtitle"
   end
 
-  create_table "screenshots", :force => true do |t|
+  create_table "screenshots", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "image_file_name"
     t.string   "image_content_type"
@@ -90,7 +93,7 @@ ActiveRecord::Schema.define(:version => 20110413065100) do
     t.integer  "logo_of_id"
   end
 
-  create_table "timelines", :force => true do |t|
+  create_table "timelines", force: :cascade do |t|
     t.string   "name"
     t.date     "took_place_at"
     t.datetime "created_at"
