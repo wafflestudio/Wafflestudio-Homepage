@@ -309,6 +309,13 @@ function init_members(){
 	//멤버 리스트 초기화 
   var members = $('.member');
   var member_tags = $('#member_tags li');
+  var member_list_toggle = $('#member_list_toggle li');
+  var member_list = $('.member_list')
+  member_list_toggle.click(function(){
+  	// 멤버 리스트 토클 클릭시 멤버리스트 교체
+    member_list_toggle.toggle();
+    member_list.fadeToggle();
+  });
   members.hover(function(){
   	//호버 시 슬라이드업 되면서 이름 보여줌
     $(this).children('.member_thumb').stop().animate({'top': '-17px'}, 150);

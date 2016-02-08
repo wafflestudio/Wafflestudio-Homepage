@@ -325,10 +325,27 @@ a.nivo-prevNav {
     }
   }
 }
+#member_list_toggle {
+  position: absolute;
+  left: 35px;
+  top: 310px;
+  li {
+    min-width: 120px;
+    margin-bottom: 6px;
+    padding: 4px 10px;
+    color: black;
+    cursor: pointer;
+    float: left;
+    clear: left;
+    font-size: 14px;
+    background: white;
+    box-shadow: 1px 1px 1px black;
+  }
+}
 #member_tags {
   position: absolute;
   left: 40px;
-  top: 310px;
+  top: 350px;
   li {
     margin-bottom: 6px;
     padding: 3px 6px;
@@ -339,7 +356,7 @@ a.nivo-prevNav {
     font-size: 13px;
   }
 }
-#member_list {
+.member_list {
   width: 590px;
   height: 400px;
   position: absolute;
