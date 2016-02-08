@@ -2,7 +2,7 @@
 
 class Admin::MembersController < AdminController
   def index
-    @members = Member.all.order(:group, :id)
+    @members = Member.all
   end
 
   def new

@@ -13,6 +13,8 @@ class Project < ActiveRecord::Base
   attr_accessor :screenshot_files, :member_ids, :prev_member_ids, :from_form, :featured_img, :logo_img
   after_save :add_screenshots, :set_members
 
+  default_scope { order(:start_date) }
+
   def self.available_statuses
     ['on', 'off', 'develop']
     # on - 서비스 중, off - 활동 안 함, develop - 개발 중

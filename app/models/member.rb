@@ -6,11 +6,14 @@ class Member < ActiveRecord::Base
       Involvement.where(:status => 'previous').scoping {self.concat prev_project}
     end
   end
+
   serialize :tags
   serialize :skills
   attr_accessor :project_ids, :prev_project_ids, :tag_names, :skill_inputs, :from_form
   before_save :set_tags, :set_skills
   after_save :set_projects
+
+  default_scope { order(:group, :id) }
 
   has_attached_file :resume
   has_attached_file :profile, :styles => { :actual => "230x480>", :thumb => "100x100>" }
