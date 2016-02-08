@@ -30,8 +30,16 @@
 				<td class="last"><%= f.text_field 'name_eng' %></td>
 			</tr>
 			<tr>
+				<td class="first" width="150"><strong>기수</strong></td>
+				<td class="last"><%= f.text_field 'group' %></td>
+			</tr>
+			<tr>
 				<td class="first" width="150"><strong>등급</strong></td>
 				<td class="last"><%= f.select :grade, Member.available_grades, {:selected => @member.grade} %></td>
+			</tr>
+			<tr>
+				<td class="first" width="150"><strong>보이기</strong></td>
+				<td class="last"><%= f.check_box 'is_visible' %></td>
 			</tr>
 			<tr>
 				<td class="first" width="150"><strong>이메일</strong></td>
