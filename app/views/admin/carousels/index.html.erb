@@ -2,31 +2,31 @@
 <p><%= flash[:notice] %></p>
 <p><%= flash[:error] %></p>
 <%= link_to image_tag('admin/add-icon.gif')+"new carousel", new_admin_carousel_path %>
-	<p>동작종류-값(url-주소, member&amp;project-id)<br/>그림크기:355x287</p>
+<p>동작종류-값(url-주소, member&amp;project-id)<br/>그림크기:355x287</p>
 <div class="table">
-	<%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
-	<%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-<table class="listing" cellpadding="0" cellspacing="0">
-  <tr>
-    <th class="first">image</th>
-    <th>visibility</th>
-    <th>동작 종류</th>
-    <th>동작 값</th>
-    <th>변경</th>
-    <th class="last">삭제</th>
-  </tr>
+  <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
+  <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0">
+    <tr>
+      <th class="first">image</th>
+      <th>visibility</th>
+      <th>동작 종류</th>
+      <th>동작 값</th>
+      <th>변경</th>
+      <th class="last">삭제</th>
+    </tr>
 
-<% @carousels.each do |carousel| %>
-  <tr id="carousel_<%= carousel.id %>" class="carousel">
-    <td><%= image_tag carousel.c_image.url(:thumb) %></td>
-    <td><%= select_tag :visibility, options_for_select(Carousel.available_visibility_options, carousel.visibility).html_safe %></td>
-    <td><%= select_tag :action_type, options_for_select(Carousel.available_action_types, carousel.action[:type]).html_safe %></td>
-    <td><%= text_field_tag :action_value, carousel.action[:value] %></td>
-    <td><%= link_to '변경', "#", onclick: "update_carousel(#{carousel.id});" %></td>
-    <td><%= link_to image_tag('admin/hr.gif'), admin_carousel_url(carousel), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @carousels.each do |carousel| %>
+    <tr id="carousel_<%= carousel.id %>" class="carousel">
+      <td><%= image_tag carousel.c_image.url(:thumb) %></td>
+      <td><%= select_tag :visibility, options_for_select(Carousel.available_visibility_options, carousel.visibility).html_safe %></td>
+      <td><%= select_tag :action_type, options_for_select(Carousel.available_action_types, carousel.action[:type]).html_safe %></td>
+      <td><%= text_field_tag :action_value, carousel.action[:value] %></td>
+      <td><%= link_to '변경', "#", onclick: "update_carousel(#{carousel.id});" %></td>
+      <td><%= link_to image_tag('admin/hr.gif'), admin_carousel_url(carousel), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 </div>
 <div style="clear:both"></div>
 <%= link_to image_tag('admin/add-icon.gif')+"new carousel", new_admin_carousel_path %>

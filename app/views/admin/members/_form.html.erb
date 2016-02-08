@@ -15,60 +15,60 @@
   <%= f.hidden_field 'from_form', :value => 1 %>
 
   <div class="table">
-		<table class="listing form" cellpadding="0" cellspacing="0">
+    <table class="listing form" cellpadding="0" cellspacing="0">
       <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
       <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-			<tr>
-				<th class="full" colspan="2"><%= yield(:title) %></th>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이름</strong></td>
-				<td class="last"><%= f.text_field 'name' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이름(영문)</strong></td>
-				<td class="last"><%= f.text_field 'name_eng' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>기수</strong></td>
-				<td class="last"><%= f.text_field 'group' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>등급</strong></td>
-				<td class="last"><%= f.select :grade, Member.available_grades %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>보이기</strong></td>
-				<td class="last"><%= f.check_box 'is_visible' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이메일</strong></td>
-				<td class="last"><%= f.text_field 'email' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>트위터</strong></td>
-				<td class="last"><%= f.text_field 'twitter' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>소속(학교)</strong></td>
-				<td class="last"><%= f.text_field 'school' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>웹사이트</strong></td>
-				<td class="last"><%= f.text_field 'website' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>태그</strong></td>
-				<td class="last">
+      <tr>
+        <th class="full" colspan="2"><%= yield(:title) %></th>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이름</strong></td>
+        <td class="last"><%= f.text_field 'name' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이름(영문)</strong></td>
+        <td class="last"><%= f.text_field 'name_eng' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>기수</strong></td>
+        <td class="last"><%= f.text_field 'group' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>등급</strong></td>
+        <td class="last"><%= f.select :grade, Member.available_grades %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>보이기</strong></td>
+        <td class="last"><%= f.check_box 'is_visible' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이메일</strong></td>
+        <td class="last"><%= f.text_field 'email' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>트위터</strong></td>
+        <td class="last"><%= f.text_field 'twitter' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>소속(학교)</strong></td>
+        <td class="last"><%= f.text_field 'school' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>웹사이트</strong></td>
+        <td class="last"><%= f.text_field 'website' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>태그</strong></td>
+        <td class="last">
           <% for tag in Member.available_tags %>
             <%= check_box_tag 'member[tag_names][]', tag, false %>
             <%= tag %>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>기술</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>기술</strong></td>
+        <td class="last">
           <% for i in (1..5) %>
             <div class="skill">
               <label>종류:</label><%= text_field_tag 'member[skill_inputs][][name]', '', :class => 'skill_name' %>
@@ -76,46 +76,46 @@
             </div>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>프로젝트</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>프로젝트</strong></td>
+        <td class="last">
           <% for project in Project.all %>
             <%= check_box_tag 'member[project_ids][]', project.id, false %>
             <%= project.name %>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이전 프로젝트</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이전 프로젝트</strong></td>
+        <td class="last">
           <% for project in Project.all %>
             <%= check_box_tag 'member[prev_project_ids][]', project.id, false %>
             <%= project.name %>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이력서</strong></td>
-				<td class="last"><%= f.file_field 'resume' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>전신샷</strong></td>
-				<td class="last"><%= f.file_field 'profile' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>섬네일1</strong></td>
-				<td class="last"><%= f.file_field 'list1' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>섬네일2</strong></td>
-				<td class="last"><%= f.file_field 'list2' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>코멘트</strong></td>
-				<td class="last"><%= f.text_area 'comment' %></td>
-			</tr>
-		</table>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이력서</strong></td>
+        <td class="last"><%= f.file_field 'resume' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>전신샷</strong></td>
+        <td class="last"><%= f.file_field 'profile' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>섬네일1</strong></td>
+        <td class="last"><%= f.file_field 'list1' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>섬네일2</strong></td>
+        <td class="last"><%= f.file_field 'list2' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>코멘트</strong></td>
+        <td class="last"><%= f.text_area 'comment' %></td>
+      </tr>
+    </table>
   </div>
 
   <div class="actions">

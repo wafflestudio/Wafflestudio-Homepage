@@ -93,7 +93,7 @@ nav.navigation {
     }
   }
 }
-	/*tweet box*/
+  /*tweet box*/
 #tweetbox {
   width: 340px;
   position: absolute;
@@ -142,15 +142,15 @@ nav.navigation {
   }
 }
 #follow_us {
-	display: block;
-	width: 127px;
-	height: 43px;
-	background: url(asset-path('buttons/follow_us.gif')) no-repeat;
-	position: absolute;
-	right: 5px;
-	top: 0px;
+  display: block;
+  width: 127px;
+  height: 43px;
+  background: url(asset-path('buttons/follow_us.gif')) no-repeat;
+  position: absolute;
+  right: 5px;
+  top: 0px;
 }
-	/*carousel*/
+  /*carousel*/
 #carousel {
   position: absolute;
   top: 240px;
@@ -254,9 +254,9 @@ a.nivo-prevNav {
   }
 }
 #about_us_body {
-	position: absolute;
-	top: 320px;
-	left: 40px;
+  position: absolute;
+  top: 320px;
+  left: 40px;
   li {
     width: 225px;
     float: left;
@@ -273,7 +273,7 @@ a.nivo-prevNav {
     text-align: justify;
   }
 }
-	/*timeline*/
+  /*timeline*/
 #timeline {
   width: 671px;
   height: 25px;
@@ -299,7 +299,7 @@ a.nivo-prevNav {
 
 /*members section start*/
 #members {
-	margin-top: 200px;
+  margin-top: 200px;
   height: 650px;
   h1 {
     width: 453px;
@@ -930,24 +930,24 @@ form {
 /*contact section end*/
 footer {
   height: 425px;
-	background: url(asset-path('backgrounds/waffle.png')) no-repeat center top;
+  background: url(asset-path('backgrounds/waffle.png')) no-repeat center top;
 }
 /*image loader*/
 #invisible {
-	background: url(asset-path('contact_submit_loader.gif'));
+  background: url(asset-path('contact_submit_loader.gif'));
   background: url(asset-path('tweet-loader.gif'));
   background: url(asset-path('pdf.png'));
   background: url(asset-path('colorbox/arrows.png'));
 }
 #top {
-	position: fixed;
-	bottom: 20px;
-	width: 59px;
-	height: 59px;
-	background: url(asset-path('buttons/top.png')) no-repeat 0px -59px;
-	text-indent: -9999px;
-	display: block;
-	left: 50%;
+  position: fixed;
+  bottom: 20px;
+  width: 59px;
+  height: 59px;
+  background: url(asset-path('buttons/top.png')) no-repeat 0px -59px;
+  text-indent: -9999px;
+  display: block;
+  left: 50%;
   &.hover {
     background: url(asset-path('buttons/top.png')) no-repeat;
   }
