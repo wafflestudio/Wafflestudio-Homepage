@@ -49,7 +49,7 @@ class Admin::ProjectsController < AdminController
 
   private
   def project_params
-    params.require(:project).permit(:from_form, :name, :subtitle, :description, :start_date, :status, :link, :logo_img, :featured_img, :member_ids => [], :prev_member_ids => [], :screenshot_files => [])
+    params.require(:project).permit(:from_form, :name, :subtitle, :description, :start_date, :is_visible, :status, :link, :logo_img, :featured_img, :member_ids => [], :prev_member_ids => [], :screenshot_files => [])
   end
 
 end

@@ -14,7 +14,8 @@ class Project < ActiveRecord::Base
   after_save :add_screenshots, :set_members
 
   def self.available_statuses
-    ['on', 'off']
+    ['on', 'off', 'develop']
+    # on - 서비스 중, off - 활동 안 함, develop - 개발 중
   end
 
   def add_screenshots

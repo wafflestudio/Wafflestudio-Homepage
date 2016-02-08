@@ -38,6 +38,10 @@
         <td class="last"><%= f.date_field 'start_date' %></td>
       </tr>
       <tr>
+        <td class="first" width="150"><strong>보이기</strong></td>
+        <td class="last"><%= f.check_box 'is_visible' %></td>
+      </tr>
+      <tr>
         <td class="first" width="150"><strong>상태</strong></td>
         <td class="last"><%= f.select :status, Project.available_statuses %></td>
       </tr>
