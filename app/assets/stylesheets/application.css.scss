@@ -280,18 +280,27 @@ a.nivo-prevNav {
   position: absolute;
   left: 65px;
   bottom: 0px;
-  background: url(asset-path('backgrounds/timeline_bg.png')) no-repeat;
-  li {
+  border-top: 1px dashed white;
+  .timeline_item {
     width: 14px;
     height: 14px;
     position: absolute;
-    top: -5px;
+    top: -7px;
     display: block;
     background: url(asset-path('icons/timeline_entry.png')) no-repeat;
     cursor: pointer;
     line-height: 0px;
     font-size: 0px;
     list-style: none;
+  }
+  #year_list {
+    margin-top: 10px;
+    display: flex;
+  }
+  .year_item {
+    display: inline-block;
+    flex: 1;
+    font-size: 15px;
   }
 }
 /*about us section end*/

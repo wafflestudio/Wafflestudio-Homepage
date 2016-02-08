@@ -25,10 +25,16 @@
 
   <div id="timeline">
     <ul>
-    <% start_date = Date.new(2007)
-       end_date = Date.new(2018) %>
+    <% end_year = Time.now.year + 2
+       start_date = Date.new(2007)
+       end_date = Date.new(end_year) %>
     <% @timelines.each do |timeline| %>
-      <li title="<%= "#{timeline.name} (#{timeline.took_place_at.strftime("%m/%d")})" %>" data-percent="<%= ((timeline.took_place_at - start_date)/(end_date - start_date)).to_f %>"></li>
+      <li class="timeline_item" title="<%= "#{timeline.name} (#{timeline.took_place_at.strftime("%m/%d")})" %>" data-percent="<%= ((timeline.took_place_at - start_date)/(end_date - start_date)).to_f %>"></li>
+    <% end %>
+    </ul>
+    <ul id="year_list">
+    <% (2007...end_year).each do |y| %>
+      <li class="year_item"><%= y %></li>
     <% end %>
     </ul>
   </div>
