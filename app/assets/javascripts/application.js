@@ -13,7 +13,7 @@
 
 $(function(){
   init_navigation();
-  request_tweets();
+  // request_tweets();
   init_carousel();
   init_timeline();
   init_members();
