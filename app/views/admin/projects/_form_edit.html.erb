@@ -73,7 +73,7 @@
           <% unless @project.logo.nil? %>
             <%= image_tag @project.logo.image.url(:thumb) %>
             <%= @project.logo.image_file_name %>
-            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(@project.logo), :confirm => 'Are you sure?', :method => :delete %><br />
+            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(@project.logo), data: { :confirm => 'Are you sure?' }, :method => :delete %><br />
           <% end %>
           <%= file_field_tag 'project[logo_img]' %><br />
         </td>
@@ -84,7 +84,7 @@
           <% unless @project.featured.nil? %>
             <%= image_tag @project.featured.image.url(:thumb) %>
             <%= @project.featured.image_file_name %>
-            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(@project.featured), :confirm => 'Are you sure?', :method => :delete %><br />
+            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(@project.featured), data: { :confirm => 'Are you sure?' }, :method => :delete %><br />
           <% end %>
           <%= file_field_tag 'project[featured_img]' %><br />
         </td>
@@ -95,7 +95,7 @@
           <% for screenshot in @project.screenshots %>
             <%= image_tag screenshot.image.url(:thumb) %>
             <%= screenshot.image_file_name %>
-            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(screenshot), :confirm => 'Are you sure?', :method => :delete %><br />
+            <%= link_to image_tag('admin/hr.gif'), admin_screenshots_path(screenshot), data: { :confirm => 'Are you sure?' }, :method => :delete %><br />
           <% end %>
           <% for i in (1..5-@project.screenshots.length) %>
             <%= file_field_tag 'project[screenshot_files][]' %><br />

@@ -25,7 +25,7 @@
         <%= select_tag :status, options_for_select(Contact.available_statuses, contact.status).html_safe %>
         <%= link_to '변경', '#', onclick: "change_status(#{contact.id})" %>
       </td>
-      <td><%= link_to image_tag('admin/hr.gif'), admin_contact_url(contact), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to image_tag('admin/hr.gif'), admin_contact_url(contact), data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
     </tr>
     <tr id="contact_content_<%= contact.id %>" class="contact_content <%= 'unread' if contact.status == 'unread'%>">
       <td colspan="6">
