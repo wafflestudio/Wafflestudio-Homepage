@@ -27,8 +27,6 @@ class Admin::ProjectsController < AdminController
   def update
     @project = Project.find params[:id]
     if @project.update_attributes(project_params)
-      puts @project.from_form
-      puts '수정'
       flash[:notice] = '수정완료'
       redirect_to admin_projects_path
     else
