@@ -4,8 +4,8 @@
 <%= render :partial => 'layouts/navigation', :locals => {:cur => 'members'} %>
 <article>
   <ul id="member_list_toggle">
-     <li style="display: none;">OB Member</li>
-     <li>Active Member</li>
+     <li style="display: none;">OB Member<span>▼</span></li>
+     <li>Active Member<span>▼</span></li>
   </ul>
   <ul id="member_tags">
   <% Member.available_tags.each do |tag| %>

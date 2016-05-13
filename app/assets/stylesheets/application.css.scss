@@ -357,6 +357,9 @@ a.nivo-prevNav {
     font-size: 14px;
     background: white;
     box-shadow: 1px 1px 1px black;
+    span {
+      float: right;
+    }
   }
 }
 #member_tags {
