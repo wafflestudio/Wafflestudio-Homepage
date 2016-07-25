@@ -11,27 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20110413065100) do
+ActiveRecord::Schema.define(version: 20160208060533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "carousels", force: :cascade do |t|
-    t.string   "visibility",           default: "invisible"
-    t.string   "c_image_file_name"
-    t.string   "c_image_content_type"
-    t.string   "action"
+    t.text     "visibility",           default: "invisible"
+    t.text     "c_image_file_name"
+    t.text     "c_image_content_type"
+    t.text     "action"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
+    t.text     "name"
+    t.text     "email"
+    t.text     "phone"
     t.text     "message"
-    t.string   "status",      default: "unread"
-    t.string   "mail_status", default: "unsent"
+    t.text     "status",      default: "unread"
+    t.text     "mail_status", default: "unsent"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,32 +39,34 @@ ActiveRecord::Schema.define(version: 20110413065100) do
   create_table "involvements", force: :cascade do |t|
     t.integer  "member_id"
     t.integer  "project_id"
-    t.string   "status",     default: "current"
+    t.text     "status",     default: "current"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "name",                                   null: false
-    t.string   "name_eng"
-    t.string   "tags",                 default: ""
-    t.string   "skills",               default: ""
-    t.string   "school",               default: ""
-    t.string   "email",                default: ""
-    t.string   "website",              default: ""
-    t.string   "twitter",              default: ""
+    t.text     "name",                                   null: false
+    t.text     "name_eng"
+    t.text     "tags",                 default: ""
+    t.text     "skills",               default: ""
+    t.text     "school",               default: ""
+    t.text     "email",                default: ""
+    t.text     "website",              default: ""
+    t.text     "twitter",              default: ""
     t.text     "comment",              default: ""
-    t.string   "resume_file_name"
-    t.string   "resume_content_type"
-    t.string   "list1_file_name"
-    t.string   "list1_content_type"
-    t.string   "list2_file_name"
-    t.string   "list2_content_type"
-    t.string   "profile_file_name"
-    t.string   "profile_content_type"
+    t.text     "resume_file_name"
+    t.text     "resume_content_type"
+    t.text     "list1_file_name"
+    t.text     "list1_content_type"
+    t.text     "list2_file_name"
+    t.text     "list2_content_type"
+    t.text     "profile_file_name"
+    t.text     "profile_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "grade",                default: "cream"
+    t.text     "grade",                default: "cream"
+    t.boolean  "is_visible",           default: true
+    t.integer  "group"
   end
 
   create_table "members_projects", id: false, force: :cascade do |t|
@@ -73,20 +75,21 @@ ActiveRecord::Schema.define(version: 20110413065100) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name"
+    t.text     "name"
     t.text     "description"
     t.date     "start_date"
-    t.string   "status",      default: "on"
-    t.string   "link"
+    t.text     "status",      default: "on"
+    t.text     "link"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "subtitle"
+    t.text     "subtitle"
+    t.boolean  "is_visible",  default: true
   end
 
   create_table "screenshots", force: :cascade do |t|
     t.integer  "project_id"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
+    t.text     "image_file_name"
+    t.text     "image_content_type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "featuring_id"
@@ -94,7 +97,7 @@ ActiveRecord::Schema.define(version: 20110413065100) do
   end
 
   create_table "timelines", force: :cascade do |t|
-    t.string   "name"
+    t.text     "name"
     t.date     "took_place_at"
     t.datetime "created_at"
     t.datetime "updated_at"

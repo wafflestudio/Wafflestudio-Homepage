@@ -3,13 +3,30 @@
 </header>
 <%= render :partial => 'layouts/navigation', :locals => {:cur => 'members'} %>
 <article>
+  <ul id="member_list_toggle">
+     <li style="display: none;">OB Member<span>▼</span></li>
+     <li>Active Member<span>▼</span></li>
+  </ul>
   <ul id="member_tags">
   <% Member.available_tags.each do |tag| %>
     <li style="background: <%= Member.tag_color[tag] %>;"><%= tag %></li>
   <% end %>
   </ul>
-  <ul id="member_list">
-  <% @members.each do |member| %>
+  <ul class="member_list" id="ob_member_list" style="display: none;">
+  <% @members.where(grade: "jam").each do |member| %>
+    <li id="member_<%= member.id %>" data-id="<%= member.id %>" class="member" data-tags="<%= member.tags.join(',') if member.tags and !member.tags.blank? %>">
+      <%= image_tag member.list1.url(:thumb), :class => 'member_thumb' %>
+      <span class="name"><%= member.name %></span>
+      <div class="tagbars">
+      <% for tag in member.tags %>
+        <span class="tagbar" style="background: <%= Member.tag_color[tag] %>;"></span>
+      <% end %>
+      </div>
+    </li>
+  <% end %>
+  </ul>
+  <ul class="member_list" id="active_member_list">
+  <% @members.where.not(grade: "jam").each do |member| %>
     <li id="member_<%= member.id %>" data-id="<%= member.id %>" class="member" data-tags="<%= member.tags.join(',') if member.tags and !member.tags.blank? %>">
       <%= image_tag member.list1.url(:thumb), :class => 'member_thumb' %>
       <span class="name"><%= member.name %></span>

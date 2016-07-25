@@ -1,16 +1,19 @@
 class Member < ActiveRecord::Base
   has_many :involvements
-	has_many :projects, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
-	has_many :prev_projects, -> {where(:involvements => {:status => 'previous'})}, :source => :project, :through => :involvements do
-		def <<(prev_project)
-			Involvement.where(:status => 'previous').scoping {self.concat prev_project}
-		end
-	end
+  has_many :projects, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
+  has_many :prev_projects, -> {where(:involvements => {:status => 'previous'})}, :source => :project, :through => :involvements do
+    def <<(prev_project)
+      Involvement.where(:status => 'previous').scoping {self.concat prev_project}
+    end
+  end
+
   serialize :tags
   serialize :skills
   attr_accessor :project_ids, :prev_project_ids, :tag_names, :skill_inputs, :from_form
   before_save :set_tags, :set_skills
   after_save :set_projects
+
+  default_scope { order(:group, :id) }
 
   has_attached_file :resume
   has_attached_file :profile, :styles => { :actual => "230x480>", :thumb => "100x100>" }
@@ -51,14 +54,14 @@ class Member < ActiveRecord::Base
       projects.delete_all
       selected_projects = (project_ids||[]).collect{|id| Project.find id}
       selected_projects.each{|project| self.projects << project }
-			prev_projects.delete_all
-			selected_prev_projects = (prev_project_ids||[]).collect{|id| Project.find id}
+      prev_projects.delete_all
+      selected_prev_projects = (prev_project_ids||[]).collect{|id| Project.find id}
       selected_prev_projects.each{|project| self.prev_projects << project }
     end
   end
 
   def self.available_grades
-		['cream', 'choco', 'jam', 'previous']
+    ['cream', 'choco', 'jam', 'previous']
   end
 
   def self.available_tags

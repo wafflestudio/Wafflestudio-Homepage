@@ -1,3 +1,4 @@
+mail_password = YAML::load_file("config/mail_password.yml")||{}
 #ActionMailer::Base.raise_delivery_errors = true
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.delivery_method = :smtp
@@ -6,7 +7,7 @@ ActionMailer::Base.smtp_settings = {
   :port => 587,
   :domain => "wafflestudio.com",
   :user_name => "hello@wafflestudio.com",
-  :password => "gpffhdhkvmf",
+  :password => mail_password["password"],
   :authentication => "plain",
   :enable_starttls_auto => true
 }

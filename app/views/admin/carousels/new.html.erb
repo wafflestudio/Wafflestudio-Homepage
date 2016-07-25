@@ -15,35 +15,35 @@
   <%= f.hidden_field 'from_form', :value => 1 %>
 
   <div class="table">
-		<table class="listing form" cellpadding="0" cellspacing="0">
+    <table class="listing form" cellpadding="0" cellspacing="0">
       <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
       <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-			<tr>
-				<th class="full" colspan="2"><%= yield(:title) %></th>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이미지</strong></td>
-				<td class="last"><%= f.file_field 'c_image' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>visibility</strong></td>
-				<td class="last"><%= f.select :visibility, Carousel.available_visibility_options  %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>action type</strong></td>
-				<td class="last">
+      <tr>
+        <th class="full" colspan="2"><%= yield(:title) %></th>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이미지</strong></td>
+        <td class="last"><%= f.file_field 'c_image' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>visibility</strong></td>
+        <td class="last"><%= f.select :visibility, Carousel.available_visibility_options  %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>action type</strong></td>
+        <td class="last">
           <%= f.text_field 'action_type' %>
           <p>available types: 'project', 'url', 'member'</p>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>action value</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>action value</strong></td>
+        <td class="last">
           <%= f.text_field 'action_value' %>
           <p>project -> project_id, url -> some url, member -> member_id</p>
         </td>
-			</tr>
-		</table>
+      </tr>
+    </table>
   </div>
 
   <div class="actions">

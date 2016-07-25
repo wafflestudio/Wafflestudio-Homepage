@@ -15,75 +15,79 @@
   <%= f.hidden_field 'from_form', :value => 1 %>
 
   <div class="table">
-		<table class="listing form" cellpadding="0" cellspacing="0">
+    <table class="listing form" cellpadding="0" cellspacing="0">
       <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
       <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-			<tr>
-				<th class="full" colspan="2"><%= yield(:title) %></th>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>프로젝트명</strong></td>
-				<td class="last"><%= f.text_field 'name' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>프로젝트 부제</strong></td>
-				<td class="last"><%= f.text_field 'subtitle' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>설명</strong></td>
-				<td class="last"><%= f.text_area 'description' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>시작일</strong></td>
-				<td class="last"><%= f.date_field 'start_date' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>상태</strong></td>
-				<td class="last"><%= f.select :status, Project.available_statuses %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>링크</strong></td>
-				<td class="last"><%= f.text_field 'link' %></td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>멤버</strong></td>
-				<td class="last">
+      <tr>
+        <th class="full" colspan="2"><%= yield(:title) %></th>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>프로젝트명</strong></td>
+        <td class="last"><%= f.text_field 'name' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>프로젝트 부제</strong></td>
+        <td class="last"><%= f.text_field 'subtitle' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>설명</strong></td>
+        <td class="last"><%= f.text_area 'description' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>시작일</strong></td>
+        <td class="last"><%= f.date_field 'start_date' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>보이기</strong></td>
+        <td class="last"><%= f.check_box 'is_visible' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>상태</strong></td>
+        <td class="last"><%= f.select :status, Project.available_statuses %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>링크</strong></td>
+        <td class="last"><%= f.text_field 'link' %></td>
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>멤버</strong></td>
+        <td class="last">
           <% for member in Member.all %>
             <%= check_box_tag 'project[member_ids][]', member.id, false %>
             <%= member.name %>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>이전 멤버</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>이전 멤버</strong></td>
+        <td class="last">
           <% for member in Member.all %>
             <%= check_box_tag 'project[prev_member_ids][]', member.id, false %>
             <%= member.name %>
           <% end %>
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>Logo</strong></td>
-				<td class="last">
-					<%= file_field_tag 'project[logo_img]' %><br />
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>Logo</strong></td>
+        <td class="last">
+          <%= file_field_tag 'project[logo_img]' %><br />
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>Featured</strong></td>
-				<td class="last">
-					<%= file_field_tag 'project[featured_img]' %><br />
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>Featured</strong></td>
+        <td class="last">
+          <%= file_field_tag 'project[featured_img]' %><br />
         </td>
-			</tr>
-			<tr>
-				<td class="first" width="150"><strong>스크린샷</strong></td>
-				<td class="last">
+      </tr>
+      <tr>
+        <td class="first" width="150"><strong>스크린샷</strong></td>
+        <td class="last">
           <% for i in (1..5) %>
             <%= file_field_tag 'project[screenshot_files][]' %><br />
           <% end %>
         </td>
-			</tr>
-		</table>
+      </tr>
+    </table>
   </div>
 
   <div class="actions">

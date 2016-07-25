@@ -3,37 +3,37 @@
 <p><%= flash[:error] %></p>
 <p>이름을 클릭하면 내용을 볼 수 있습니다</p>
 <div class="table">
-	<%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
-	<%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-<table class="listing" cellpadding="0" cellspacing="0">
-  <tr>
-    <th class="first">이름</th>
-    <th>이메일</th>
-    <th>전화번호</th>
-    <th>날짜</th>
-    <th>상태</th>
-    <th class="last">삭제</th>
-  </tr>
+  <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
+  <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0">
+    <tr>
+      <th class="first">이름</th>
+      <th>이메일</th>
+      <th>전화번호</th>
+      <th>날짜</th>
+      <th>상태</th>
+      <th class="last">삭제</th>
+    </tr>
 
-<% @contacts.each do |contact| %>
-  <tr id="contact_<%= contact.id %>" class="contact <%= 'unread' if contact.status == 'unread'%>">
-    <td><%= contact.name %></td>
-    <td><%= contact.email %></td>
-    <td><%= contact.phone %></td>
-    <td><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-    <td>
-      <%= select_tag :status, options_for_select(Contact.available_statuses, contact.status).html_safe %>
-      <%= link_to '변경', '#', onclick: "change_status(#{contact.id})" %>
-    </td>
-    <td><%= link_to image_tag('admin/hr.gif'), admin_contact_url(contact), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-  <tr id="contact_content_<%= contact.id %>" class="contact_content <%= 'unread' if contact.status == 'unread'%>">
-    <td colspan="6">
-      <%= contact.message %>
-    </td>
-  </tr>
-<% end %>
-</table>
+  <% @contacts.each do |contact| %>
+    <tr id="contact_<%= contact.id %>" class="contact <%= 'unread' if contact.status == 'unread'%>">
+      <td><%= contact.name %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.phone %></td>
+      <td><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+      <td>
+        <%= select_tag :status, options_for_select(Contact.available_statuses, contact.status).html_safe %>
+        <%= link_to '변경', '#', onclick: "change_status(#{contact.id})" %>
+      </td>
+      <td><%= link_to image_tag('admin/hr.gif'), admin_contact_url(contact), data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    </tr>
+    <tr id="contact_content_<%= contact.id %>" class="contact_content <%= 'unread' if contact.status == 'unread'%>">
+      <td colspan="6">
+        <%= contact.message %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
 </div>
 <div style="clear:both"></div>
 

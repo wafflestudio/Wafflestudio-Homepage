@@ -4,7 +4,9 @@ $ bundle install
 2. 관리자 계정등록(정보는 config/admin.yml에 저장. 비밀번호는 암호화됨)
 $ ruby new_admin.rb
 
-3. 크론탭에 send_mail.rb 등록(적당히 30분~1시간 주기로 메일보내게) 적당히 환경변수 세팅해주고 1시간 정도 간격으로 돌리면 됨
+3. *.example 들을 참고하여 데이터와 DB 세팅과 문의 메일 계정 비밀번호를 써준다
+
+4. 크론탭에 send_mail.rb 등록(적당히 30분~1시간 주기로 메일보내게) 적당히 환경변수 세팅해주고 1시간 정도 간격으로 돌리면 됨
   RUBYOPT=rubygems$
   PATH=/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/home/thefron/bin$
   1 * * * * /home/thefron/waffle/script/rails runner /home/thefron/waffle/send_mail.rb >> /home/thefron/waffle/log/send_mail.log

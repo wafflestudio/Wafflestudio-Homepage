@@ -42,7 +42,7 @@ class Admin::MembersController < AdminController
 
   private
   def member_params
-    params.require(:member).permit(:from_form, :name, :name_eng, :grade, :email, :twitter, :school, :website, :resume, :profile, :list1, :list2, :comment, :tag_names => [], :skill_inputs => [:name, :degree], :project_ids => [], :prev_project_ids => [])
+    params.require(:member).permit(:from_form, :name, :name_eng, :group, :grade, :is_visible, :email, :twitter, :school, :website, :resume, :profile, :list1, :list2, :comment, :tag_names => [], :skill_inputs => [:name, :degree], :project_ids => [], :prev_project_ids => [])
   end
 
 end

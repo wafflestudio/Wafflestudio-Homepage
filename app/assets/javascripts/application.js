@@ -12,84 +12,84 @@
 //= require aga.min
 
 $(function(){
-	init_navigation();
-  request_tweets();
+  init_navigation();
+  // request_tweets();
   init_carousel();
   init_timeline();
   init_members();
   init_projects();
   init_contact_form();
-	init_parallax();
+  init_parallax();
   //팝업용 임시공간
-	$('<div>').attr('id', 'invisible').appendTo($('body')).hide()
-	//hover클래스가 필요한 것들
-	$('nav.navigation a, #contact_submit, #top').hover(function(){
-		$(this).addClass('hover');
-	}, function(){
-		$(this).removeClass('hover');
-	});
+  $('<div>').attr('id', 'invisible').appendTo($('body')).hide()
+  //hover클래스가 필요한 것들
+  $('nav.navigation a, #contact_submit, #top').hover(function(){
+    $(this).addClass('hover');
+  }, function(){
+    $(this).removeClass('hover');
+  });
 });
 
 function init_parallax(){
-	var footer = $('footer');
-	var Fmin = footer.height()/2;
-	var newPos;
-	$(window).bind('scroll', function(){
-		top_pos = footer.offset().top - $(window).height();
-		bottom_pos = $(document).height()-$(window).height()
-		windowTop = $(window).scrollTop();
-		if(windowTop >= top_pos && windowTop <= bottom_pos){
-			ratio = parseFloat((windowTop-top_pos)/(bottom_pos - top_pos));
-			newPos = Fmin+(footer.height()-Fmin)*ratio;
-		}
-		else{
-			newPos = Fmin
-		}
-		$('footer').css({
-			'background-position': '0 '+(-footer.height()+newPos)+'px'
-		});
-	});
+  var footer = $('footer');
+  var Fmin = footer.height()/2;
+  var newPos;
+  $(window).bind('scroll', function(){
+    top_pos = footer.offset().top - $(window).height();
+    bottom_pos = $(document).height()-$(window).height()
+    windowTop = $(window).scrollTop();
+    if(windowTop >= top_pos && windowTop <= bottom_pos){
+      ratio = parseFloat((windowTop-top_pos)/(bottom_pos - top_pos));
+      newPos = Fmin+(footer.height()-Fmin)*ratio;
+    }
+    else{
+      newPos = Fmin
+    }
+    $('footer').css({
+      'background-position': '0 '+(-footer.height()+newPos)+'px'
+    });
+  });
 }
 
 function init_navigation(){
-	//주 네비게이션 스크롤 기능
-	$('nav.navigation li a').click(function(e){
-		e.preventDefault();
-		if($(this).hasClass('active')) return;
-		switch($(this).text()){
-			case 'About Us':
-				$('html, body').animate({
-					scrollTop: $('#about_us').offset().top-100
-				}, 1000);
-				break;
-			case 'Members':
-				$('html, body').animate({
-					scrollTop: $('#members').offset().top-40
-				}, 1000);
-				break;
-			case 'Projects':
-				$('html, body').animate({
-					scrollTop: $('#projects').offset().top-100
-				}, 1000);
-				break;
-			case 'Contact':
-				$('html, body').animate({
-					scrollTop: $('#contact').offset().top-50
-				}, 1000);
-				break;
-		}
-	});
-	$('#top').click(function(e){
-		e.preventDefault();
-		$('html, body').animate({
-			scrollTop: 0
-		}, 1000);
-	}).css({
-		marginLeft: $('#container').width()/2-20
-	});
+  //주 네비게이션 스크롤 기능
+  $('nav.navigation li a').click(function(e){
+    e.preventDefault();
+    if($(this).hasClass('active')) return;
+    switch($(this).text()){
+      case 'About Us':
+        $('html, body').animate({
+          scrollTop: $('#about_us').offset().top-100
+        }, 1000);
+        break;
+      case 'Members':
+        $('html, body').animate({
+          scrollTop: $('#members').offset().top-40
+        }, 1000);
+        break;
+      case 'Projects':
+        $('html, body').animate({
+          scrollTop: $('#projects').offset().top-100
+        }, 1000);
+        break;
+      case 'Contact':
+        $('html, body').animate({
+          scrollTop: $('#contact').offset().top-50
+        }, 1000);
+        break;
+    }
+  });
+  $('#top').click(function(e){
+    e.preventDefault();
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1000);
+  }).css({
+    marginLeft: $('#container').width()/2-20
+  });
 }
 function init_timeline(){
-	//연혁에 내용물 뿌리고, 툴팁 적용
+  //연혁에 내용물 뿌리고, 툴팁 적용
   $('#timeline li').tipsy({
     gravity: 's',
     fade: true,
@@ -101,7 +101,7 @@ function init_timeline(){
   });
 }
 function init_carousel(){
-	//top section의 카로슬 활성화
+  //top section의 카로슬 활성화
   $('#slider').nivoSlider({
     effect: 'sliceDownRight,sliceDownLeft,sliceUpRight',
     slices: 8,
@@ -113,29 +113,29 @@ function init_carousel(){
   control.css('margin-left', -control.width()/2);
 }
 function slider_action(type, value){
-	//top section 카로슬 개체 클릭 시 동작 지정
+  //top section 카로슬 개체 클릭 시 동작 지정
   switch(type){
     case 'url': 
       window.open(value);
       break;
     case 'project': 
-			$('html, body').animate({
-				scrollTop: $('#projects').offset().top-100
-			}, 500, function(){
-				request_project(value, false);
-			});
+      $('html, body').animate({
+        scrollTop: $('#projects').offset().top-100
+      }, 500, function(){
+        request_project(value, false);
+      });
       break;
     case 'member': 
-			$('html, body').animate({
-				scrollTop: $('#members').offset().top-40
-			}, 500, function(){
-				request_member(value, false);
-			});
+      $('html, body').animate({
+        scrollTop: $('#members').offset().top-40
+      }, 500, function(){
+        request_member(value, false);
+      });
       break;
   }
 }
 function request_tweets(){
-	//최신 트윗 가져오기
+  //최신 트윗 가져오기
   //$('#tweets').html('<li class="loading">Loading tweets...</li>');
   $.ajax({
     data: {
@@ -151,7 +151,7 @@ function request_tweets(){
   });
 }
 function process_tweets(tweets){
-	//트위터 API로 가져온 데이터 처리
+  //트위터 API로 가져온 데이터 처리
   var processed_tweets = $.map(tweets, function(tweet){
     var processed_tweet = {};
     processed_tweet.text = linkify_entities(tweet);
@@ -162,12 +162,12 @@ function process_tweets(tweets){
   $('#tweet_template').tmpl(processed_tweets).hide().appendTo('#tweets').fadeIn();
 }
 function fail_loading_tweets(){
-	//트윗 가져오기 실패했을 때
+  //트윗 가져오기 실패했을 때
   $('#tweets').html('<li class="failed">Failed to load tweets. <a class="reload_tweet">Try again</a></li>');
   $('.reload_tweet').click(request_tweets);
 }
 function relativeTime(pastTime){
-	//상대시간 계산
+  //상대시간 계산
   var toParse = pastTime.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/, "$1 $2 $4 $3 UTC");
   var origStamp = Date.parse(toParse);
   var curDate = new Date();
@@ -186,7 +186,7 @@ function relativeTime(pastTime){
   return Math.round(diff/(3600*24*30))+"months ago";
 }
 function request_member(id, replace){
-	//멤버 페이지 보여주기 replace는 팝업을 열면서 보여줄지, 열려있는 상태에서 다른 멤버를 보여줄지를 결정
+  //멤버 페이지 보여주기 replace는 팝업을 열면서 보여줄지, 열려있는 상태에서 다른 멤버를 보여줄지를 결정
   $('.member').removeClass('current');
   $('#member_'+id).addClass('current');
   var success_callback = replace? replace_member:show_member;
@@ -203,7 +203,7 @@ function request_member(id, replace){
   });
 }
 function show_member(data){
-	//멤버 팝업 열기
+  //멤버 팝업 열기
   var member = data.member;
   $('#invisible').empty();
   $('#member_template').tmpl(member).attr('id', 'member_popup').appendTo('#invisible');
@@ -216,7 +216,7 @@ function show_member(data){
   });
 }
 function replace_member(data){
-	//현재 열려있는 멤버 팝업 내용 교체하기
+  //현재 열려있는 멤버 팝업 내용 교체하기
   var member = data.member;
   $('#member_template').tmpl(member).attr('id', 'member_popup').hide().appendTo('#cboxLoadedContent').fadeIn(100, function(){
     $('#cboxLoadedContent').removeClass('loading');
@@ -224,14 +224,14 @@ function replace_member(data){
   init_member_popup();
 }
 function show_next_member(){
-	//다음 멤버 페이지 요청
+  //다음 멤버 페이지 요청
   var next = next_member(); 
   if(!next) return;
   var id = next.attr('data-id');
   request_member(id, true);
 }
 function next_member(){
-	//다음 멤버 알아오기
+  //다음 멤버 알아오기
   var next = $('.member.current').next();
   if(next.length > 0)
     return next;
@@ -239,14 +239,14 @@ function next_member(){
     return false;
 }
 function show_prev_member(){
-	//이전 멤버 페이지 요청
+  //이전 멤버 페이지 요청
   var prev = prev_member();
   if(!prev) return;
   var id = prev.attr('data-id');
   request_member(id, true);
 }
 function prev_member(){
-	//이전 멤버 알아오기
+  //이전 멤버 알아오기
   var prev = $('.member.current').prev();
   if(prev.length > 0)
     return prev;
@@ -254,7 +254,7 @@ function prev_member(){
     return false;
 }
 function member_bind_key_nav(){
-	//키보드로 멤버 좌우 네비게이션
+  //키보드로 멤버 좌우 네비게이션
   window.keyNav = true;
   $(document).bind('keydown.member_nav', function(e){
     if(!window.keyNav) return;
@@ -269,12 +269,12 @@ function member_bind_key_nav(){
   });
 }
 function member_unbind_key_nav(){
-	//키보드로 멤버 좌우네비게이션 해제
+  //키보드로 멤버 좌우네비게이션 해제
   window.keyNav = false;
   $(document).unbind('keydown.member_nav');
 }
 function init_member_popup(){
-	//멤버 팝업 오픈 후 내용 세팅해주기
+  //멤버 팝업 오픈 후 내용 세팅해주기
   window.keyNav = true;
   if(prev_member())
     $('.member_popup .nav .prev').click(show_prev_member);
@@ -306,11 +306,18 @@ function init_member_popup(){
    });
 }
 function init_members(){
-	//멤버 리스트 초기화 
+  //멤버 리스트 초기화 
   var members = $('.member');
   var member_tags = $('#member_tags li');
+  var member_list_toggle = $('#member_list_toggle li');
+  var member_list = $('.member_list')
+  member_list_toggle.click(function(){
+    // 멤버 리스트 토클 클릭시 멤버리스트 교체
+    member_list_toggle.toggle();
+    member_list.fadeToggle();
+  });
   members.hover(function(){
-  	//호버 시 슬라이드업 되면서 이름 보여줌
+    //호버 시 슬라이드업 되면서 이름 보여줌
     $(this).children('.member_thumb').stop().animate({'top': '-17px'}, 150);
   }, function(){
     $(this).children('.member_thumb').animate({'top': '0px'}, 150);
@@ -325,7 +332,7 @@ function init_members(){
     request_member(id, false);
   });
   member_tags.click(function(){
-  	//멤버 태그 클릭시 해당멤버 보여주기
+    //멤버 태그 클릭시 해당멤버 보여주기
     var tag = $(this);
     if(!tag.hasClass('on')){
       members.removeClass('disabled on');
@@ -334,17 +341,17 @@ function init_members(){
       members.filter('.'+tag_str).addClass('on');
       member_tags.not(tag[0]).removeClass('on');
       tag.addClass('on');
-			members.filter('.disabled').animate({
-				opacity: 0.3
-			}, 'fast');
-			members.not('.disabled').animate({
-				opacity: 1
-			}, 'fast');
+      members.filter('.disabled').animate({
+        opacity: 0.3
+      }, 'fast');
+      members.not('.disabled').animate({
+        opacity: 1
+      }, 'fast');
     }
     else{
-			members.filter('.disabled').animate({
-				opacity: 1
-			}, 'fast');
+      members.filter('.disabled').animate({
+        opacity: 1
+      }, 'fast');
       members.removeClass('disabled on');
       tag.removeClass('on');
     }
@@ -352,20 +359,20 @@ function init_members(){
   //TODO:choco&cream/jam separation
 }
 function init_projects(){
-	//프로젝트 리스트 초기화
-	/*
+  //프로젝트 리스트 초기화
+  /*
   $('#project_list').slider({
-		onClick: function(el){
-			var id = el.attr('data-id');
-			request_project(id, false);
-		},
-		startIndex: 0,
-		useCaption: true,
-		duration: 6000
-	});
+    onClick: function(el){
+      var id = el.attr('data-id');
+      request_project(id, false);
+    },
+    startIndex: 0,
+    useCaption: true,
+    duration: 6000
+  });
 */
-	$('#project_list').aga({
-	  easing: ['easeOutExpo'],
+  $('#project_list').aga({
+    easing: ['easeOutExpo'],
     size: {
       max: $('#project_list').width() - 20*($('#project_list li').length - 1)
     },
@@ -373,33 +380,33 @@ function init_projects(){
     handler: function(el){
       return $(el).find('.handle');
     }
-	});
-	$('#project_list .handle').each(function(i){
-		$(this).css('top', ($(this).position().top + i*5)+'px');
-	});
-	$('#project_list .project_overlay').click(function(){
+  });
+  $('#project_list .handle').each(function(i){
+    $(this).css('top', ($(this).position().top + i*5)+'px');
+  });
+  $('#project_list .project_overlay').click(function(){
     var id = $(this).closest('.project').attr('data-id');
     request_project(id, false);
   });
 }
 function init_contact_form(){
-	//컨택 폼 ajax로 동작하게
+  //컨택 폼 ajax로 동작하게
   $('#new_contact').ajaxForm({
     dataType: 'json',
     clearForm: true,
     success: contact_send_success,
     error: contact_send_fail,
     beforeSubmit: function(){
-			var submit_btn = $('#contact_submit');
-			if(submit_btn.hasClass('sending'))
-				return false;
-			$('#contact_submit').addClass('sending').val('Sending...');
-		},
-		complete: function(){
-			$('#contact_submit').removeClass('sending').val('Send');
-		}
+      var submit_btn = $('#contact_submit');
+      if(submit_btn.hasClass('sending'))
+        return false;
+      $('#contact_submit').addClass('sending').val('Sending...');
+    },
+    complete: function(){
+      $('#contact_submit').removeClass('sending').val('Send');
+    }
   });
-	//컨택 폼 툴팁
+  //컨택 폼 툴팁
   $('#new_contact input[title]').tipsy({
     trigger: 'focus',
     fade: true,
@@ -417,7 +424,7 @@ function contact_send_success(response, status, xhr){
   $.prompt('전송되었습니다');
 }
 function contact_send_fail(xhr, status){
-	//컨택 폼 전송 실패시 메시지 띄우기
+  //컨택 폼 전송 실패시 메시지 띄우기
   var errors = $.parseJSON(xhr.responseText);
   var error_arr = [];
   $.each(errors, function(i, message){
@@ -426,7 +433,7 @@ function contact_send_fail(xhr, status){
   $.prompt(error_arr.join('\n'));
 }
 function request_project(id, replace){
-	//프로젝트 페이지 요청 replace에 따라 팝업이 열리거나 열려있는 팝업의 내용물 대체
+  //프로젝트 페이지 요청 replace에 따라 팝업이 열리거나 열려있는 팝업의 내용물 대체
   $('.project').removeClass('current');
   $('#project_'+id).addClass('current');
   var success_callback = replace? replace_member:show_member;
@@ -450,7 +457,7 @@ function request_project(id, replace){
   });
 }
 function show_project(data){
-	//프로젝트 팝업 열기
+  //프로젝트 팝업 열기
   var project = data.project;
   $('#invisible').empty();
   $('#project_template').tmpl(project).attr('id', 'project_popup').appendTo('#invisible');
@@ -463,7 +470,7 @@ function show_project(data){
   });
 }
 function replace_project(data){
-	//열려있는 프로젝트 팝업에 다른 프로젝트 내용 불러오기
+  //열려있는 프로젝트 팝업에 다른 프로젝트 내용 불러오기
   var project = data.project;
   $('#project_template').tmpl(project).attr('id', 'project_popup').hide().appendTo('#cboxLoadedContent').fadeIn(100, function(){
     $('#cboxLoadedContent').removeClass('loading');
@@ -471,7 +478,7 @@ function replace_project(data){
   init_project_popup();
 }
 function init_project_popup(){
-	//프로젝트 팝업 초기화
+  //프로젝트 팝업 초기화
   window.keyNav = true;
   if(prev_project())
     $('.project_popup .nav .prev').click(show_prev_project);
@@ -509,14 +516,14 @@ function init_project_popup(){
    });
 }
 function show_next_project(){
-	//다음 프로젝트 페이지 요청
+  //다음 프로젝트 페이지 요청
   var next = next_project();
   if(!next) return;
   var id = next.attr('data-id');
   request_project(id, true);
 }
 function next_project(){
-	//다음 프로젝트 가져오기
+  //다음 프로젝트 가져오기
   var next = $('.project.current').next();
   if(next.length > 0)
     return next;
@@ -524,14 +531,14 @@ function next_project(){
     return false;
 }
 function show_prev_project(){
-	//이전 프로젝트 페이지 요청
+  //이전 프로젝트 페이지 요청
   var prev= prev_project();
   if(!prev) return;
   var id = prev.attr('data-id');
   request_project(id, true);
 }
 function prev_project(){
-	//이전 프로젝트 가져오기
+  //이전 프로젝트 가져오기
   var prev = $('.project.current').prev();
   if(prev.length > 0)
     return prev;
@@ -539,7 +546,7 @@ function prev_project(){
     return false;
 }
 function project_bind_key_nav(){
-	//프로젝트 팝업 좌우 키보드 네비게이션
+  //프로젝트 팝업 좌우 키보드 네비게이션
   window.keyNav = true;
   $(document).bind('keydown.project_nav', function(e){
     if(!window.keyNav) return;
@@ -554,19 +561,19 @@ function project_bind_key_nav(){
   });
 }
 function project_unbind_key_nav(){
-	//프로젝트 팝업 좌우 키보드 네비게이션 해제
+  //프로젝트 팝업 좌우 키보드 네비게이션 해제
   window.keyNav = false;
   $(document).unbind('keydown.project_nav');
 }
 function member_to_project(id){
-	//멤버 팝업에서 프로젝트 클릭시
+  //멤버 팝업에서 프로젝트 클릭시
   $(document).one('cbox_closed', function(){
     request_project(id, false);
   });
   $.colorbox.close();
 }
 function project_to_member(id){
-	//프로젝트 팝업에서 멤버 클릭시
+  //프로젝트 팝업에서 멤버 클릭시
   $(document).one('cbox_closed', function(){
     request_member(id, false);
   });

@@ -4,25 +4,25 @@
 <%= link_to image_tag('admin/add-icon.gif')+"새 멤버", new_admin_member_path %>
 <p>섬네일 사진, 전신 사진은 배경 하얗게. 적어도 모서리는 하얀색이어야 함.<br />전신 사진은 위아래 트림을 최대한 많이 해야 사진이 크게 보임</p>
 <div class="table">
-	<%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
-	<%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
-<table class="listing" cellpadding="0" cellspacing="0">
-  <tr>
-    <th class="first">이름</th>
-    <th>태그</th>
-    <th>수정</th>
-    <th class="last">삭제</th>
-  </tr>
+  <%= image_tag 'admin/bg-th-left.gif', width:"8", height:"7", alt:"", class:"left" %>
+  <%= image_tag 'admin/bg-th-right.gif', width:"8", height:"7", alt:"", class:"right" %>
+  <table class="listing" cellpadding="0" cellspacing="0">
+    <tr>
+      <th class="first">이름</th>
+      <th>태그</th>
+      <th>수정</th>
+      <th class="last">삭제</th>
+    </tr>
 
-<% @members.each do |member| %>
-  <tr>
-    <td><%= link_to member.name, edit_admin_member_path(member) %></td>
-    <td><%= member.tags.to_a.join(', ') || '' %></td>
-    <td><%= link_to image_tag('admin/edit-icon.gif'), edit_admin_member_path(member) %></td>
-    <td><%= link_to image_tag('admin/hr.gif'), admin_member_url(member), :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @members.each do |member| %>
+    <tr>
+      <td><%= link_to member.name, edit_admin_member_path(member) %></td>
+      <td><%= member.tags.to_a.join(', ') || '' %></td>
+      <td><%= link_to image_tag('admin/edit-icon.gif'), edit_admin_member_path(member) %></td>
+      <td><%= link_to image_tag('admin/hr.gif'), admin_member_url(member), data: { :confirm => 'Are you sure?' }, :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 </div>
 <div style="clear:both"></div>
 <%= link_to image_tag('admin/add-icon.gif')+"새 멤버", new_admin_member_path %>
