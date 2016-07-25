@@ -1,2 +1,2 @@
-class Timeline < ActiveRecord::Base
+class Timeline < ApplicationRecord
 end
