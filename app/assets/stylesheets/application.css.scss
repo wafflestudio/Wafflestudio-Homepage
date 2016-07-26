@@ -14,6 +14,9 @@ body{
   font-size: 12px;
   background: #aeafa0 url(asset-path('backgrounds/bg_pattern.jpg')) center top;
 }
+:focus {
+  outline: none;
+}
 /*overall style end*/
 
 
