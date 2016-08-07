@@ -1,4 +1,4 @@
-class Project < ActiveRecord::Base
+class Project < ApplicationRecord
   has_many :involvements
   has_many :members, -> {where(:involvements => {:status => 'current'})}, :through => :involvements
   has_many :prev_members, -> {where(:involvements => {:status => 'previous'})}, :source => :member, :through => :involvements do
