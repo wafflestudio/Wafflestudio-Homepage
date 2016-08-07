@@ -4,7 +4,7 @@ require 'yaml'
 require 'digest/sha1'
 
 class AdminController < ApplicationController
-  before_filter :authorized?, :except => [:authorize, :login]
+  before_action :authorized?, :except => [:authorize, :login]
 
   def login
     if session[:admin]
