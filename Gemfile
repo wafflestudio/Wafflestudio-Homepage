@@ -25,6 +25,9 @@ gem 'therubyracer'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'capistrano-rbenv'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano-thin', '~> 1.2.0'
 
 # To use debugger
 # gem 'ruby-debug'
